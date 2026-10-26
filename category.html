@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الأقسام والبحث | NAS Market</title>
+  <meta name="description" content="تصفّح قطع الغيار والمعدات الصناعية حسب القسم، مع فلاتر الحالة والبائع والسعر.">
+  <meta property="og:title" content="الأقسام والبحث | NAS Market">
+  <meta property="og:description" content="تصفّح قطع الغيار والمعدات الصناعية حسب القسم، مع فلاتر الحالة والبائع والسعر.">
+  <meta property="og:image" content="assets/img/p10.jpg">
+  <meta name="theme-color" content="#122A36">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="category" data-root="">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <header class="pagehead">
+      <div class="container">
+        <nav class="crumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><svg class="icon icon--sm flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span id="ph-crumb">الأقسام</span></nav>
+        <h1 id="ph-title">الأقسام</h1>
+        <p id="ph-sub"></p>
+        <span class="pagehead__code" id="ph-code" aria-hidden="true"></span>
+      </div>
+    </header>
+    <div class="container">
+      <div class="cat-banner" id="cat-banner"></div>
+      <nav class="subcats" id="subcats" aria-label="أقسام فرعية"></nav>
+      <div class="listing">
+        <form class="filters" id="filters" aria-label="الفلاتر">
+          <div class="filters__head"><h2>تصفية النتائج</h2><button type="button" class="close-btn filters__close" data-close aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+          <div class="fgroup"><h3>الحالة</h3>
+            <label class="check"><input type="checkbox" name="cond" value="new"> جديد</label>
+            <label class="check"><input type="checkbox" name="cond" value="refurb"> مجدد</label>
+            <label class="check"><input type="checkbox" name="cond" value="used"> مستعمل</label>
+          </div>
+          <div class="fgroup"><h3>السعر <span class="mono muted" style="font-weight:400">AED</span></h3>
+            <div class="price-range"><input class="input mono" name="min" type="number" placeholder="من" aria-label="أقل سعر"><input class="input mono" name="max" type="number" placeholder="إلى" aria-label="أعلى سعر"></div>
+          </div>
+          <div class="fgroup"><h3>القسم</h3><div id="f-cat" style="display:grid;gap:10px"></div></div>
+          <div class="fgroup"><h3>البائع</h3><div id="f-vendor" style="display:grid;gap:10px"></div></div>
+          <div class="fgroup"><h3>التوفر</h3><label class="check"><input type="checkbox" name="stock" value="1" checked> متوفر فقط</label></div>
+          <div class="filters__apply"><button class="btn btn--primary btn--block">عرض النتائج</button></div>
+        </form>
+        <section aria-label="النتائج">
+          <div class="toolbar">
+            <p class="toolbar__count"><b id="count">0</b> منتج</p>
+            <div class="toolbar__right">
+              <button type="button" class="btn btn--line btn--sm filter-btn" data-open="#filters"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7.5V19l-4 2v-8.5z"/></svg>الفلاتر</button>
+              <label class="sr-only" for="sort">ترتيب</label>
+              <select class="select" id="sort"><option value="">الأكثر صلة</option><option value="low">السعر: من الأقل</option><option value="high">السعر: من الأعلى</option><option value="rating">الأعلى تقييماً</option></select>
+            </div>
+          </div>
+          <div class="chips" id="chips"></div>
+          <div class="pgrid" id="grid"></div>
+          <nav class="pager" aria-label="الصفحات"><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">…</a><a href="#">12</a></nav>
+        </section>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/core.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>

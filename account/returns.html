@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الإرجاع والاسترداد | NAS Market</title>
+  <meta name="description" content="طلبات الإرجاع وحالة الاسترداد.">
+  <meta property="og:title" content="الإرجاع والاسترداد | NAS Market">
+  <meta property="og:description" content="طلبات الإرجاع وحالة الاسترداد.">
+  <meta property="og:image" content="../assets/img/p10.jpg">
+  <meta name="theme-color" content="#122A36">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/store.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body data-page="returns" data-root="../">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <div class="container acct">
+      <div id="acct-nav"></div>
+      <section>
+        <div class="sec-head" style="margin-bottom:12px"><h1 style="margin:0">الإرجاع والاسترداد</h1><button class="btn btn--primary btn--sm" data-open="#m-ret">طلب إرجاع جديد</button></div>
+        <article class="order">
+          <div class="order__head"><div><small>رقم الإرجاع</small><span class="mono">RMA-2610-006</span></div><div><small>الطلب</small><span class="mono">NAS-261009-0017</span></div><div><small>المنتج</small>ملتيميتر رقمي مع مجسات</div><div class="btns"><span class="badge badge--info">بانتظار استلام الشحنة المرتجعة</span></div></div>
+          <div class="sub"><ol class="steps"><li class="step is-done">تم الطلب</li><li class="step is-done">موافقة البائع</li><li class="step is-current">استلام المرتجع</li><li class="step">فحص المنتج</li><li class="step">الاسترداد</li></ol>
+          <div class="sub__top"><span style="font-size:13px">السبب: <b>لا يعمل عند الاستلام</b> · الاسترداد إلى: <b>الدفع عند الاستلام ← تحويل بنكي</b></span><span class="awb">RETURN AWB ARX 7799 1206 44</span></div></div>
+        </article>
+        <article class="order">
+          <div class="order__head"><div><small>رقم الإرجاع</small><span class="mono">RMA-2609-031</span></div><div><small>الطلب</small><span class="mono">NAS-260912-0088</span></div><div><small>المنتج</small>قفازات عمل مقاومة للقطع</div><div class="btns"><span class="badge badge--ok">تم الاسترداد · 75.60 درهم</span></div></div>
+        </article>
+
+        <div class="modal" id="m-ret" aria-hidden="true" role="dialog" aria-labelledby="ret-t">
+          <form class="modal__box" id="rt-form">
+            <div class="modal__head"><h2 id="ret-t" style="font-size:17px">طلب إرجاع</h2><button type="button" class="close-btn" data-close aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+            <div class="modal__body form-grid">
+              <div class="field"><label for="rt-i">المنتج</label><select class="select" id="rt-i"><option>قفازات عمل مقاومة للقطع — NAS-261024-0042</option><option>خوذة سلامة بيضاء EN397 — NAS-261024-0042</option><option>طقم مفتاح عزم — NAS-261009-0017</option></select></div>
+              <div class="field"><label for="rt-r">سبب الإرجاع</label><select class="select" id="rt-r"><option>المنتج مختلف عن الوصف</option><option>لا يعمل عند الاستلام</option><option>وصل تالف</option><option>طلبت المقاس أو الموديل الخطأ</option><option>غير ذلك</option></select></div>
+              <div class="field"><label for="rt-n">التفاصيل</label><textarea class="textarea" id="rt-n" placeholder="اشرح المشكلة باختصار"></textarea></div>
+              <label class="upload"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V9M7 13.5l5-5 5 5M5 4h14"/></svg><span><strong>صور المنتج</strong> (حتى 5 صور) — مطلوبة لطلبات التلف</span><input type="file" hidden multiple accept="image/*"></label>
+              <fieldset style="border:1px solid var(--line);border-radius:5px;padding:12px 14px;display:grid;gap:8px"><legend class="label" style="padding:0 6px">نموذج حالة المنتج المستعمل</legend>
+                <label class="check"><input type="checkbox"> العبوة الأصلية موجودة</label><label class="check"><input type="checkbox"> كل الملحقات موجودة</label><label class="check"><input type="checkbox"> لا توجد آثار استخدام إضافية</label></fieldset>
+              <div class="field"><label for="rt-m">طريقة الاسترداد</label><select class="select" id="rt-m"><option>نفس وسيلة الدفع الأصلية</option><option>تحويل بنكي</option></select></div>
+            </div>
+            <div class="modal__foot"><button type="button" class="btn btn--line" data-close>إلغاء</button><button class="btn btn--primary">إرسال الطلب</button></div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../js/core.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/store.js"></script>
+</body>
+</html>

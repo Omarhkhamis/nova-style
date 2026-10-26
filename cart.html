@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سلة المشتريات | NAS Market</title>
+  <meta name="description" content="راجع سلتك مقسمة حسب البائع قبل إتمام الطلب.">
+  <meta property="og:title" content="سلة المشتريات | NAS Market">
+  <meta property="og:description" content="راجع سلتك مقسمة حسب البائع قبل إتمام الطلب.">
+  <meta property="og:image" content="assets/img/p10.jpg">
+  <meta name="theme-color" content="#122A36">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="cart" data-root="">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <div class="container">
+      <div class="sec-head" style="margin:24px 0 0"><div><nav class="crumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><svg class="icon icon--sm flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span>السلة</span></nav><h1 style="font-size:var(--fs-2xl);margin-top:6px">سلة المشتريات <span class="mono muted" style="font-size:16px">(<span id="cart-count">0</span>)</span></h1></div>
+        <ol class="steps" style="min-width:min(420px,100%)"><li class="step is-current">السلة</li><li class="step">الشحن والدفع</li><li class="step">التأكيد</li></ol></div>
+      <div class="cartpage" id="cart"></div>
+      <section style="padding-bottom:64px"><div class="sec-head"><h2>قد يعجبك أيضاً</h2></div><div class="pgrid pgrid--5" id="recs"></div></section>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/core.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>

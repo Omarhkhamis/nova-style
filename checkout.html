@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>إتمام الطلب | NAS Market</title>
+  <meta name="description" content="عنوان الشحن، طريقة الشحن، وطريقة الدفع.">
+  <meta property="og:title" content="إتمام الطلب | NAS Market">
+  <meta property="og:description" content="عنوان الشحن، طريقة الشحن، وطريقة الدفع.">
+  <meta property="og:image" content="assets/img/p10.jpg">
+  <meta name="theme-color" content="#122A36">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="checkout" data-root="">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <div class="container">
+      <div class="sec-head" style="margin:24px 0 0"><div><nav class="crumbs" aria-label="مسار التنقل"><a href="cart.html">السلة</a><svg class="icon icon--sm flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span>إتمام الطلب</span></nav><h1 style="font-size:var(--fs-2xl);margin-top:6px">إتمام الطلب</h1></div>
+        <ol class="steps" style="min-width:min(420px,100%)"><li class="step is-done">السلة</li><li class="step is-current">الشحن والدفع</li><li class="step">التأكيد</li></ol></div>
+      <div class="checkout" id="co-root">
+        <form id="co-form" style="display:grid;gap:16px">
+          <section class="cstep"><div class="cstep__head"><span class="cstep__n">1</span><h2>عنوان الشحن</h2></div>
+            <div class="cstep__body form-grid form-grid--2">
+              <div class="field"><label for="c-n">الاسم الكامل</label><input class="input" id="c-n" value="أحمد خالد" required autocomplete="name"></div>
+              <div class="field"><label for="c-p">رقم الجوال</label><input class="input mono" id="c-p" value="+971 50 123 4567" dir="ltr" required autocomplete="tel"></div>
+              <div class="field"><label for="c-e">الإمارة</label><select class="select" id="c-e"><option>دبي</option><option>أبوظبي</option><option>الشارقة</option><option>عجمان</option><option>رأس الخيمة</option><option>الفجيرة</option><option>أم القيوين</option></select></div>
+              <div class="field"><label for="c-a">المنطقة</label><input class="input" id="c-a" value="القصيص الصناعية 2"></div>
+              <div class="field span-2"><label for="c-s">الشارع، المبنى، رقم المستودع أو المكتب</label><input class="input" id="c-s" value="شارع 18، مستودع 4"></div>
+              <label class="check span-2"><input type="checkbox" checked> أحتاج فاتورة ضريبية باسم شركة</label>
+              <div class="field"><label for="c-co">اسم الشركة</label><input class="input" id="c-co" value="[اسم الشركة]"></div>
+              <div class="field"><label for="c-trn">الرقم الضريبي TRN</label><input class="input mono" id="c-trn" placeholder="100XXXXXXXXXXX3" dir="ltr"></div>
+            </div></section>
+          <section class="cstep"><div class="cstep__head"><span class="cstep__n">2</span><h2>طريقة الشحن</h2></div>
+            <div class="cstep__body"><div class="optcards optcards--2">
+              <label class="optcard"><input type="radio" name="ship" value="std" checked><span class="optcard__main"><b>شحن عادي</b><span>2–4 أيام عمل · مجاني فوق 500 درهم لكل بائع</span></span><span class="optcard__side">15.00</span></label>
+              <label class="optcard"><input type="radio" name="ship" value="express"><span class="optcard__main"><b>شحن سريع</b><span>خلال 24 ساعة داخل دبي والشارقة</span></span><span class="optcard__side">35.00</span></label>
+            </div><p class="muted" style="font-size:12px">طلبك من أكثر من بائع، لذلك سيصلك على أكثر من شحنة، ولكل شحنة رقم تتبع خاص.</p></div></section>
+          <section class="cstep"><div class="cstep__head"><span class="cstep__n">3</span><h2>طريقة الدفع</h2></div>
+            <div class="cstep__body"><div class="optcards">
+              <label class="optcard"><input type="radio" name="pay" value="card" checked><span class="optcard__main"><b>بطاقة ائتمان أو خصم</b><span>Visa · Mastercard — عبر مزود دفع مرخّص</span></span><span class="optcard__side">VISA / MC</span></label>
+              <div class="card-fields" id="card-fields">
+                <div class="field span-2"><label for="cc-n">رقم البطاقة</label><input class="input mono" id="cc-n" placeholder="0000 0000 0000 0000" dir="ltr" autocomplete="off"></div>
+                <div class="field"><label for="cc-e">تاريخ الانتهاء</label><input class="input mono" id="cc-e" placeholder="MM / YY" dir="ltr" autocomplete="off"></div>
+                <div class="field"><label for="cc-c">CVV</label><input class="input mono" id="cc-c" placeholder="•••" dir="ltr" autocomplete="off"></div>
+                <p class="span-2 muted" style="font-size:11.5px">حقول تجريبية — في النسخة الفعلية تظهر نافذة مزود الدفع ولا تُخزَّن البطاقة على المنصة.</p>
+              </div>
+              <label class="optcard"><input type="radio" name="pay" value="apple"><span class="optcard__main"><b>Apple Pay</b><span>دفع سريع من جهازك</span></span><span class="optcard__side">APPLE PAY</span></label>
+              <label class="optcard"><input type="radio" name="pay" value="cod"><span class="optcard__main"><b>الدفع عند الاستلام</b><span>نقداً أو بالبطاقة للمندوب · رسوم 10 درهم</span></span><span class="optcard__side">+10.00</span></label>
+              <label class="optcard"><input type="radio" name="pay" value="bank"><span class="optcard__main"><b>تحويل بنكي</b><span>للطلبات الكبيرة والشركات · يُشحن بعد تأكيد التحويل</span></span><span class="optcard__side">IBAN</span></label>
+              <div class="plate" id="bank-info" hidden style="padding:14px 18px;font-size:13px;display:grid;gap:4px"><span class="plate__key">بيانات التحويل</span><span>[اسم البنك] — [اسم الحساب]</span><span class="mono" dir="ltr" style="text-align:right">AE00 0000 0000 0000 0000 000</span></div>
+            </div></div></section>
+        </form>
+        <aside class="panel summary" id="co-sum"></aside>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/core.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>

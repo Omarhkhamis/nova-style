@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Become a seller — NAS Market</title>
+  <meta name="description" content="Register your company, upload your licence, and we'll activate your store after review.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1C25">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/store.css">
+  <link rel="stylesheet" href="../../css/dash.css">
+  <link rel="stylesheet" href="../../css/app.css">
+</head>
+<body class="dash-body" data-root="../../">
+  <div class="join">
+    <aside class="join__side">
+      <img class="bg" src="../../assets/img/b-port.jpg" alt="" width="960" height="588">
+      <div style="display:flex;justify-content:space-between;align-items:center" id="j-brand"></div>
+      <div style="display:grid;gap:12px"><span class="eyebrow" style="color:var(--volt-500)">NAS MARKET · SELLERS</span><h1>Sell your parts and equipment across the UAE.</h1><p>Register your company, upload your licence, and we'll activate your store after review.</p></div>
+      <ul class="join__needs"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>A valid trade licence that covers trading</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>VAT registration certificate (TRN), if registered</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Owner's or authorised signatory's ID</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>A bank account in the company's name (IBAN)</span></li></ul>
+      <div class="sell__plates" style="grid-template-columns:repeat(3,1fr)"><div class="plate plate--dark" style="padding:12px 14px;display:grid"><b style="font:600 20px var(--font-mono);color:var(--volt-500)">0</b><span style="font-size:12px;color:var(--on-dark-muted)">Sign-up fee</span></div><div class="plate plate--dark" style="padding:12px 14px;display:grid"><b style="font:600 20px var(--font-mono);color:var(--volt-500)">48h</b><span style="font-size:12px;color:var(--on-dark-muted)">Review time</span></div><div class="plate plate--dark" style="padding:12px 14px;display:grid"><b style="font:600 20px var(--font-mono);color:var(--volt-500)">%</b><span style="font-size:12px;color:var(--on-dark-muted)">Commission on sales only</span></div></div>
+    </aside>
+    <main class="join__main" id="main">
+      <div class="join__top"><a class="link" href="../../en/index.html">Back to store</a>
+        <div style="display:flex;gap:12px;align-items:center;font-size:13px"><span class="muted">Already a seller?</span><a class="link" href="index.html">Sign in to Seller Central</a>
+        <nav class="langs" aria-label="Language" style="border-color:var(--line-strong)"><a href="../../seller/join.html" lang="ar" hreflang="ar" aria-current="false">ع</a><a href="../../en/seller/join.html" lang="en" hreflang="en" aria-current="true">EN</a></nav></div></div>
+      <ol class="steps" id="j-steps"><li class="step is-current">Company</li><li class="step">Documents</li><li class="step">Bank account</li><li class="step">Store setup</li></ol>
+      <form id="j-form" class="panel panel__body" novalidate>
+        <section class="jstep" data-step="0"><h2>Company details</h2>
+          <div class="form-grid form-grid--2">
+            <div class="field span-2"><label for="j-co">Trade name (as on licence)</label><input class="input" id="j-co" type="text" value=""></div>
+            <div class="field"><label for="j-co2">Name in Arabic</label><input class="input" id="j-co2" type="text" value=""></div>
+            <div class="field"><label for="j-lic">Trade licence number</label><input class="input mono" id="j-lic" type="text" value="" dir="ltr"></div>
+            <div class="field"><label for="j-em">Emirate / issuing authority</label><select class="select" id="j-em"><option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option><option>Ajman</option><option>Ras Al Khaimah</option><option>Fujairah</option><option>Umm Al Quwain</option></select></div>
+            <div class="field"><label for="j-exp">Licence expiry date</label><input class="input mono" id="j-exp" type="date" value=""></div>
+            <div class="field"><label for="j-trn">Tax registration number (TRN)</label><input class="input mono" id="j-trn" type="text" value="" dir="ltr"></div>
+            <div class="field"><label for="j-p">Contact person</label><input class="input" id="j-p" type="text" value="" autocomplete="name"></div>
+            <div class="field"><label for="j-ph">Contact mobile</label><input class="input mono" id="j-ph" type="text" value="+971 " dir="ltr" autocomplete="tel"></div>
+            <div class="field"><label for="j-e">Email</label><input class="input" id="j-e" type="email" value="" dir="ltr" autocomplete="email"></div>
+            <div class="field"><label for="j-pw">Password</label><input class="input" id="j-pw" type="password" value="" autocomplete="new-password"></div>
+          </div></section>
+        <section class="jstep" data-step="1" hidden><h2>Documents</h2><p class="muted" style="font-size:14px">PDF or clear photos, up to 10MB each.</p>
+          <div style="display:grid;gap:10px"><div class="file-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span class="grow"><b>Trade licence</b><span class="mono">licence_2026.pdf · 840 KB</span></span><span class="badge badge--ok"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Uploaded</span></div><div class="file-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span class="grow"><b>TRN certificate</b><span class="mono">PDF / JPG</span></span><label class="btn btn--line btn--sm">Upload<input type="file" hidden></label></div><div class="file-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span class="grow"><b>Owner ID (both sides)</b><span class="mono">PDF / JPG</span></span><label class="btn btn--line btn--sm">Upload<input type="file" hidden></label></div><div class="file-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span class="grow"><b>Power of attorney (if not the owner)</b><span class="mono">Optional</span></span><label class="btn btn--line btn--sm">Upload<input type="file" hidden></label></div></div></section>
+        <section class="jstep" data-step="2" hidden><h2>Bank account</h2><p class="muted" style="font-size:14px">Payouts are sent to this account on the settlement cycle. It must be in the company's own name.</p>
+          <div class="form-grid form-grid--2"><div class="field"><label for="j-bank">Bank name</label><input class="input" id="j-bank" type="text" value=""></div><div class="field"><label for="j-holder">Account holder</label><input class="input" id="j-holder" type="text" value=""></div><div class="field span-2"><label for="j-iban">IBAN</label><input class="input mono" id="j-iban" type="text" value="AE" dir="ltr"></div></div>
+          <div class="file-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span class="grow"><b>IBAN letter from the bank</b><span class="mono">PDF / JPG</span></span><label class="btn btn--line btn--sm">Upload<input type="file" hidden></label></div></section>
+        <section class="jstep" data-step="3" hidden><h2>Store setup</h2>
+          <div class="form-grid"><div class="field"><label for="j-sn">Store name shown to buyers</label><input class="input" id="j-sn" type="text" value=""></div>
+            <div class="field"><span class="label">Categories you sell in</span><div class="cat-picks"><label><input type="checkbox">Marine</label><label><input type="checkbox" checked>Electrical</label><label><input type="checkbox">HVAC & Refrigeration</label><label><input type="checkbox" checked>Automation & Control</label><label><input type="checkbox">Mechanical & CNC</label><label><input type="checkbox">Pumps & Valves</label><label><input type="checkbox">Tools</label><label><input type="checkbox">Safety Gear</label></div></div>
+            <div class="field"><span class="label">Product conditions</span><div class="cat-picks"><label><input type="checkbox" checked>New</label><label><input type="checkbox">Refurbished</label><label><input type="checkbox">Used</label></div></div>
+            <div class="field"><label for="j-wh">Warehouse address (carrier pickup)</label><textarea class="textarea" id="j-wh" style="min-height:80px"></textarea></div>
+            <label class="upload"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V9M7 13.5l5-5 5 5M5 4h14"/></svg><span><strong>Store logo</strong> · PNG / SVG</span><input type="file" hidden accept="image/*"></label>
+            <label class="check"><input type="checkbox" required> I accept the seller agreement, commission and returns policies</label></div></section>
+        <div class="jstep__nav"><button type="button" class="btn btn--line" id="j-back" disabled>Back</button><button type="button" class="btn btn--primary" id="j-next">Next</button></div>
+      </form>
+      <div class="panel success" id="j-done" hidden><span class="success__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><h2 style="font-size:22px">Application received — under review</h2><p class="muted" style="max-width:52ch">Application no. SA-2610-0214. We review documents within 2 business days and will email and text you the result.</p><a class="btn btn--primary" href="index.html">Preview Seller Central</a></div>
+    </main>
+  </div>
+  <script src="../../js/core.js"></script>
+  <script>
+    // brand + simple step navigation (prototype)
+    document.getElementById("j-brand").innerHTML = NAS.brand("../../en/index.html");
+    (function () {
+      var steps = NAS.$$(".jstep"), dots = NAS.$$("#j-steps .step"), i = 0;
+      var back = document.getElementById("j-back"), next = document.getElementById("j-next");
+      function go(n) {
+        i = n;
+        steps.forEach(function (s, k) { s.hidden = k !== i; });
+        dots.forEach(function (d, k) { d.className = "step" + (k < i ? " is-done" : k === i ? " is-current" : ""); });
+        back.disabled = i === 0;
+        next.textContent = i === steps.length - 1 ? "Submit for review" : "Next";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      back.onclick = function () { go(Math.max(0, i - 1)); };
+      next.onclick = function () {
+        if (i < steps.length - 1) return go(i + 1);
+        document.getElementById("j-form").hidden = true;
+        dots.forEach(function (d) { d.className = "step is-done"; });
+        document.getElementById("j-done").hidden = false;
+      };
+    })();
+  </script>
+</body>
+</html>
