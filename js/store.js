@@ -407,7 +407,7 @@
       // buy box
       '<aside class="panel buybox"><div class="buybox__price">' + money(p.price) + (p.old ? '<span class="price-old">' + num(p.old, true) + "</span>" : "") + '</div><span class="buybox__vat">السعر غير شامل ضريبة القيمة المضافة 5%</span>' +
       '<div class="buybox__row">' + icon("truck") + "<span>توصيل <b>خلال 1–2 يوم</b> داخل دبي والشارقة</span></div>" +
-      '<div class="buybox__row">' + icon("ret") + "<span>إرجاع خلال <b>14 يوم</b> حسب سياسة البائع</span></div>" +
+      '<div class="buybox__row">' + icon("ret") + "<span>إرجاع واستبدال <b>حسب سياسة هذه القطعة</b> بالاتفاق مع المورد</span></div>" +
       '<div class="buybox__row">' + icon("shield") + "<span>الدفع يُحفظ لدى المنصة حتى استلامك</span></div>" +
       '<div class="buybox__row">' + icon("box") + "<span>" + (p.stock <= 3 ? '<span class="stock-low">آخر ' + p.stock + " قطع متوفرة</span>" : "المتوفر: <b class=\"mono\">" + p.stock + "</b> قطعة") + "</span></div>" +
       '<div class="buybox__actions"><div class="buybox__qty"><div class="qty"><button type="button" data-q="-1" aria-label="أقل">' + icon("minus", "icon--sm") + '</button><input id="qty" type="number" value="1" min="1" aria-label="الكمية"><button type="button" data-q="1" aria-label="أكثر">' + icon("plus", "icon--sm") + "</button></div>" +
@@ -534,7 +534,7 @@
       '<aside class="panel summary">' + summaryHtml(tt,
         '<form class="coupon" id="coupon"><input class="input" name="code" placeholder="كود الخصم" value="' + (coupon ? "NAS10" : "") + '" aria-label="كود الخصم"><button class="btn btn--line">تطبيق</button></form>' +
         '<a class="btn btn--primary btn--lg btn--block" href="' + L("checkout.html") + '">' + icon("lock") + 'متابعة لإتمام الطلب</a>' +
-        '<div class="trust-mini"><span>' + icon("shield") + "دفع آمن عبر مزود مرخّص في الإمارات</span><span>" + icon("doc") + "فاتورة ضريبية لكل بائع</span><span>" + icon("ret") + "إرجاع خلال 14 يوم</span></div>") + "</aside>";
+        '<div class="trust-mini"><span>' + icon("shield") + "دفع آمن عبر مزود مرخّص في الإمارات</span><span>" + icon("doc") + "فاتورة ضريبية لكل بائع</span><span>" + icon("ret") + "إرجاع واستبدال حسب كل قطعة</span></div>") + "</aside>";
     $("#coupon").addEventListener("submit", e => { e.preventDefault(); store.set("nas_coupon", true); toast("تم تطبيق خصم 10%"); renderCartPage(); });
     document.body.insertAdjacentHTML("beforeend", '<div class="cartbar"><span class="cartbar__total">الإجمالي شامل الضريبة<b>' + num(tt.total, true) + ' درهم</b></span><a class="btn btn--volt" href="' + L("checkout.html") + '">' + icon("lock", "icon--sm") + "إتمام الطلب</a></div>");
   }
