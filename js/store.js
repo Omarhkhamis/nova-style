@@ -8,7 +8,7 @@
   const T = {
     ar: {
       topmsg: "توصيل لكل الإمارات · فواتير ضريبية 5% · دفع آمن",
-      sell: "بِع على NAS Market", help: "المساعدة", track: "تتبّع طلب",
+      help: "المساعدة", track: "تتبّع طلب",
       allDept: "كل الأقسام", searchPh: "ابحث باسم القطعة، رقم الموديل، أو الباركود", searchBtn: "بحث",
       hello: "أهلاً، سجّل دخولك", account: "حسابي", compare: "المقارنة", cart: "السلة",
       deals: "عروض الأسبوع", request: "اطلب قطعة غير موجودة", menu: "القائمة",
@@ -17,16 +17,15 @@
       cartTitle: "سلة المشتريات", cartEmpty: "سلتك فارغة حالياً", subtotal: "المجموع الفرعي", checkout: "إتمام الطلب", viewCart: "عرض السلة",
       shipNote: "الطلبات من أكثر من بائع تُقسم تلقائياً لشحنات منفصلة", keep: "متابعة التسوق",
       cmpTray: "منتجات للمقارنة", cmpGo: "قارن الآن", cmpClear: "مسح", cmpMax: "يمكن مقارنة 4 منتجات كحد أقصى",
-      fShop: "تسوّق", fSell: "للبائعين", fHelp: "المساعدة", fCo: "NAS Market",
+      fShop: "تسوّق", fHelp: "المساعدة", fCo: "NAS Market", seller: "بائع",
       fAbout: "سوق إلكتروني متعدد البائعين لقطع الغيار والمعدات الصناعية في الإمارات. كل بائع موثّق برخصة تجارية.",
-      fJoin: "سجّل كبائع", fSellerLogin: "دخول لوحة البائع", fFees: "العمولات والرسوم", fGuide: "دليل البائع",
       fReturns: "سياسة الإرجاع", fShipping: "الشحن والتوصيل", fPay: "طرق الدفع", fContact: "تواصل معنا", fTerms: "الشروط والأحكام", fPrivacy: "سياسة الخصوصية",
-      fAboutLink: "من نحن", fAdmin: "لوحة الإدارة", proto: "نموذج أولي للعرض — البيانات والصور تجريبية", rights: "© 2026 NAS Market",
-      allPages: "خريطة الصفحات", tHome: "الرئيسية", tCats: "الأقسام", tDeals: "العروض", qparts: "قطعة"
+      fAboutLink: "من نحن", proto: "نموذج أولي للعرض — البيانات والصور تجريبية", rights: "© 2026 NAS Market",
+      tHome: "الرئيسية", tCats: "الأقسام", tDeals: "العروض", qparts: "قطعة"
     },
     en: {
       topmsg: "Delivery across the UAE · 5% VAT invoices · Secure payment",
-      sell: "Sell on NAS Market", help: "Help", track: "Track order",
+      help: "Help", track: "Track order",
       allDept: "All departments", searchPh: "Search by part name, model number or barcode", searchBtn: "Search",
       hello: "Hello, sign in", account: "Account", compare: "Compare", cart: "Cart",
       deals: "Weekly deals", request: "Request a missing part", menu: "Menu",
@@ -35,16 +34,15 @@
       cartTitle: "Your cart", cartEmpty: "Your cart is empty", subtotal: "Subtotal", checkout: "Checkout", viewCart: "View cart",
       shipNote: "Orders from several sellers are split into separate shipments automatically", keep: "Continue shopping",
       cmpTray: "items to compare", cmpGo: "Compare now", cmpClear: "Clear", cmpMax: "You can compare up to 4 items",
-      fShop: "Shop", fSell: "Sellers", fHelp: "Help", fCo: "NAS Market",
+      fShop: "Shop", fHelp: "Help", fCo: "NAS Market", seller: "Seller",
       fAbout: "A multi-vendor marketplace for industrial spare parts and equipment in the UAE. Every seller is verified with a trade licence.",
-      fJoin: "Become a seller", fSellerLogin: "Seller dashboard", fFees: "Fees & commission", fGuide: "Seller guide",
       fReturns: "Returns policy", fShipping: "Shipping & delivery", fPay: "Payment methods", fContact: "Contact us", fTerms: "Terms & conditions", fPrivacy: "Privacy policy",
-      fAboutLink: "About us", fAdmin: "Admin panel", proto: "Prototype for review — data and photos are placeholders", rights: "© 2026 NAS Market",
-      allPages: "Page map", tHome: "Home", tCats: "Categories", tDeals: "Deals", qparts: "parts"
+      fAboutLink: "About us", proto: "Prototype for review — data and photos are placeholders", rights: "© 2026 NAS Market",
+      tHome: "Home", tCats: "Categories", tDeals: "Deals", qparts: "parts"
     },
     ur: {
       topmsg: "پورے امارات میں ڈیلیوری · 5% VAT انوائس · محفوظ ادائیگی",
-      sell: "NAS Market پر فروخت کریں", help: "مدد", track: "آرڈر ٹریک کریں",
+      help: "مدد", track: "آرڈر ٹریک کریں",
       allDept: "تمام شعبے", searchPh: "پرزے کا نام، ماڈل نمبر یا بارکوڈ سے تلاش کریں", searchBtn: "تلاش",
       hello: "خوش آمدید، لاگ ان کریں", account: "میرا اکاؤنٹ", compare: "موازنہ", cart: "ٹوکری",
       deals: "ہفتہ وار آفرز", request: "غیر موجود پرزہ طلب کریں", menu: "مینو",
@@ -53,12 +51,11 @@
       cartTitle: "آپ کی ٹوکری", cartEmpty: "آپ کی ٹوکری خالی ہے", subtotal: "ذیلی کل", checkout: "آرڈر مکمل کریں", viewCart: "ٹوکری دیکھیں",
       shipNote: "کئی فروخت کنندگان کے آرڈر خود بخود الگ شپمنٹس میں تقسیم ہوتے ہیں", keep: "خریداری جاری رکھیں",
       cmpTray: "موازنے کے لیے", cmpGo: "موازنہ کریں", cmpClear: "صاف کریں", cmpMax: "زیادہ سے زیادہ 4 اشیاء",
-      fShop: "خریداری", fSell: "فروخت کنندگان", fHelp: "مدد", fCo: "NAS Market",
+      fShop: "خریداری", fHelp: "مدد", fCo: "NAS Market", seller: "فروخت کنندہ",
       fAbout: "امارات میں صنعتی اسپیئر پارٹس اور آلات کی ملٹی وینڈر مارکیٹ۔ ہر فروخت کنندہ تجارتی لائسنس سے تصدیق شدہ ہے۔",
-      fJoin: "فروخت کنندہ بنیں", fSellerLogin: "سیلر ڈیش بورڈ", fFees: "کمیشن اور فیس", fGuide: "سیلر گائیڈ",
       fReturns: "واپسی کی پالیسی", fShipping: "شپنگ اور ڈیلیوری", fPay: "ادائیگی کے طریقے", fContact: "رابطہ کریں", fTerms: "شرائط و ضوابط", fPrivacy: "رازداری کی پالیسی",
-      fAboutLink: "ہمارے بارے میں", fAdmin: "ایڈمن پینل", proto: "جائزے کے لیے پروٹوٹائپ — ڈیٹا اور تصاویر عارضی ہیں", rights: "© 2026 NAS Market",
-      allPages: "صفحات کا نقشہ", tHome: "ہوم", tCats: "شعبے", tDeals: "آفرز", qparts: "پرزے"
+      fAboutLink: "ہمارے بارے میں", proto: "جائزے کے لیے پروٹوٹائپ — ڈیٹا اور تصاویر عارضی ہیں", rights: "© 2026 NAS Market",
+      tHome: "ہوم", tCats: "شعبے", tDeals: "آفرز", qparts: "پرزے"
     }
   };
   const t = k => (T[LANG] && T[LANG][k]) || T.ar[k] || k;
@@ -72,7 +69,9 @@
   const nm = o => (o && (o[LANG] || o.en || o.ar)) || "";
   const condLabel = c => t(c);
   const condBadge = c => '<span class="badge badge--' + c + '">' + condLabel(c) + "</span>";
-  const initials = v => (v.en || "").split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
+  // buyers only ever see the seller code, never the company name
+  const vlab = v => t("seller") + " " + v.code;
+  const vav = (v, st) => '<span class="vavatar"' + (st ? ' style="' + st + '"' : "") + ">" + icon("store", "icon--sm") + "</span>";
   const qs = k => new URLSearchParams(location.search).get(k);
   const BANNERS = liveBanners(D.banners).filter(bannerOn).sort((a, b) => a.order - b.order);
   const bannersAt = place => BANNERS.filter(b => b.place === place);
@@ -96,7 +95,7 @@
       '<span class="pcard__tags">' + condBadge(p.cond) + "</span>" +
       (off ? '<span class="pcard__off plate plate--volt">-' + off + "%</span>" : "") + "</a>" +
       '<div class="pcard__body">' +
-      '<a class="pcard__vendor" href="' + L("vendor.html?v=" + v.id) + '">' + icon("badge") + esc(nm(v)) + "</a>" +
+      '<a class="pcard__vendor" href="' + L("vendor.html?v=" + v.id) + '">' + icon("badge") + esc(vlab(v)) + "</a>" +
       '<h3 class="pcard__title"><a href="' + L("product.html?id=" + p.id) + '">' + esc(nm(p)) + "</a></h3>" +
       '<div class="stars">' + icon("star") + "<b>" + p.rating.toFixed(1) + "</b><span class=\"mono\">(" + p.reviews + ")</span></div>" +
       '<div class="plate pcard__plate">' +
@@ -123,7 +122,7 @@
     const cats = D.categories.map(c => '<option value="' + c.id + '">' + esc(nm(c)) + "</option>").join("");
     return '<a class="sr-only" href="#main">' + (LANG === "en" ? "Skip to content" : "تخطّي إلى المحتوى") + "</a>" +
       '<div class="topbar"><div class="container"><p class="topbar__msg">' + icon("truck") + "<span>" + (bannersAt("topbar")[0] ? esc(bannerText(bannersAt("topbar")[0], "title", LANG)) : t("topmsg")) + "</span></p>" +
-      '<div class="topbar__links"><a class="hide-sm" href="' + L("seller/join.html") + '">' + t("sell") + '</a><a class="hide-sm" href="' + L("account/orders.html") + '">' + t("track") + "</a>" + langLinks() + "</div></div></div>" +
+      '<div class="topbar__links"><a class="hide-sm" href="' + L("account/orders.html") + '">' + t("track") + "</a>" + langLinks() + "</div></div></div>" +
       '<header class="header"><div class="container"><div class="header__row">' +
       '<div class="header__left"><button class="header__menu" data-open="#mnav" aria-label="' + t("menu") + '">' + icon("menu") + "</button>" + brand(home) + "</div>" +
       '<form class="search" role="search" action="' + L("category.html") + '"><label class="sr-only" for="q">' + t("searchBtn") + '</label>' +
@@ -151,18 +150,14 @@
       '<a href="' + L("request.html") + '">' + t("request") + "</a>" +
       '<a href="' + L("compare.html") + '">' + t("compare") + "</a>" +
       '<a href="' + L("account/orders.html") + '">' + t("account") + "</a>" +
-      '<div class="mnav__group">' + t("fSell") + "</div>" +
-      '<a href="' + L("seller/join.html") + '">' + t("fJoin") + "</a>" +
-      '<a href="' + L("seller/index.html") + '">' + t("fSellerLogin") + "</a>" +
       '<div class="mnav__group">Language</div><div style="padding:8px 18px">' + langLinks() + "</div></div></aside>";
   }
   function footer() {
     return '<footer class="footer">' + wave() + '<div class="container footer__grid">' +
       '<div class="footer__brand">' + brand(L("index.html")) + "<p>" + t("fAbout") + '</p><span class="proto-note">' + icon("info", "icon--sm") + t("proto") + "</span></div>" +
       "<div><h3>" + t("fShop") + "</h3><ul>" + D.categories.slice(0, 6).map(c => '<li><a href="' + L("category.html?c=" + c.id) + '">' + esc(nm(c)) + "</a></li>").join("") + "</ul></div>" +
-      "<div><h3>" + t("fSell") + '</h3><ul><li><a href="' + L("seller/join.html") + '">' + t("fJoin") + '</a></li><li><a href="' + L("seller/index.html") + '">' + t("fSellerLogin") + '</a></li><li><a href="#">' + t("fFees") + '</a></li><li><a href="#">' + t("fGuide") + "</a></li></ul></div>" +
       "<div><h3>" + t("fHelp") + '</h3><ul><li><a href="' + L("account/orders.html") + '">' + t("track") + '</a></li><li><a href="' + L("account/returns.html") + '">' + t("fReturns") + '</a></li><li><a href="#">' + t("fShipping") + '</a></li><li><a href="#">' + t("fPay") + "</a></li></ul></div>" +
-      "<div><h3>" + t("fCo") + '</h3><ul><li><a href="#">' + t("fAboutLink") + '</a></li><li><a href="#">' + t("fContact") + '</a></li><li><a href="' + L("admin/index.html") + '">' + t("fAdmin") + '</a></li><li><a href="' + L("pages.html") + '">' + t("allPages") + "</a></li></ul></div>" +
+      "<div><h3>" + t("fCo") + '</h3><ul><li><a href="#">' + t("fAboutLink") + '</a></li><li><a href="#">' + t("fContact") + "</a></li></ul></div>" +
       '</div><div class="footer__bottom"><div class="container"><span>' + t("rights") + ' · <a href="#">' + t("fTerms") + '</a> · <a href="#">' + t("fPrivacy") + "</a></span>" +
       '<div class="paychips"><span class="paychip">VISA</span><span class="paychip">MASTERCARD</span><span class="paychip">APPLE PAY</span><span class="paychip">COD</span><span class="paychip">VAT 5%</span></div></div></div></footer>';
   }
@@ -238,7 +233,7 @@
     if (!c.length) { body.innerHTML = '<div class="empty">' + icon("cart") + "<p>" + t("cartEmpty") + "</p></div>"; foot.innerHTML = ""; return; }
     const g = groupByVendor(c);
     body.innerHTML = '<p class="muted" style="font-size:12px;margin-bottom:6px">' + t("shipNote") + "</p>" + Object.keys(g).map(vid =>
-      '<div class="minicart-vendor">' + icon("store", "icon--sm") + esc(nm(V(vid))) + "</div>" + g[vid].map(x => {
+      '<div class="minicart-vendor">' + icon("store", "icon--sm") + '<a class="mono" href="' + L("vendor.html?v=" + vid) + '">' + esc(vlab(V(vid))) + "</a>" + "</div>" + g[vid].map(x => {
         const p = P(x.id);
         return '<div class="minicart-item"><img src="' + IMG(p.img) + '" alt="" width="64" height="64" loading="lazy"><div style="display:grid;gap:4px"><h4>' + esc(nm(p)) + "</h4>" +
           '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono muted" style="font-size:12px">' + x.qty + " × " + num(x.price, true) + "</span>" +
@@ -299,10 +294,6 @@
       const tl = $("#arrival-tabs");
       if (tl) tl.addEventListener("tabchange", e => arrivals(e.detail.dataset.cat));
     }
-    const vg = $("#vendors");
-    if (vg) vg.innerHTML = D.vendors.map(v =>
-      '<a class="plate vcard reveal" href="' + L("vendor.html?v=" + v.id) + '"><div class="vcard__top"><span class="vavatar">' + initials(v) + "</span><div><h3>" + esc(nm(v)) + '</h3><span class="badge badge--ok">' + icon("badge", "icon--sm") + (LANG === "en" ? "Licence verified" : LANG === "ur" ? "لائسنس تصدیق شدہ" : "رخصة موثّقة") + "</span></div></div>" +
-      '<div class="vcard__meta"><span>' + icon("pin", "icon--sm") + " " + esc(nm(v.city)) + '</span><span><span class="mono">' + v.rating + "</span> ★ (" + v.reviews + ')</span><span><span class="mono">' + num(v.products) + "</span> " + (LANG === "en" ? "products" : LANG === "ur" ? "مصنوعات" : "منتج") + "</span></div></a>").join("");
     // countdown to the end of the week (Sunday 23:59 local)
     const tm = $("#timer");
     if (tm) {
@@ -338,17 +329,15 @@
     $("#subcats").innerHTML = '<a href="#" aria-current="true">الكل</a>' + subs.map(s => '<a href="#">' + s + "</a>").join("");
 
     // filters
-    const vendorsIn = D.vendors;
-    $("#f-vendor").innerHTML = vendorsIn.map(v => '<label class="check"><input type="checkbox" name="v" value="' + v.id + '"> ' + esc(v.ar) + '<span class="mono">' + D.products.filter(p => p.v === v.id).length + "</span></label>").join("");
     $("#f-cat").innerHTML = D.categories.map(x => '<label class="check"><input type="checkbox" name="cat" value="' + x.id + '"' + (x.id === c ? " checked" : "") + "> " + x.ar + '<span class="mono">' + num(x.count) + "</span></label>").join("");
 
     const grid = $("#grid"), chips = $("#chips"), form = $("#filters");
     function apply() {
       const fd = new FormData(form);
-      const conds = fd.getAll("cond"), vs = fd.getAll("v"), cats = fd.getAll("cat");
+      const conds = fd.getAll("cond"), cats = fd.getAll("cat");
       const min = +fd.get("min") || 0, max = +fd.get("max") || Infinity, stock = fd.get("stock");
       let list = D.products.filter(p =>
-        (!cats.length || cats.includes(p.cat)) && (!conds.length || conds.includes(p.cond)) && (!vs.length || vs.includes(p.v)) &&
+        (!cats.length || cats.includes(p.cat)) && (!conds.length || conds.includes(p.cond)) &&
         p.price >= min && p.price <= max && (!stock || p.stock > 0) && (!deals || p.old) &&
         (!q || (p.ar + " " + p.en + " " + p.sku).toLowerCase().includes(q.toLowerCase())));
       const sort = $("#sort").value;
@@ -359,7 +348,7 @@
       grid.innerHTML = list.length ? list.map(p => card(p)).join("") :
         '<div class="empty" style="grid-column:1/-1">' + icon("search") + "<p>لا توجد نتائج مطابقة. جرّب تخفيف الفلاتر أو</p><a class=\"btn btn--primary\" href=\"" + L("request.html?pn=" + encodeURIComponent(q)) + "\">اطلب القطعة من البائعين</a></div>";
       const labels = { new: "جديد", used: "مستعمل", refurb: "مجدد" };
-      chips.innerHTML = conds.map(x => chip(labels[x], "cond", x)).join("") + vs.map(x => chip(V(x).ar, "v", x)).join("") +
+      chips.innerHTML = conds.map(x => chip(labels[x], "cond", x)).join("") +
         cats.filter(x => x !== c).map(x => chip(C(x).ar, "cat", x)).join("") + (q ? '<span class="chip">«' + esc(q) + "»</span>" : "");
       reveal(grid);
     }
@@ -396,7 +385,7 @@
       // info
       '<div class="pinfo"><div style="display:flex;gap:6px;flex-wrap:wrap">' + condBadge(p.cond) + '<span class="badge">' + cat.ar + "</span>" + (p.stock > 0 ? '<span class="badge badge--ok"><span class="dot"></span>متوفر</span>' : "") + "</div>" +
       "<h1>" + esc(p.ar) + "</h1>" +
-      '<div class="pinfo__meta"><span>البائع: <a href="' + L("vendor.html?v=" + v.id) + '">' + v.ar + '</a></span><span class="stars">' + icon("star") + "<b>" + p.rating + '</b> <a href="#reviews">(' + p.reviews + ' تقييم)</a></span><span>' + icon("chat", "icon--sm") + ' <a href="#qa">3 أسئلة مُجاب عنها</a></span></div>' +
+      '<div class="pinfo__meta"><span>البائع: <a class="mono" href="' + L("vendor.html?v=" + v.id) + '">' + v.code + '</a></span><span class="stars">' + icon("star") + "<b>" + p.rating + '</b> <a href="#reviews">(' + p.reviews + ' تقييم)</a></span><span>' + icon("chat", "icon--sm") + ' <a href="#qa">3 أسئلة مُجاب عنها</a></span></div>' +
       '<div class="plate idplate"><div><span class="plate__key">رقم القطعة P/N</span><span class="mono">' + esc(p.sku) + '</span><button class="copy" data-copy="' + esc(p.sku) + '">' + icon("copy", "icon--sm") + 'نسخ</button></div>' +
       '<div><span class="plate__key">الباركود EAN</span><span class="mono">629' + (p.sku.length * 7919 % 1e9).toString().padStart(10, "0") + '</span></div><div><span class="plate__key">بلد المنشأ</span><span>' + (p.cond === "new" ? "ألمانيا" : "—") + "</span></div></div>" +
       '<div class="condpick"><span class="label">الحالة — كل حالة من بائع مختلف</span><div class="condpick__opts">' +
@@ -416,15 +405,14 @@
       '<div class="buybox__sub"><button class="btn btn--line btn--sm" data-open="#m-rfq">' + icon("doc", "icon--sm") + 'طلب عرض سعر</button><button class="btn btn--line btn--sm" data-open="#m-ask">' + icon("chat", "icon--sm") + "استفسار من البائع</button></div></div>" +
       '<div class="ship-est"><label class="label" for="emirate">تقدير الشحن إلى</label><select class="select" id="emirate"><option>دبي</option><option>أبوظبي</option><option>الشارقة</option><option>عجمان</option><option>رأس الخيمة</option><option>الفجيرة</option><option>أم القيوين</option></select>' +
       '<div class="sumrow"><span>عادي (2–4 أيام)</span><span class="mono">15.00</span></div><div class="sumrow"><span>سريع (24 ساعة)</span><span class="mono">35.00</span></div></div>' +
-      '<div class="plate" style="padding:12px 14px;display:flex;gap:10px;align-items:center"><span class="vavatar" style="width:38px;height:38px;font-size:12px">' + initials(v) + '</span><div style="font-size:13px;line-height:1.5"><b>' + v.ar + '</b><br><span class="muted">' + v.city.ar + " · يرد خلال " + v.response.replace("h", " ساعات") + "</span></div></div></aside>";
+      '<a class="plate" href="' + L("vendor.html?v=" + v.id) + '" style="padding:12px 14px;display:flex;gap:10px;align-items:center">' + vav(v, "width:38px;height:38px") + '<div style="font-size:13px;line-height:1.5"><b>' + vlab(v) + '</b><br><span class="muted">' + v.city.ar + " · ★ " + v.rating + " · عرض منتجات البائع</span></div></a></aside>";
 
     // other sellers
-    $("#offers").innerHTML = offers.map(o => { const ov = V(o.v); return '<div class="offer"><div><div class="offer__v">' + ov.ar + '</div><div class="offer__meta">' + condBadge(o.cond) + "<span>★ " + ov.rating + "</span><span>توصيل " + (o.eta.ar || "") + '</span></div></div><div class="offer__buy">' + money(o.price) + '<button class="btn btn--sm btn--line" data-add-offer="' + o.v + ":" + o.cond + ":" + o.price + '">أضف للسلة</button></div></div>'; }).join("");
+    $("#offers").innerHTML = offers.map(o => { const ov = V(o.v); return '<div class="offer"><div><a class="offer__v" href="' + L("vendor.html?v=" + ov.id) + '">' + vlab(ov) + '</a><div class="offer__meta">' + condBadge(o.cond) + "<span>★ " + ov.rating + "</span><span>توصيل " + (o.eta.ar || "") + '</span></div></div><div class="offer__buy">' + money(o.price) + '<button class="btn btn--sm btn--line" data-add-offer="' + o.v + ":" + o.cond + ":" + o.price + '">أضف للسلة</button></div></div>'; }).join("");
     $("#similar").innerHTML = D.products.filter(x => x.cat === p.cat && x.id !== p.id).concat(D.products.filter(x => x.cat !== p.cat)).slice(0, 5).map(x => card(x)).join("");
     $("#spec-full").innerHTML = specs;
     $("#rfq-product").textContent = p.ar + " — " + p.sku;
     $("#ask-product").textContent = p.ar;
-    $("#ask-vendor").textContent = v.ar;
 
     // interactions
     const qty = $("#qty");
@@ -459,7 +447,7 @@
     const rows = [
       ["السعر", p => money(p.price)],
       ["الحالة", p => condBadge(p.cond)],
-      ["البائع", p => '<a class="link" href="' + L("vendor.html?v=" + p.v) + '">' + V(p.v).ar + "</a>"],
+      ["البائع", p => '<a class="link mono" href="' + L("vendor.html?v=" + p.v) + '">' + V(p.v).code + "</a>"],
       ["التقييم", p => '<span class="stars">' + icon("star") + "<b>" + p.rating + "</b> (" + p.reviews + ")</span>"],
       ["رقم القطعة", p => '<span class="mono">' + p.sku + "</span>"],
       ["المتوفر", p => '<span class="mono">' + p.stock + "</span>"]
@@ -474,15 +462,24 @@
   // ---------- Vendor ----------
   pages.vendor = function () {
     const v = V(qs("v")) || V("v1");
-    document.title = v.ar + " | NAS Market";
-    $("#vh").innerHTML = '<img class="vhead__cover" src="' + IMG(v.cover) + '" alt=""><div class="container"><span class="vavatar">' + initials(v) + "</span>" +
-      '<div><div class="crumbs" style="color:var(--on-dark-muted)"><a href="' + L("index.html") + '">الرئيسية</a>' + icon("chev", "flip-rtl") + "<span>البائعون</span></div><h1>" + v.ar + "</h1>" +
-      '<div class="vhead__meta"><span class="badge badge--volt">' + icon("badge", "icon--sm") + 'رخصة تجارية موثّقة</span><span>' + icon("pin", "icon--sm") + " " + v.city.ar + '</span><span>عضو منذ <span class="mono">' + v.since + '</span></span><span>رقم الرخصة <span class="mono">CN-' + (1000000 + v.reviews * 917) + "</span></span></div></div>" +
+    document.title = vlab(v) + " | NAS Market";
+    $("#vh").innerHTML = '<img class="vhead__cover" src="' + IMG(v.cover) + '" alt=""><div class="container">' + vav(v) +
+      '<div><div class="crumbs" style="color:var(--on-dark-muted)"><a href="' + L("index.html") + '">الرئيسية</a>' + icon("chev", "flip-rtl") + "<span>البائعون</span></div><h1>" + vlab(v) + "</h1>" +
+      '<div class="vhead__meta"><span class="badge badge--volt">' + icon("badge", "icon--sm") + 'رخصة تجارية موثّقة</span><span>' + icon("pin", "icon--sm") + " " + v.city.ar + '</span><span>عضو منذ <span class="mono">' + v.since + "</span></span></div></div>" +
       '<div class="vhead__stats"><div class="plate plate--dark"><b>' + v.rating + "</b><span>" + v.reviews + ' تقييم</span></div><div class="plate plate--dark"><b>' + num(v.products) + '</b><span>منتج</span></div><div class="plate plate--dark"><b>' + v.response + "</b><span>متوسط الرد</span></div></div></div>";
     const list = D.products.filter(p => p.v === v.id);
-    $("#vgrid").innerHTML = list.concat(D.products.filter(p => p.v !== v.id)).slice(0, 12).map(p => card(p)).join("");
-    $("#vcount").textContent = num(v.products);
-    $("#vname").textContent = v.ar;
+    const grid = $("#vgrid"), q = $("#vq"), chips = $$("[data-vc]");
+    function show() {
+      const cond = ($("[data-vc][aria-pressed=true]") || {}).dataset?.vc || "", s = q.value.trim().toLowerCase();
+      const out = list.filter(p => (!cond || p.cond === cond) && (!s || (p.ar + " " + p.en + " " + p.sku).toLowerCase().includes(s)));
+      grid.innerHTML = out.length ? out.map(p => card(p)).join("") : '<div class="empty" style="grid-column:1/-1">' + icon("search") + "<p>لا توجد منتجات مطابقة لدى هذا البائع</p></div>";
+      reveal(grid);
+    }
+    chips.forEach(b => b.addEventListener("click", () => { chips.forEach(x => x.setAttribute("aria-pressed", x === b)); show(); }));
+    q.addEventListener("input", show);
+    show();
+    $("#vcount").textContent = list.length;
+    $("#vname").textContent = vlab(v);
   };
 
   // ---------- Cart ----------
@@ -492,7 +489,7 @@
     let sub = 0, ship = 0;
     Object.values(g).forEach(items => {
       const s = items.reduce((a, x) => a + x.qty * x.price, 0);
-      sub += s; ship += s >= 500 ? 0 : (opt.express ? 35 : 15);
+      sub += s; ship += opt.express ? 35 : 15;
     });
     const disc = opt.coupon ? Math.round(sub * 0.1 * 100) / 100 : 0;
     const cod = opt.cod ? 10 : 0;
@@ -502,7 +499,7 @@
   function summaryHtml(tt, cta) {
     return '<h2>ملخص الطلب</h2><div class="sumrow"><span>المجموع الفرعي</span><span class="mono">' + num(tt.sub, true) + "</span></div>" +
       (tt.disc ? '<div class="sumrow" style="color:var(--ok)"><span>خصم القسيمة NAS10</span><span class="mono">-' + num(tt.disc, true) + "</span></div>" : "") +
-      '<div class="sumrow"><span>الشحن (' + Object.keys(tt.g).length + " شحنات)</span><span class=\"mono\">" + (tt.ship ? num(tt.ship, true) : "مجاني") + "</span></div>" +
+      '<div class="sumrow"><span>الشحن (' + Object.keys(tt.g).length + " شحنات)</span><span class=\"mono\">" + num(tt.ship, true) + "</span></div>" +
       (tt.cod ? '<div class="sumrow"><span>رسوم الدفع عند الاستلام</span><span class="mono">' + num(tt.cod, true) + "</span></div>" : "") +
       '<div class="sumrow"><span>ضريبة القيمة المضافة 5%</span><span class="mono">' + num(tt.vat, true) + "</span></div>" +
       '<div class="sumrow sumrow--total"><span>الإجمالي</span><span class="mono">' + num(tt.total, true) + ' <small style="font-size:12px">درهم</small></span></div>' + (cta || "");
@@ -520,7 +517,7 @@
       Object.keys(tt.g).map((vid, gi) => {
         const v = V(vid), items = tt.g[vid];
         const s = items.reduce((a, x) => a + x.qty * x.price, 0);
-        return '<section class="vgroup"><div class="vgroup__head"><span>' + icon("store", "icon--sm") + ' <b><a href="' + L("vendor.html?v=" + vid) + '">' + v.ar + '</a></b></span><span class="mono">SHIPMENT 0' + (gi + 1) + "</span></div>" +
+        return '<section class="vgroup"><div class="vgroup__head"><span>' + icon("store", "icon--sm") + ' <b><a class="mono" href="' + L("vendor.html?v=" + vid) + '">' + vlab(v) + '</a></b></span><span class="mono">SHIPMENT 0' + (gi + 1) + "</span></div>" +
           items.map(x => {
             const p = P(x.id);
             return '<div class="citem"><a class="citem__img" href="' + L("product.html?id=" + p.id) + '"><img src="' + IMG(p.img) + '" alt="" width="84" height="84"></a><div class="citem__main">' +
@@ -529,7 +526,7 @@
               '<div class="citem__row"><div class="qty"><button data-cq="' + x.idx + ':-1" aria-label="أقل">' + icon("minus", "icon--sm") + '</button><input value="' + x.qty + '" readonly aria-label="الكمية"><button data-cq="' + x.idx + ':1" aria-label="أكثر">' + icon("plus", "icon--sm") + "</button></div>" +
               money(x.qty * x.price) + '<button class="citem__rm" data-rm="' + x.idx + '">' + icon("trash", "icon--sm") + "حذف</button></div></div></div>";
           }).join("") +
-          '<div class="vgroup__foot"><span>' + (s >= 500 ? '<b style="color:var(--ok)">شحن مجاني</b> لهذا البائع' : "أضف بقيمة <b class=\"mono\">" + num(500 - s, true) + "</b> للحصول على شحن مجاني من هذا البائع") + '</span><span class="mono">' + num(s, true) + "</span></div></section>";
+          '<div class="vgroup__foot"><span>شحن هذه الشحنة <b class="mono">15.00</b> درهم</span><span class="mono">' + num(s, true) + "</span></div></section>";
       }).join("") + "</div>" +
       '<aside class="panel summary">' + summaryHtml(tt,
         '<form class="coupon" id="coupon"><input class="input" name="code" placeholder="كود الخصم" value="' + (coupon ? "NAS10" : "") + '" aria-label="كود الخصم"><button class="btn btn--line">تطبيق</button></form>' +
@@ -554,7 +551,7 @@
     function upd() {
       const fd = new FormData(form);
       const tt = totals(getCart(), { coupon: store.get("nas_coupon", false), express: fd.get("ship") === "express", cod: fd.get("pay") === "cod" });
-      const items = Object.keys(tt.g).map(vid => '<div class="minicart-vendor">' + icon("store", "icon--sm") + V(vid).ar + "</div>" + tt.g[vid].map(x => { const p = P(x.id); return '<div class="minicart-item"><img src="' + IMG(p.img) + '" alt="" width="64" height="64"><div><h4>' + esc(p.ar) + '</h4><span class="mono muted" style="font-size:12px">' + x.qty + " × " + num(x.price, true) + "</span></div></div>"; }).join("")).join("");
+      const items = Object.keys(tt.g).map(vid => '<div class="minicart-vendor">' + icon("store", "icon--sm") + vlab(V(vid)) + "</div>" + tt.g[vid].map(x => { const p = P(x.id); return '<div class="minicart-item"><img src="' + IMG(p.img) + '" alt="" width="64" height="64"><div><h4>' + esc(p.ar) + '</h4><span class="mono muted" style="font-size:12px">' + x.qty + " × " + num(x.price, true) + "</span></div></div>"; }).join("")).join("");
       $("#co-sum").innerHTML = summaryHtml(tt, '<details><summary style="cursor:pointer;font-size:13px;color:var(--marine-700)">عرض المنتجات (' + getCart().length + ")</summary>" + items + "</details>" +
         '<button class="btn btn--volt btn--lg btn--block" form="co-form">' + icon("lock") + "تأكيد الطلب ودفع " + num(tt.total, true) + " درهم</button>" +
         '<p class="muted" style="font-size:12px">بالضغط على تأكيد الطلب أنت توافق على الشروط والأحكام وسياسة الإرجاع.</p>');
@@ -572,7 +569,7 @@
       const bb = $(".buybar"); if (bb) bb.remove(); document.body.classList.remove("has-buybar");
       $("#co-root").innerHTML = '<div class="panel success" style="grid-column:1/-1"><span class="success__icon">' + icon("check") + "</span><h1>تم استلام طلبك</h1>" +
         '<p class="muted">رقم الطلب <b class="mono" style="color:var(--ink)">' + no + "</b> — أرسلنا التفاصيل والفاتورة إلى بريدك.</p>" +
-        '<div class="suborders">' + Object.keys(tt.g).map((vid, i) => '<div class="plate"><div class="plate__row"><span><span class="plate__key">SUB-ORDER</span> <b class="mono">' + no + "-" + (i + 1) + "</b></span>" + '<span class="badge badge--info">بانتظار تأكيد البائع</span></div><div class="plate__row" style="margin-top:4px;font-size:13px"><span>' + V(vid).ar + '</span><span class="mono">' + tt.g[vid].length + " منتج</span></div></div>").join("") + "</div>" +
+        '<div class="suborders">' + Object.keys(tt.g).map((vid, i) => '<div class="plate"><div class="plate__row"><span><span class="plate__key">SUB-ORDER</span> <b class="mono">' + no + "-" + (i + 1) + "</b></span>" + '<span class="badge badge--info">بانتظار تأكيد البائع</span></div><div class="plate__row" style="margin-top:4px;font-size:13px"><span>' + vlab(V(vid)) + '</span><span class="mono">' + tt.g[vid].length + " منتج</span></div></div>").join("") + "</div>" +
         '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn btn--primary" href="' + L("account/orders.html") + '">تتبّع الطلب</a><a class="btn btn--line" href="' + L("index.html") + '">متابعة التسوق</a></div></div>';
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
@@ -615,7 +612,7 @@
     const steps = ["تم الطلب", "تأكيد البائع", "قيد التجهيز", "تم الشحن", "تم التسليم"];
     $("#orders").innerHTML = orders.map(o => '<article class="order"><div class="order__head"><div><small>رقم الطلب</small><span class="mono">' + o.no + "</span></div><div><small>التاريخ</small>" + o.date + '</div><div><small>الإجمالي</small><span class="mono">' + num(o.total, true) + " درهم</span></div><div><small>الدفع</small>" + o.pay + "</div>" +
       '<div class="btns"><a class="btn btn--sm btn--line" href="#">' + icon("download", "icon--sm") + "الفواتير PDF</a></div></div>" +
-      o.subs.map((s, i) => '<div class="sub"><div class="sub__top"><span><span class="plate__key">SUB-ORDER ' + (i + 1) + "</span> · <b>" + V(s.v).ar + '</b></span><span class="badge badge--' + s.status[0] + '">' + s.status[1] + "</span></div>" +
+      o.subs.map((s, i) => '<div class="sub"><div class="sub__top"><span><span class="plate__key">SUB-ORDER ' + (i + 1) + "</span> · <b><a class=\"mono\" href=\"" + L("vendor.html?v=" + s.v) + "\">" + vlab(V(s.v)) + '</a></b></span><span class="badge badge--' + s.status[0] + '">' + s.status[1] + "</span></div>" +
         '<ol class="steps">' + steps.map((st, j) => '<li class="step ' + (j < s.step ? "is-done" : j === s.step ? "is-current" : "") + '">' + st + "</li>").join("") + "</ol>" +
         '<div class="sub__top"><div class="sub__items">' + s.items.map(id => '<a href="' + L("product.html?id=" + id) + '"><img src="' + IMG(P(id).img) + '" alt="' + esc(P(id).ar) + '"></a>').join("") + "</div>" +
         '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">' + (s.awb ? '<span class="awb">AWB ' + s.awb + "</span>" : "") +
@@ -627,19 +624,19 @@
   pages.quotes = function () {
     mountAcct("quotes");
     const q = [
-      { no: "RFQ-2610-031", p: "p04", qty: 6, date: "22 أكتوبر 2026", state: ["ok", "وصل عرض"], offer: { v: "v1", unit: 3620, lead: "7 أيام عمل", valid: "5 نوفمبر 2026", note: "سعر خاص للكمية، الشحن مجاني لمستودعكم في جبل علي." } },
-      { no: "RFQ-2610-028", p: "p28", qty: 12, date: "20 أكتوبر 2026", state: ["ok", "وصل عرض"], offer: { v: "v2", unit: 1310, lead: "3 أيام عمل", valid: "30 أكتوبر 2026", note: "يتوفر 8 بكرات فوراً والباقي خلال 10 أيام." } },
-      { no: "REQ-2610-118", p: null, pn: "SKF 22216 E", qty: 2, date: "25 أكتوبر 2026", state: ["warn", "بانتظار ردود البائعين"], sent: 14 },
+      { no: "RFQ-2610-031", p: "p04", qty: 6, date: "22 أكتوبر 2026", state: ["ok", "وصل عرض"], offer: { v: "v1", unit: 3620, lead: "7 أيام عمل", valid: "5 نوفمبر 2026", note: "سعر خاص للكمية، التسليم لمستودعكم في جبل علي." } },
+      { no: "RFQ-2610-028", p: "p28", qty: 12, date: "20 أكتوبر 2026", state: ["ok", "وصل عرض"], offer: { v: "v2", unit: 1388.6, lead: "3 أيام عمل", valid: "30 أكتوبر 2026", note: "يتوفر 8 بكرات فوراً والباقي خلال 10 أيام." } },
+      { no: "REQ-2610-118", p: null, pn: "SKF 22216 E", qty: 2, date: "25 أكتوبر 2026", state: ["warn", "قيد التسعير لدى NAS Market"], sent: true },
       { no: "RFQ-2609-077", p: "p12", qty: 3, date: "28 سبتمبر 2026", state: ["", "منتهي الصلاحية"] }
     ];
     $("#quotes").innerHTML = q.map(r => {
       const p = r.p && P(r.p);
       return '<article class="order"><div class="order__head"><div><small>رقم الطلب</small><span class="mono">' + r.no + "</span></div><div><small>القطعة</small>" + (p ? esc(p.ar) : '<span class="mono">' + r.pn + "</span> (غير موجودة بالمتجر)") + '</div><div><small>الكمية</small><span class="mono">' + r.qty + "</span></div><div><small>التاريخ</small>" + r.date + '</div><div class="btns"><span class="badge badge--' + (r.state[0] || "") + '">' + r.state[1] + "</span></div></div>" +
-        (r.offer ? '<div class="sub"><div class="plate" style="padding:16px 20px;display:grid;gap:12px"><div class="plate__row"><b>' + V(r.offer.v).ar + '</b><span class="plate__key">QUOTE · ' + r.no.replace("RFQ", "Q") + "</span></div>" +
+        (r.offer ? '<div class="sub"><div class="plate" style="padding:16px 20px;display:grid;gap:12px"><div class="plate__row"><b>عرض سعر من NAS Market</b><span class="plate__key">QUOTE · ' + r.no.replace("RFQ", "Q") + "</span></div>" +
           '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px"><div><span class="plate__key">سعر الوحدة</span><br>' + money(r.offer.unit) + '</div><div><span class="plate__key">الإجمالي</span><br>' + money(r.offer.unit * r.qty) + '</div><div><span class="plate__key">مدة التوريد</span><br>' + r.offer.lead + '</div><div><span class="plate__key">صالح حتى</span><br>' + r.offer.valid + "</div></div>" +
           '<p style="font-size:13px" class="muted">' + r.offer.note + "</p></div>" +
-          '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn--primary btn--sm" data-acc>' + icon("check", "icon--sm") + 'قبول وتحويل لطلب</button><button class="btn btn--line btn--sm">' + icon("chat", "icon--sm") + 'تفاوض مع البائع</button><button class="btn btn--line btn--sm">' + icon("download", "icon--sm") + 'عرض السعر PDF</button><button class="btn btn--danger btn--sm">رفض</button></div></div>' : "") +
-        (r.sent ? '<div class="sub"><p style="font-size:14px">' + icon("clock", "icon--sm") + " أُرسل الطلب إلى <b class=\"mono\">" + r.sent + "</b> بائعاً متخصصاً بالمحامل. عادةً تصل أول العروض خلال 24 ساعة.</p></div>" : "") + "</article>";
+          '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn--primary btn--sm" data-acc>' + icon("check", "icon--sm") + 'قبول وتحويل لطلب</button><button class="btn btn--line btn--sm">' + icon("chat", "icon--sm") + 'طلب تعديل العرض</button><button class="btn btn--line btn--sm">' + icon("download", "icon--sm") + 'عرض السعر PDF</button><button class="btn btn--danger btn--sm">رفض</button></div></div>' : "") +
+        (r.sent ? '<div class="sub"><p style="font-size:14px">' + icon("clock", "icon--sm") + " فريق NAS Market يجهّز لك عرض السعر لهذه القطعة. عادةً يصلك العرض خلال 24 ساعة.</p></div>" : "") + "</article>";
     }).join("");
     $("#quotes").addEventListener("click", e => { if (e.target.closest("[data-acc]")) toast("تم قبول العرض وتحويله إلى طلب — أكمل الدفع من السلة"); });
   };
@@ -647,7 +644,7 @@
   pages.messages = function () {
     mountAcct("messages");
     const convs = [["v2", "متوفر وجاهز للشحن اليوم إن شاء الله", "10:42"], ["v1", "أرسلنا لك عرض السعر المحدث", "أمس"], ["v3", "شكراً لتقييمك", "20/10"]];
-    $("#conv-list").innerHTML = convs.map(([vid, m, tm], i) => { const v = V(vid); return '<button class="chat__conv" aria-current="' + (i === 0) + '"><span class="vavatar">' + initials(v) + "</span><span style=\"min-width:0\"><b>" + v.ar + "</b><p>" + m + "</p></span><time>" + tm + "</time></button>"; }).join("");
+    $("#conv-list").innerHTML = convs.map(([vid, m, tm], i) => { const v = V(vid); return '<button class="chat__conv" aria-current="' + (i === 0) + '">' + vav(v) + "<span style=\"min-width:0\"><b class=\"mono\">" + vlab(v) + "</b><p>" + m + "</p></span><time>" + tm + "</time></button>"; }).join("");
     const box = $("#msgs");
     $("#compose").addEventListener("submit", e => {
       e.preventDefault();

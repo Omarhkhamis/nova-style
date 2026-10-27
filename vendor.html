@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>متجر البائع | NAS Market</title>
-  <meta name="description" content="صفحة متجر البائع: المنتجات، التقييم، ومعلومات الرخصة.">
+  <meta name="description" content="صفحة البائع: المنتجات المعروضة والتقييم.">
   <meta property="og:title" content="متجر البائع | NAS Market">
-  <meta property="og:description" content="صفحة متجر البائع: المنتجات، التقييم، ومعلومات الرخصة.">
+  <meta property="og:description" content="صفحة البائع: المنتجات المعروضة والتقييم.">
   <meta property="og:image" content="assets/img/p10.jpg">
   <meta name="theme-color" content="#122A36">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -29,13 +29,13 @@
         <button class="tab" role="tab" aria-selected="false" aria-controls="vt-r">سياسة الإرجاع</button>
       </div>
       <div id="vt-p">
-        <div class="toolbar"><div style="display:flex;gap:8px;flex-wrap:wrap"><span class="badge badge--dark">الكل</span><span class="badge">جديد</span><span class="badge">مجدد</span><span class="badge">مستعمل</span></div>
-          <div class="search" style="margin:0;height:40px;border:1px solid var(--line-strong);max-width:320px;flex:1"><input placeholder="ابحث داخل هذا المتجر" aria-label="بحث داخل المتجر"><button type="button" aria-label="بحث" style="width:44px"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button></div></div>
+        <div class="toolbar"><div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="vchip" data-vc="" aria-pressed="true">الكل</button><button type="button" class="vchip" data-vc="new" aria-pressed="false">جديد</button><button type="button" class="vchip" data-vc="refurb" aria-pressed="false">مجدد</button><button type="button" class="vchip" data-vc="used" aria-pressed="false">مستعمل</button></div>
+          <div class="search" style="margin:0;height:40px;border:1px solid var(--line-strong);max-width:320px;flex:1"><input id="vq" type="search" placeholder="ابحث داخل منتجات هذا البائع" aria-label="بحث داخل المتجر"><button type="button" aria-label="بحث" style="width:44px"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button></div></div>
         <div class="pgrid" id="vgrid"></div>
       </div>
       <div id="vt-a" hidden><div class="panel panel__body" style="max-width:760px;display:grid;gap:12px">
         <h2 style="font-size:18px" id="vname"></h2>
-        <p>[نبذة البائع: نوع النشاط، العلامات التجارية الموزّعة، سنوات الخبرة، والقطاعات التي يخدمها. يكتبها البائع من لوحة التحكم.]</p>
+        <p>[نبذة البائع: نوع النشاط، سنوات الخبرة، والقطاعات التي يخدمها. يكتبها البائع من لوحة التحكم، وتراجعها الإدارة قبل النشر حتى لا تتضمن اسم الشركة أو بيانات تواصل.]</p>
         <dl class="spec-table"><div><dt>الرخصة التجارية</dt><dd>Verified · exp. 2027-03</dd></div><div><dt>الرقم الضريبي TRN</dt><dd>100 xxx xxx xxx 003</dd></div><div><dt>المستودع</dt><dd>Dubai Investments Park</dd></div><div><dt>نسبة الطلبات المكتملة</dt><dd>98.6%</dd></div></dl>
       </div></div>
       <div id="vt-r" hidden><div class="panel panel__body" style="max-width:760px"><p>مدة الإرجاع والاستبدال تُحدد لكل قطعة بالاتفاق بين البائع والمنصة، وتظهر في صفحة المنتج قبل الشراء. القطع الإلكترونية الحساسة تخضع لفحص فني قبل قبول الإرجاع، وقد يُعرض استبدالها بدل استرداد المبلغ. القطع المفصّلة حسب الطلب غير قابلة للإرجاع.</p></div></div>

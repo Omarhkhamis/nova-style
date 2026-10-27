@@ -13,12 +13,13 @@ window.NAS_DATA = (function () {
     { id: "safety", ar: "معدات السلامة", en: "Safety Gear", ur: "حفاظتی سامان", img: "b-safety", count: 735, code: "08" }
   ];
 
+  // code = the only seller identity buyers ever see; company names stay with the admin
   const vendors = [
-    { id: "v1", ar: "الخليج للتوريدات البحرية", en: "Gulf Marine Supply", city: { ar: "دبي", en: "Dubai" }, rating: 4.8, reviews: 312, since: 2026, products: 486, response: "2h", verified: true, cover: "b-pumproom" },
-    { id: "v2", ar: "مصدر الطاقة للكهربائيات", en: "PowerSource Electric", city: { ar: "الشارقة", en: "Sharjah" }, rating: 4.6, reviews: 205, since: 2026, products: 1120, response: "4h", verified: true, cover: "b-electrical" },
-    { id: "v3", ar: "بارد لأنظمة التبريد", en: "Barid Cooling Systems", city: { ar: "عجمان", en: "Ajman" }, rating: 4.7, reviews: 148, since: 2026, products: 390, response: "3h", verified: true, cover: "b-hvac" },
-    { id: "v4", ar: "الدقة للعدد الصناعية", en: "Precision Industrial Tools", city: { ar: "أبوظبي", en: "Abu Dhabi" }, rating: 4.5, reviews: 97, since: 2026, products: 820, response: "6h", verified: true, cover: "b-cnc2" },
-    { id: "v5", ar: "حماية لمعدات السلامة", en: "Himaya Safety Equipment", city: { ar: "دبي", en: "Dubai" }, rating: 4.9, reviews: 260, since: 2026, products: 214, response: "1h", verified: true, cover: "b-safety" }
+    { id: "v1", code: "S-1042", ar: "الخليج للتوريدات البحرية", en: "Gulf Marine Supply", city: { ar: "دبي", en: "Dubai" }, rating: 4.8, reviews: 312, since: 2026, products: 486, response: "2h", verified: true, cover: "b-pumproom" },
+    { id: "v2", code: "S-2087", ar: "مصدر الطاقة للكهربائيات", en: "PowerSource Electric", city: { ar: "الشارقة", en: "Sharjah" }, rating: 4.6, reviews: 205, since: 2026, products: 1120, response: "4h", verified: true, cover: "b-electrical" },
+    { id: "v3", code: "S-3115", ar: "بارد لأنظمة التبريد", en: "Barid Cooling Systems", city: { ar: "عجمان", en: "Ajman" }, rating: 4.7, reviews: 148, since: 2026, products: 390, response: "3h", verified: true, cover: "b-hvac" },
+    { id: "v4", code: "S-4026", ar: "الدقة للعدد الصناعية", en: "Precision Industrial Tools", city: { ar: "أبوظبي", en: "Abu Dhabi" }, rating: 4.5, reviews: 97, since: 2026, products: 820, response: "6h", verified: true, cover: "b-cnc2" },
+    { id: "v5", code: "S-5063", ar: "حماية لمعدات السلامة", en: "Himaya Safety Equipment", city: { ar: "دبي", en: "Dubai" }, rating: 4.9, reviews: 260, since: 2026, products: 214, response: "1h", verified: true, cover: "b-safety" }
   ];
 
   // cond: new | used | refurb
@@ -136,7 +137,7 @@ window.NAS_DATA = (function () {
   // Banners managed from the admin panel (admin/banners.html). place: topbar | wide | promo
   const banners = [
     { id: "b1", place: "topbar", active: true, order: 1, start: "2026-10-01", end: "2026-12-31", theme: "navy", img: "", link: "category.html?deals=1",
-      title: { ar: "شحن مجاني فوق 500 درهم لكل بائع · كود PUMP15 خصم 15% على المضخات", en: "Free shipping over AED 500 per seller · Code PUMP15 for 15% off pumps", ur: "ہر فروخت کنندہ سے 500 درہم سے زائد پر مفت شپنگ · کوڈ PUMP15 پمپس پر 15% رعایت" },
+      title: { ar: "كود PUMP15 خصم 15% على المضخات والصمامات · توصيل لكل الإمارات", en: "Code PUMP15 for 15% off pumps & valves · Delivery across the UAE", ur: "کوڈ PUMP15 پمپس اور والوز پر 15% رعایت · پورے امارات میں ڈیلیوری" },
       views: 48210, clicks: 1206 },
     { id: "b2", place: "wide", active: true, order: 1, start: "2026-10-15", end: "2026-11-30", theme: "volt", img: "p04", link: "category.html?c=pumps", code: "PUMP15",
       tag: { ar: "عرض محدود · حتى 30 نوفمبر", en: "Limited offer · until 30 Nov", ur: "محدود آفر · 30 نومبر تک" },

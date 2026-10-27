@@ -559,3 +559,9 @@ pre.code .k { color: var(--volt-400); } pre.code .s { color: #8FD3B6; }
 .side-card--buyer .panel__head { background: var(--info-bg); border-radius: var(--r-lg) var(--r-lg) 0 0; }
 .aud-hop { display: flex; align-items: center; gap: 8px; padding: 12px 16px; font-size: 13px; color: var(--marine-700); font-weight: 600; }
 .aud-hop .icon:last-child { margin-inline-start: auto; }
+
+/* chat monitoring + platform-mediated chats */
+.msg__who { display: block; font: 600 11px var(--font-mono); opacity: .7; margin-bottom: 2px; }
+.chat__mask { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: var(--warn-bg); color: #5E3E00; font-family: inherit; }
+.mask-chip { display: inline-block; padding: 0 6px; border-radius: 4px; background: rgba(255,255,255,.18); font: 600 12px var(--font-mono); }
+.dash-body .chat { height: min(640px, calc(100vh - 260px)); }

@@ -52,7 +52,7 @@
         </div>
         <div class="tabpanel" id="t-ship" hidden>
           <dl class="spec-table" style="max-width:720px">
-            <div><dt>الشحن العادي</dt><dd>2–4 أيام · 15.00 AED · مجاني فوق 500</dd></div>
+            <div><dt>الشحن العادي</dt><dd>2–4 أيام · 15.00 AED</dd></div>
             <div><dt>الشحن السريع</dt><dd>24h · 35.00 AED</dd></div>
             <div><dt>الإرجاع والاستبدال</dt><dd>حسب سياسة هذه القطعة بالاتفاق مع المورد · بتغليفها الأصلي · فحص فني للقطع الإلكترونية قبل القبول</dd></div>
             <div><dt>الاسترداد</dt><dd>To original payment method</dd></div>
@@ -68,7 +68,7 @@
 
     <!-- RFQ modal -->
     <div class="modal" id="m-rfq" aria-hidden="true" role="dialog" aria-labelledby="rfq-t">
-      <form class="modal__box" data-submit-toast="تم إرسال طلب عرض السعر للبائع RFQ-2610-032">
+      <form class="modal__box" data-submit-toast="تم إرسال طلب عرض السعر إلى NAS Market RFQ-2610-032">
         <div class="modal__head"><h2 id="rfq-t" style="font-size:17px">طلب عرض سعر</h2><button type="button" class="close-btn" data-close aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
         <div class="modal__body form-grid">
           <div class="plate" style="padding:10px 14px;font-size:13px"><span class="plate__key">القطعة</span><br><span id="rfq-product"></span></div>
@@ -78,7 +78,8 @@
           </div>
           <div class="field"><label for="rfq-s">المواصفات أو الملاحظات</label><textarea class="textarea" id="rfq-s" placeholder="مثال: نحتاج إطار B5 وجهد 400V، مع شهادة منشأ."></textarea></div>
           <label class="upload"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V9M7 13.5l5-5 5 5M5 4h14"/></svg><span><strong>إرفاق ملف</strong> (مخطط، صورة لوحة البيانات، PDF)</span><input type="file" hidden></label>
-          <label class="check"><input type="checkbox" checked> أرسل الطلب لبائعين آخرين يبيعون نفس القطعة</label>
+          <label class="check"><input type="checkbox" checked> ابحثوا لي عن أفضل سعر لدى كل الموردين المعتمدين</label>
+          <p class="muted" style="font-size:12px">يصلك عرض السعر من NAS Market مباشرةً بعد مراجعته واعتماده.</p>
         </div>
         <div class="modal__foot"><button type="button" class="btn btn--line" data-close>إلغاء</button><button class="btn btn--primary">إرسال الطلب</button></div>
       </form>
@@ -87,12 +88,12 @@
     <!-- Ask seller modal -->
     <div class="modal" id="m-ask" aria-hidden="true" role="dialog" aria-labelledby="ask-t">
       <form class="modal__box" data-submit-toast="تم إرسال استفسارك — بتلاقي الرد في المحادثات">
-        <div class="modal__head"><h2 id="ask-t" style="font-size:17px">استفسار من <span id="ask-vendor"></span></h2><button type="button" class="close-btn" data-close aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+        <div class="modal__head"><h2 id="ask-t" style="font-size:17px">استفسار عن القطعة</h2><button type="button" class="close-btn" data-close aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
         <div class="modal__body form-grid">
           <p class="muted" style="font-size:13px">بخصوص: <b id="ask-product" style="color:var(--ink)"></b></p>
           <div class="field"><label for="ask-m">رسالتك</label><textarea class="textarea" id="ask-m" placeholder="اكتب سؤالك عن المواصفات، التوافق، أو التوفر…" required></textarea></div>
           <label class="upload"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V9M7 13.5l5-5 5 5M5 4h14"/></svg><span><strong>إرفاق صورة</strong> للقطعة القديمة أو لوحة البيانات</span><input type="file" hidden></label>
-          <p class="muted" style="font-size:12px">المحادثة محفوظة بحسابك، وإدارة المنصة تقدر تطّلع عليها عند وجود نزاع.</p>
+          <p class="muted" style="font-size:12px">رسالتك تصل للبائع عبر NAS Market بدون اسمك أو بيانات تواصلك، وفريق المنصة يطّلع على المحادثات لضمان جودة الخدمة.</p>
         </div>
         <div class="modal__foot"><button type="button" class="btn btn--line" data-close>إلغاء</button><button class="btn btn--primary">إرسال</button></div>
       </form>

@@ -29,25 +29,24 @@
     seller: [
       [tr("الرئيسية", "Main"), [["index", tr("نظرة عامة", "Overview"), "grid"], ["orders", tr("الطلبات", "Orders"), "box", 4], ["products", tr("المنتجات", "Products"), "tag"], ["quotes", tr("طلبات عروض الأسعار", "Quote requests"), "doc", 2]]],
       [tr("المالية", "Finance"), [["payouts", tr("الأرباح والكشوف", "Earnings & statements"), "wallet"]]],
-      [tr("المتجر", "Store"), [["@vendor", tr("عرض متجري", "View my store"), "store"], ["@msgs", tr("المحادثات", "Messages"), "chat", 3], ["support", tr("الدعم الفني", "Support"), "headset", 1]]]
+      [tr("المتجر", "Store"), [["@vendor", tr("عرض متجري", "View my store"), "store"], ["messages", tr("المحادثات", "Messages"), "chat", 3], ["support", tr("الدعم الفني", "Support"), "headset", 1]]]
     ],
     admin: [
-      [tr("الرئيسية", "Main"), [["index", tr("نظرة عامة", "Overview"), "grid"], ["orders", tr("الطلبات", "Orders"), "box"], ["vendors", tr("البائعون", "Sellers"), "users", 5]]],
+      [tr("الرئيسية", "Main"), [["index", tr("نظرة عامة", "Overview"), "grid"], ["orders", tr("الطلبات", "Orders"), "box"], ["quotes", tr("عروض الأسعار", "Quotes"), "doc", 3], ["vendors", tr("البائعون", "Sellers"), "users", 5]]],
       [tr("الدعم الفني", "Support"), [["support?aud=buyer", tr("دعم العملاء", "Customer support"), "user", 6], ["support?aud=seller", tr("دعم البائعين", "Seller support"), "store", 12]]],
       [tr("الكتالوج", "Catalogue"), [["products", tr("مراجعة المنتجات", "Product review"), "check", 7], ["categories", tr("التصنيفات", "Categories"), "grid"]]],
-      [tr("المحتوى والتواصل", "Content & messaging"), [["banners", tr("البنرات والعروض", "Banners & offers"), "image"], ["notifications", tr("مركز الإشعارات", "Notification center"), "bell"]]],
+      [tr("المحتوى والتواصل", "Content & messaging"), [["messages", tr("مراقبة المحادثات", "Chat monitoring"), "chat", 2], ["banners", tr("البنرات والعروض", "Banners & offers"), "image"], ["notifications", tr("مركز الإشعارات", "Notification center"), "bell"]]],
       [tr("المالية", "Finance"), [["commissions", tr("العمولات والتسويات", "Commissions & payouts"), "percent"]]],
       [tr("الإعدادات", "Settings"), [["integrations", tr("التكاملات وشركات الشحن", "Integrations & carriers"), "plug"], ["staff", tr("الموظفون والصلاحيات", "Staff & permissions"), "key"], ["@store", tr("عرض المتجر", "View storefront"), "store"]]]
     ]
   };
   const TITLES = {
-    seller: { index: tr("نظرة عامة", "Overview"), orders: tr("الطلبات", "Orders"), products: tr("المنتجات", "Products"), quotes: tr("طلبات عروض الأسعار", "Quote requests"), payouts: tr("الأرباح والكشوف", "Earnings & statements"), support: tr("الدعم الفني", "Support"), "product-new": tr("إضافة منتج", "Add product") },
-    admin: { index: tr("نظرة عامة", "Overview"), orders: tr("كل الطلبات", "All orders"), vendors: tr("البائعون", "Sellers"), commissions: tr("العمولات والتسويات", "Commissions & payouts"), staff: tr("الموظفون والصلاحيات", "Staff & permissions"), banners: tr("البنرات والعروض", "Banners & offers"), support: tr("الدعم الفني", "Support tickets"), integrations: tr("التكاملات", "Integrations"), notifications: tr("مركز الإشعارات", "Notification center"), categories: tr("التصنيفات", "Categories"), products: tr("مراجعة المنتجات", "Product review") }
+    seller: { index: tr("نظرة عامة", "Overview"), orders: tr("الطلبات", "Orders"), products: tr("المنتجات", "Products"), quotes: tr("طلبات عروض الأسعار", "Quote requests"), payouts: tr("الأرباح والكشوف", "Earnings & statements"), support: tr("الدعم الفني", "Support"), messages: tr("المحادثات", "Messages"), "product-new": tr("إضافة منتج", "Add product") },
+    admin: { index: tr("نظرة عامة", "Overview"), orders: tr("كل الطلبات", "All orders"), vendors: tr("البائعون", "Sellers"), commissions: tr("العمولات والتسويات", "Commissions & payouts"), staff: tr("الموظفون والصلاحيات", "Staff & permissions"), banners: tr("البنرات والعروض", "Banners & offers"), support: tr("الدعم الفني", "Support tickets"), integrations: tr("التكاملات", "Integrations"), notifications: tr("مركز الإشعارات", "Notification center"), categories: tr("التصنيفات", "Categories"), products: tr("مراجعة المنتجات", "Product review"), quotes: tr("عروض الأسعار", "Quotes"), messages: tr("مراقبة المحادثات", "Chat monitoring") }
   };
   const storeHome = ROOT + (AR ? "index.html" : "en/index.html");
   function navHref(k) {
     if (k === "@vendor") return ROOT + "vendor.html?v=v2";
-    if (k === "@msgs") return ROOT + "account/messages.html";
     if (k === "@store") return storeHome;
     const [b, q] = k.split("?");
     return b + ".html" + (q ? "?" + q : "");
@@ -156,7 +155,8 @@
 
   // ---------- seller data ----------
   const MY = D.products.filter(p => p.v === "v2").concat([P("p11"), P("p06"), P("p20")]);
-  const cust = [tr("أحمد خ.", "Ahmed K."), tr("شركة الريم للمقاولات", "Al Reem Contracting"), tr("محمد س.", "Mohammed S."), tr("ورشة النجم", "Al Najm Workshop"), tr("خالد ع.", "Khalid A."), tr("مؤسسة البحر الأزرق", "Blue Sea Est."), tr("يوسف م.", "Yousef M."), tr("راشد ح.", "Rashed H.")];
+  // sellers see a buyer code only; names and contact details stay with the admin
+  const cust = ["C-20431", "C-20788", "C-18850", "C-19902", "C-21016", "C-17543", "C-20112", "C-19377"].map(c => tr("عميل ", "Buyer ") + c);
   const emir = [tr("دبي", "Dubai"), tr("الشارقة", "Sharjah"), tr("أبوظبي", "Abu Dhabi"), tr("عجمان", "Ajman")];
   const SORD = [
     ["NAS-261025-0051-2", "25/10 · 09:14", 0, [["p10", 1]], "new", "card"],
@@ -195,8 +195,8 @@
       '<div class="stack"><section class="panel"><div class="panel__head"><h2>' + tr("مخزون منخفض", "Low stock") + "</h2>" + badge("warn", "3") + '</div><div class="rows">' +
       [["p18", 3], ["p28", 8], ["p10", 14]].map(([id, s]) => '<div class="row"><img src="' + IMG(P(id).img) + '" alt=""><div class="row__main"><b>' + esc(pn(P(id))) + "</b><span class=\"mono\">" + P(id).sku + '</span></div><span class="mono ' + (s <= 5 ? "stock-low" : "") + '">' + s + '</span><button class="btn btn--sm btn--line">' + tr("تحديث", "Restock") + "</button></div>").join("") + "</div></section>" +
       '<section class="panel"><div class="panel__head"><h2>' + tr("طلبات عروض أسعار جديدة", "New quote requests") + '</h2><a class="link" href="quotes.html" style="font-size:13px">' + tr("الرد", "Respond") + '</a></div><div class="rows">' +
-      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">AR</span><div class="row__main"><b>' + pn(P("p28")) + "</b><span>" + tr("شركة الريم للمقاولات · 12 بكرة", "Al Reem Contracting · 12 reels") + "</span></div>" + badge("warn", tr("ينتهي خلال يوم", "Due in 1 day")) + "</div>" +
-      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">NW</span><div class="row__main"><b>' + pn(P("p10")) + "</b><span>" + tr("ورشة النجم · 6 قطع · إطار B5", "Al Najm Workshop · 6 pcs · B5 frame") + "</span></div>" + badge("info", tr("جديد", "New")) + "</div></div></section></div></div>";
+      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">NA</span><div class="row__main"><b>' + pn(P("p28")) + "</b><span>" + tr("عبر NAS Market · 12 بكرة", "via NAS Market · 12 reels") + "</span></div>" + badge("warn", tr("ينتهي خلال يوم", "Due in 1 day")) + "</div>" +
+      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">NA</span><div class="row__main"><b>' + pn(P("p10")) + "</b><span>" + tr("عبر NAS Market · 6 قطع · إطار B5", "via NAS Market · 6 pcs · B5 frame") + "</span></div>" + badge("info", tr("جديد", "New")) + "</div></div></section></div></div>";
   };
   views["seller.index"].after = () => {
     mountLine("c-sales", series(30, 1550, 650, 2), series(30, 1380, 520, 9), kfmt);
@@ -241,7 +241,7 @@
       '<button class="btn btn--line btn--sm">' + icon("download", "icon--sm") + tr("تصدير Excel", "Export Excel") + "</button>") +
       '<section class="panel"><div class="tabs" role="tablist" style="padding-inline:12px">' +
       [["all", tr("الكل", "All")], ["new", ST.new[0]], ["processing", ST.processing[0]], ["shipped", ST.shipped[0]], ["delivered", ST.delivered[0]], ["returned", tr("الإرجاعات", "Returns")]].map(([k, l], i) => '<button class="tab" role="tab" aria-selected="' + (i === 0) + '" data-st="' + k + '">' + l + ' <span class="count">' + counts[k] + "</span></button>").join("") + "</div>" +
-      '<div class="tbl-tools"><div class="group"><input class="input" placeholder="' + tr("رقم الطلب أو اسم العميل", "Order no. or customer") + '" aria-label="search"><select class="select" aria-label="payment"><option>' + tr("كل طرق الدفع", "All payments") + "</option>" + Object.values(PAY).map(x => "<option>" + x + "</option>").join("") + '</select><select class="select" aria-label="date"><option>' + tr("آخر 30 يوم", "Last 30 days") + "</option><option>" + tr("هذا الأسبوع", "This week") + "</option></select></div></div>" +
+      '<div class="tbl-tools"><div class="group"><input class="input" placeholder="' + tr("رقم الطلب أو رمز العميل", "Order no. or buyer code") + '" aria-label="search"><select class="select" aria-label="payment"><option>' + tr("كل طرق الدفع", "All payments") + "</option>" + Object.values(PAY).map(x => "<option>" + x + "</option>").join("") + '</select><select class="select" aria-label="date"><option>' + tr("آخر 30 يوم", "Last 30 days") + "</option><option>" + tr("هذا الأسبوع", "This week") + "</option></select></div></div>" +
       '<div class="table-wrap"><table class="table"><thead><tr><th>' + tr("الطلب الفرعي", "Sub-order") + "</th><th>" + tr("العميل", "Customer") + "</th><th>" + tr("المنتجات", "Items") + "</th><th>" + tr("الدفع", "Payment") + '</th><th class="num">' + tr("الإجمالي", "Total") + "</th><th>" + tr("الحالة", "Status") + '</th><th></th></tr></thead><tbody id="o-body"></tbody></table></div>' +
       '<div class="tbl-foot"><span>' + tr("الطلبات الجديدة لازم تتأكد خلال 24 ساعة", "New orders must be confirmed within 24h") + '</span><nav class="pager"><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">…</a><a href="#">17</a></nav></div></section>' +
       '<aside class="drawer drawer--wide" id="d-order" aria-hidden="true" role="dialog" aria-labelledby="do-t"><div class="drawer__head"><h2 id="do-t" style="font-size:16px" class="mono"></h2><button class="close-btn" data-close aria-label="close">' + icon("x") + '</button></div><div class="drawer__body" id="do-body"></div><div class="drawer__foot" id="do-foot" style="display:flex;flex-wrap:wrap;gap:8px"></div></aside>';
@@ -272,26 +272,58 @@
 
   views["seller.quotes"] = () => {
     const list = [
-      ["RFQ-2610-028", "p28", 12, tr("شركة الريم للمقاولات", "Al Reem Contracting"), tr("يحتاج خلال 7 أيام", "Needed within 7 days"), ["warn", tr("ينتهي خلال يوم", "Due in 1 day")]],
-      ["RFQ-2610-033", "p10", 6, tr("ورشة النجم", "Al Najm Workshop"), tr("إطار B5 · 400V", "B5 frame · 400V"), ["info", tr("جديد", "New")]],
-      ["RFQ-2610-021", "p07", 50, tr("مؤسسة البحر الأزرق", "Blue Sea Est."), tr("توريد شهري", "Monthly supply"), ["ok", tr("تم الرد", "Answered")]],
-      ["RFQ-2610-014", "p09", 20, tr("محمد س.", "Mohammed S."), "—", ["", tr("مقبول → طلب", "Accepted → order")]]
+      ["RFQ-2610-028", "p28", 12, "NAS Market", tr("يحتاج خلال 7 أيام", "Needed within 7 days"), ["warn", tr("ينتهي خلال يوم", "Due in 1 day")]],
+      ["RFQ-2610-033", "p10", 6, "NAS Market", tr("إطار B5 · 400V", "B5 frame · 400V"), ["info", tr("جديد", "New")]],
+      ["RFQ-2610-021", "p07", 50, "NAS Market", tr("توريد شهري", "Monthly supply"), ["info", tr("بانتظار اعتماد الإدارة", "Awaiting admin approval")]],
+      ["RFQ-2610-014", "p09", 20, "NAS Market", "—", ["ok", tr("معتمد → طلب", "Approved → order")]]
     ];
-    return head(tr("طلبات عروض الأسعار", "Quote requests"), tr("ردّ بالسعر ومدة التوريد وصلاحية العرض. العرض المقبول يتحول تلقائياً لطلب.", "Reply with price, lead time and validity. Accepted quotes turn into orders automatically.")) +
+    return head(tr("طلبات عروض الأسعار", "Quote requests"), tr("الطلبات تصلك من NAS Market بدون بيانات العميل. ردّك يذهب لإدارة المنصة للمراجعة والاعتماد، ويصل للعميل باسم NAS Market.", "Requests reach you from NAS Market without buyer details. Your reply goes to the NAS Market team for approval and reaches the buyer under the NAS Market name.")) +
       '<div class="split"><section class="panel"><div class="tabs" role="tablist" style="padding-inline:12px"><button class="tab" role="tab" aria-selected="true">' + tr("بانتظار الرد", "Awaiting reply") + ' <span class="count">2</span></button><button class="tab" role="tab" aria-selected="false">' + tr("تم الرد", "Answered") + '</button><button class="tab" role="tab" aria-selected="false">' + tr("مقبولة", "Accepted") + '</button><button class="tab" role="tab" aria-selected="false">' + tr("منتهية", "Expired") + "</button></div>" +
       list.map(([no, id, q, c, note, s], i) => '<button class="rfq-item" aria-current="' + (i === 0) + '"><span class="rfq-item__top"><span class="mono" style="font-size:12px">' + no + "</span>" + badge(s[0], s[1]) + "</span><b>" + esc(pn(P(id))) + '</b><span class="muted">' + c + " · <span class=\"mono\">" + q + "</span> " + tr("قطعة", "pcs") + " · " + note + "</span></button>").join("") + "</section>" +
       '<form class="panel" id="q-form"><div class="panel__head"><h2>' + tr("الرد على", "Reply to") + ' <span class="mono">RFQ-2610-028</span></h2></div><div class="panel__body form-grid">' +
-      '<div class="plate" style="padding:12px 16px;display:grid;gap:4px;font-size:13px"><span class="plate__key">' + tr("الطلب", "REQUEST") + "</span><b>" + pn(P("p28")) + '</b><span class="muted">' + tr("الكمية 12 بكرة · التسليم إلى جبل علي · خلال 7 أيام", "Qty 12 reels · Deliver to Jebel Ali · within 7 days") + '</span><span class="doc-chip" style="justify-self:start">' + icon("attach") + "specs_cable.pdf</span></div>" +
-      '<div class="form-grid form-grid--2"><div class="field"><label>' + tr("سعر الوحدة (درهم)", "Unit price (AED)") + '</label><input class="input mono" dir="ltr" value="1,310.00"></div><div class="field"><label>' + tr("مدة التوريد", "Lead time") + '</label><select class="select"><option>' + tr("3 أيام عمل", "3 business days") + "</option><option>" + tr("7 أيام عمل", "7 business days") + "</option><option>" + tr("14 يوم", "14 days") + '</option></select></div><div class="field"><label>' + tr("صالح حتى", "Valid until") + '</label><input class="input mono" type="date" value="2026-11-05"></div><div class="field"><label>' + tr("الشحن", "Shipping") + '</label><select class="select"><option>' + tr("مجاني", "Free") + "</option><option>" + tr("على المشتري", "Paid by buyer") + "</option></select></div></div>" +
+      '<div class="plate" style="padding:12px 16px;display:grid;gap:4px;font-size:13px"><span class="plate__key">' + tr("الطلب", "REQUEST") + "</span><b>" + pn(P("p28")) + '</b><span class="muted">' + tr("الكمية 12 بكرة · التسليم: دبي · خلال 7 أيام", "Qty 12 reels · Deliver to: Dubai · within 7 days") + '</span><span class="doc-chip" style="justify-self:start">' + icon("attach") + "specs_cable.pdf</span></div>" +
+      '<div class="form-grid form-grid--2"><div class="field"><label>' + tr("سعر الوحدة (درهم)", "Unit price (AED)") + '</label><input class="input mono" dir="ltr" value="1,310.00"></div><div class="field"><label>' + tr("مدة التوريد", "Lead time") + '</label><select class="select"><option>' + tr("3 أيام عمل", "3 business days") + "</option><option>" + tr("7 أيام عمل", "7 business days") + "</option><option>" + tr("14 يوم", "14 days") + '</option></select></div><div class="field"><label>' + tr("صالح حتى", "Valid until") + '</label><input class="input mono" type="date" value="2026-11-05"></div><div class="field"><label>' + tr("الكمية المتوفرة فوراً", "Available now") + '</label><input class="input mono" dir="ltr" value="8"></div></div>' +
       '<div class="field"><span class="label">' + tr("خصومات الكمية (اختياري)", "Volume discounts (optional)") + '</span><div class="tiers"><div class="tier"><input class="input mono" value="12+" aria-label="qty"><input class="input mono" value="1,310.00" aria-label="price"><button type="button" class="icon-btn" aria-label="remove">' + icon("x") + '</button></div><div class="tier"><input class="input mono" value="24+" aria-label="qty"><input class="input mono" value="1,265.00" aria-label="price"><button type="button" class="icon-btn" aria-label="remove">' + icon("x") + '</button></div></div><button type="button" class="link" style="justify-self:start;font-size:13px">+ ' + tr("إضافة شريحة", "Add tier") + "</button></div>" +
-      '<div class="field"><label>' + tr("ملاحظات للمشتري", "Notes to buyer") + '</label><textarea class="textarea">' + tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels available now, the rest within 10 days.") + "</textarea></div>" +
+      '<div class="field"><label>' + tr("ملاحظات لإدارة NAS Market", "Notes to the NAS Market team") + '</label><textarea class="textarea">' + tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels available now, the rest within 10 days.") + "</textarea></div>" +
       '<div class="sumrow sumrow--total"><span>' + tr("إجمالي العرض", "Quote total") + '</span><span class="mono">' + (AR ? "15,720.00 درهم" : "AED 15,720.00") + "</span></div>" +
-      '<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" class="btn btn--line">' + icon("download", "icon--sm") + tr("معاينة PDF", "Preview PDF") + '</button><button class="btn btn--primary">' + tr("إرسال العرض", "Send quote") + "</button></div></div></form></div>";
+      '<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" class="btn btn--line">' + icon("download", "icon--sm") + tr("معاينة PDF", "Preview PDF") + '</button><button class="btn btn--primary">' + tr("إرسال العرض للإدارة", "Send to NAS Market") + "</button></div>" +
+      '<div class="alert alert--info">' + icon("shield") + "<span>" + tr("العميل لا يرى اسم متجرك. العرض يصله باسم NAS Market بعد اعتماده من الإدارة.", "The buyer never sees your store name. The quote reaches them as NAS Market once the team approves it.") + "</span></div></div></form></div>";
   };
   views["seller.quotes"].after = () => {
-    $("#q-form").addEventListener("submit", e => { e.preventDefault(); toast(tr("تم إرسال العرض للمشتري", "Quote sent to buyer")); });
+    $("#q-form").addEventListener("submit", e => { e.preventDefault(); toast(tr("تم إرسال العرض لإدارة NAS Market للمراجعة", "Quote sent to NAS Market for review")); });
     $(".split").addEventListener("click", e => { const b = e.target.closest(".rfq-item"); if (b) $$(".rfq-item").forEach(x => x.setAttribute("aria-current", x === b)); });
   };
+
+  // ---------- chats (buyer ⇄ seller through the platform) ----------
+  const chatAv = ic => '<span class="vavatar">' + icon(ic, "icon--sm") + "</span>";
+  const bubble = (txt, tm, me, who, file) => '<div class="msg' + (me ? " msg--me" : "") + '">' + (who ? '<b class="msg__who">' + who + "</b>" : "") + txt +
+    (file ? '<div class="msg__file">' + icon("attach", "icon--sm") + file + "</div>" : "") + "<time>" + tm + "</time></div>";
+  const masked = txt => '<span class="chat__day chat__mask">' + icon("shield", "icon--sm") + txt + "</span>";
+  function bindCompose(sent) {
+    $("#compose").addEventListener("submit", e => {
+      e.preventDefault();
+      const i = $("#compose input"); if (!i.value.trim()) return;
+      $("#msgs").insertAdjacentHTML("beforeend", sent(esc(i.value)));
+      i.value = ""; $("#msgs").scrollTop = $("#msgs").scrollHeight;
+    });
+    $("#msgs").scrollTop = $("#msgs").scrollHeight;
+  }
+
+  views["seller.messages"] = () => {
+    const convs = [["C-20431", tr("ممتاز. هاي صورة لوحة البيانات للمحرك القديم", "Great. Here's the old motor's nameplate"), "10:38"], ["C-20788", tr("هل يتوفر بطول 100 متر؟", "Is it available in 100 m?"), tr("أمس", "Yesterday")], ["C-19902", tr("شكراً، وصلت القطع", "Thanks, the parts arrived"), "20/10"]];
+    const p = P("p10");
+    return head(tr("المحادثات", "Messages"), tr("استفسارات المشترين عن منتجاتك. المحادثات تمر عبر NAS Market بدون أسماء أو بيانات تواصل.", "Buyer questions about your products. Chats run through NAS Market with no names or contact details.")) +
+      '<div class="alert alert--info">' + icon("shield") + "<span>" + tr("يُمنع تبادل أرقام الهواتف أو البريد أو الروابط الخارجية، وتُخفى تلقائياً. فريق NAS Market يطّلع على كل المحادثات.", "Phone numbers, emails and external links aren't allowed and are masked automatically. The NAS Market team can see every chat.") + "</span></div>" +
+      '<div class="chat"><div class="chat__list">' + convs.map(([c, m, tm], i) => '<button class="chat__conv" aria-current="' + (i === 0) + '">' + chatAv("user") + '<span style="min-width:0"><b class="mono">' + tr("عميل ", "Buyer ") + c + "</b><p>" + m + "</p></span><time>" + tm + "</time></button>").join("") + "</div>" +
+      '<div class="chat__main"><div class="chat__head">' + chatAv("user") + '<div style="line-height:1.4"><b class="mono">' + tr("عميل C-20431", "Buyer C-20431") + '</b><br><span class="muted" style="font-size:12px">' + tr("دبي · عبر NAS Market", "Dubai · via NAS Market") + "</span></div></div>" +
+      '<a class="plate chat__ctx" href="' + ROOT + "product.html?id=" + p.id + '"><img src="' + IMG(p.img) + '" alt=""><span>' + esc(pn(p)) + '<br><span class="mono muted" style="font-size:11px">' + p.sku + "</span></span></a>" +
+      '<div class="chat__msgs" id="msgs"><span class="chat__day">24 OCT 2026</span>' +
+      bubble(tr("مرحبا، المحرك بيشتغل مع انفرتر؟ وعندكم منه قطعتين؟", "Hi, does this motor run on a VFD? Do you have two?"), "10:21") +
+      bubble(tr("أهلاً فيك. نعم، العزل فئة F وبيتحمل التشغيل مع الانفرتر. متوفر عندنا 14 قطعة.", "Hello. Yes, class F insulation, VFD-rated. We have 14 in stock."), "10:35", true) +
+      bubble(tr("ممتاز. هاي صورة لوحة البيانات للمحرك القديم، للتأكد من المقاسات.", "Great. Here's the old motor's nameplate to check the dimensions."), "10:38", false, "", "nameplate.jpg · 1.2 MB") + "</div>" +
+      '<form class="chat__compose" id="compose"><button type="button" class="btn btn--line btn--icon" aria-label="attach">' + icon("attach") + '</button><input class="input" placeholder="' + tr("اكتب ردّك…", "Write a reply…") + '" aria-label="message"><button class="btn btn--primary">' + tr("إرسال", "Send") + "</button></form></div></div>";
+  };
+  views["seller.messages"].after = () => bindCompose(txt => bubble(txt, tr("الآن", "now"), true));
 
   views["seller.payouts"] = () => {
     const stmt = SORD.filter(o => o.st !== "new").map(o => { const g = o.total / 1.05, c = g * 0.08; return [o.no, o.d.split(" ")[0], g, c, c * 0.05, o.st === "returned" ? 0 : g - c - c * 0.05, o.st]; });
@@ -347,7 +379,7 @@
         '<div class="checks">' + [[tr("الرخصة سارية", "Licence valid") + ' <span class="mono">' + a.exp + "</span>", a.ok[0]], [tr("رقم TRN صحيح", "TRN verified"), a.ok[1]], [tr("الاسم مطابق للحساب البنكي", "Name matches bank account"), a.ok[2]], [tr("هوية المالك مرفقة", "Owner ID attached"), a.ok[3]]].map(([t, ok]) => '<span class="' + (ok ? "ok" : "warn") + '">' + icon(ok ? "check" : "alert") + "<span>" + t + "</span></span>").join("") + (a.warn ? '<span class="warn">' + icon("info") + a.warn + "</span>" : "") + "</div>" +
         '<div class="app-card__acts"><button class="btn btn--primary btn--sm" data-approve>' + icon("check", "icon--sm") + tr("موافقة", "Approve") + '</button><button class="btn btn--line btn--sm">' + tr("طلب مستندات", "Request docs") + '</button><button class="btn btn--danger btn--sm" data-reject>' + tr("رفض", "Reject") + "</button></div></article>").join("") + "</div>" +
       '<section class="panel" id="tv-list" hidden><div class="tbl-tools"><div class="group"><input class="input" placeholder="' + tr("ابحث عن بائع", "Search sellers") + '" aria-label="search"><select class="select" aria-label="category"><option>' + tr("كل الأقسام", "All categories") + '</option></select></div></div><div class="table-wrap"><table class="table"><thead><tr><th>' + tr("البائع", "Seller") + "</th><th>" + tr("المدينة", "City") + '</th><th class="num">' + tr("المنتجات", "Products") + '</th><th class="num">' + tr("مبيعات الشهر", "GMV (month)") + "</th><th>" + tr("العمولة", "Commission") + "</th><th>" + tr("التقييم", "Rating") + "</th><th>" + tr("الحالة", "Status") + "</th><th></th></tr></thead><tbody>" +
-      D.vendors.map((v, i) => '<tr><td><div class="t-prod"><span class="vavatar" style="width:38px;height:38px;font-size:12px">' + v.en.split(" ").map(w => w[0]).join("").slice(0, 2) + "</span><div><b>" + vn(v) + '</b><span>CN-' + (1000000 + v.reviews * 917) + "</span></div></div></td><td>" + (AR ? v.city.ar : v.city.en) + '</td><td class="num mono">' + num(v.products) + '</td><td class="num">' + aed([96400, 48320, 61200, 38800, 22100][i]) + '</td><td><span class="pct"><input value="' + [9, 8, 10, 10, 12][i] + '" aria-label="commission"><span>%</span></span></td><td><span class="stars">' + icon("star") + "<b>" + v.rating + "</b></span></td><td>" + badge("ok", tr("نشط", "Active")) + '</td><td><div class="acts"><button class="icon-btn" aria-label="view">' + icon("eye") + '</button><button class="icon-btn" aria-label="suspend" title="' + tr("تعليق", "Suspend") + '">' + icon("ban") + "</button></div></td></tr>").join("") + "</tbody></table></div></section>" +
+      D.vendors.map((v, i) => '<tr><td><div class="t-prod"><span class="vavatar" style="width:38px;height:38px;font-size:12px">' + v.en.split(" ").map(w => w[0]).join("").slice(0, 2) + "</span><div><b>" + vn(v) + '</b><span><span class="mono">' + v.code + "</span> · CN-" + (1000000 + v.reviews * 917) + "</span></div></div></td><td>" + (AR ? v.city.ar : v.city.en) + '</td><td class="num mono">' + num(v.products) + '</td><td class="num">' + aed([96400, 48320, 61200, 38800, 22100][i]) + '</td><td><span class="pct"><input value="' + [9, 8, 10, 10, 12][i] + '" aria-label="commission"><span>%</span></span></td><td><span class="stars">' + icon("star") + "<b>" + v.rating + "</b></span></td><td>" + badge("ok", tr("نشط", "Active")) + '</td><td><div class="acts"><button class="icon-btn" aria-label="view">' + icon("eye") + '</button><button class="icon-btn" aria-label="suspend" title="' + tr("تعليق", "Suspend") + '">' + icon("ban") + "</button></div></td></tr>").join("") + "</tbody></table></div></section>" +
       '<div class="modal" id="m-doc" aria-hidden="true" role="dialog" aria-labelledby="md-t"><div class="modal__box" style="width:min(720px,100%)"><div class="modal__head"><h2 id="md-t" style="font-size:16px">' + tr("معاينة المستند", "Document preview") + '</h2><button class="close-btn" data-close aria-label="close">' + icon("x") + '</button></div><div class="modal__body" style="display:grid;gap:14px"><div class="docprev">' + tr("[معاينة ملف PDF أو صورة المستند المرفوع]", "[Uploaded PDF / image preview]") + '</div><dl class="dl"><div><dt>' + tr("رقم الرخصة", "Licence no.") + '</dt><dd class="mono">CN-2219834</dd></div><div><dt>' + tr("تاريخ الانتهاء", "Expiry") + '</dt><dd class="mono">2027-06-30</dd></div><div><dt>' + tr("النشاط", "Activity") + "</dt><dd>" + tr("تجارة قطع غيار المعدات الثقيلة", "Heavy equipment spare parts trading") + '</dd></div></dl></div><div class="modal__foot"><button class="btn btn--line" data-close>' + tr("إغلاق", "Close") + '</button><button class="btn btn--primary" data-close>' + tr("تأكيد صحة المستند", "Mark as verified") + "</button></div></div></div>";
   };
   views["admin.vendors"].after = () => {
@@ -373,7 +405,7 @@
       '<section class="panel"><div class="tbl-tools"><div class="group"><input class="input" placeholder="' + tr("رقم الطلب، العميل، أو البائع", "Order no., customer or seller") + '" aria-label="search"><select class="select" aria-label="status"><option>' + tr("كل الحالات", "All statuses") + "</option>" + Object.values(ST).map(s => "<option>" + s[0] + "</option>").join("") + '</select><select class="select" aria-label="payment"><option>' + tr("كل طرق الدفع", "All payments") + "</option>" + Object.values(PAY).map(x => "<option>" + x + "</option>").join("") + '</select><select class="select" aria-label="emirate"><option>' + tr("كل الإمارات", "All emirates") + "</option>" + emir.map(x => "<option>" + x + "</option>").join("") + '</select><label class="check" style="font-size:13px"><input type="checkbox"> ' + tr("نزاعات فقط", "Disputes only") + "</label></div></div>" +
       '<div class="table-wrap"><table class="table"><thead><tr><th style="width:32px"></th><th>' + tr("الطلب", "Order") + "</th><th>" + tr("العميل", "Customer") + '</th><th class="num">' + tr("البائعون", "Sellers") + "</th><th>" + tr("الدفع", "Payment") + '</th><th class="num">' + tr("الإجمالي", "Total") + "</th><th>" + tr("الحالة", "Status") + "</th><th></th></tr></thead><tbody>" +
       ORD.map((o, i) => '<tr data-x="' + i + '" style="cursor:pointer"><td><button class="icon-btn" aria-label="expand" aria-expanded="false">' + icon("chevd") + '</button></td><td><span class="mono">' + o[0] + '</span><br><span class="muted mono" style="font-size:11.5px">' + o[1] + "</span></td><td>" + o[2] + '</td><td class="num mono">' + o[3] + "</td><td>" + PAY[o[5]] + '</td><td class="num">' + aed(o[4], true) + "</td><td>" + stB(o[6]) + (o[7] ? " " + badge("danger", icon("alert", "icon--sm") + tr("نزاع", "Dispute")) : "") + '</td><td><button class="icon-btn" aria-label="more">' + icon("more") + "</button></td></tr>" +
-        '<tr data-sub="' + i + '" hidden><td></td><td colspan="7" style="background:#F8FAFA"><div style="display:grid;gap:8px">' + Array.from({ length: o[3] }, (_, k) => { const v = D.vendors[(i + k) % 5]; return '<div class="plate" style="padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:13px"><span class="mono">' + o[0] + "-" + (k + 1) + "</span><b>" + vn(v) + "</b>" + stB(k === 0 ? o[6] : "processing") + '<span class="awb">' + (k === 0 && o[6] !== "new" ? "AWB ARX 7731 " + (40 + i) + "0" + k : "") + '</span><span style="margin-inline-start:auto" class="mono">' + num(o[4] / o[3], true) + "</span></div>"; }).join("") + "</div></td></tr>").join("") +
+        '<tr data-sub="' + i + '" hidden><td></td><td colspan="7" style="background:#F8FAFA"><div style="display:grid;gap:8px">' + Array.from({ length: o[3] }, (_, k) => { const v = D.vendors[(i + k) % 5]; return '<div class="plate" style="padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:13px"><span class="mono">' + o[0] + "-" + (k + 1) + "</span><b>" + vn(v) + ' <span class="mono muted">' + v.code + "</span></b>" + stB(k === 0 ? o[6] : "processing") + '<span class="awb">' + (k === 0 && o[6] !== "new" ? "AWB ARX 7731 " + (40 + i) + "0" + k : "") + '</span><span style="margin-inline-start:auto" class="mono">' + num(o[4] / o[3], true) + "</span></div>"; }).join("") + "</div></td></tr>").join("") +
       '</tbody></table></div><div class="tbl-foot"><span>' + tr("عرض 1–8 من 3,412", "Showing 1–8 of 3,412") + '</span><nav class="pager"><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">…</a><a href="#">427</a></nav></div></section>';
   };
   views["admin.orders"].after = () => {
@@ -381,6 +413,90 @@
       const r = e.target.closest("[data-x]"); if (!r) return;
       const s = $('[data-sub="' + r.dataset.x + '"]'); s.hidden = !s.hidden;
       const b = $("button", r); b.setAttribute("aria-expanded", !s.hidden); b.style.transform = s.hidden ? "" : "rotate(180deg)";
+    });
+  };
+
+  // ---------- quotes: sellers price, the admin approves, the buyer only ever sees NAS Market ----------
+  const AQ = [
+    { no: "RFQ-2610-028", p: "p28", qty: 12, buyer: tr("شركة الريم للمقاولات", "Al Reem Contracting"), bc: "C-20788", to: tr("دبي · جبل علي", "Dubai · Jebel Ali"), need: tr("خلال 7 أيام", "within 7 days"), st: ["warn", tr("بانتظار اعتمادك", "Needs your approval")],
+      replies: [["v2", 1310, tr("3 أيام عمل", "3 business days"), 8, tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels now, the rest within 10 days.")], ["v1", 1365, tr("7 أيام عمل", "7 business days"), 12, ""], ["v3", 0]] },
+    { no: "RFQ-2610-033", p: "p10", qty: 6, buyer: tr("ورشة النجم", "Al Najm Workshop"), bc: "C-19902", to: tr("الشارقة", "Sharjah"), need: tr("إطار B5 · 400V", "B5 frame · 400V"), st: ["info", tr("بانتظار ردود البائعين", "Waiting for sellers")], replies: [["v2", 0], ["v4", 0]] },
+    { no: "REQ-2610-118", pn: "SKF 22216 E", qty: 2, buyer: tr("أحمد خالد", "Ahmed Khaled"), bc: "C-20431", to: tr("دبي", "Dubai"), need: tr("قطعة غير موجودة بالمتجر", "Not listed in the store"), st: ["info", tr("قيد البحث", "Sourcing")], replies: [["v4", 0], ["v1", 0]] },
+    { no: "RFQ-2610-031", p: "p04", qty: 6, buyer: tr("أحمد خالد", "Ahmed Khaled"), bc: "C-20431", to: tr("دبي · جبل علي", "Dubai · Jebel Ali"), need: "—", st: ["ok", tr("أُرسل للعميل", "Sent to buyer")], replies: [["v1", 3420, tr("7 أيام عمل", "7 business days"), 6, ""]] }
+  ];
+  views["admin.quotes"] = () => {
+    const q = AQ[0], p = P(q.p);
+    return head(tr("عروض الأسعار", "Quotes"), tr("طلبات العملاء تصل البائعين بدون بيانات العميل، وردود البائعين تصلك هنا. العرض المعتمد يصل للعميل باسم NAS Market فقط.", "Buyer requests reach sellers without buyer details, and seller replies land here. Approved quotes reach the buyer as NAS Market only.")) +
+      '<div class="split"><section class="panel"><div class="tabs" role="tablist" style="padding-inline:12px"><button class="tab" role="tab" aria-selected="true">' + tr("بانتظار اعتمادك", "Needs approval") + ' <span class="count">1</span></button><button class="tab" role="tab" aria-selected="false">' + tr("عند البائعين", "With sellers") + ' <span class="count">2</span></button><button class="tab" role="tab" aria-selected="false">' + tr("مُرسلة", "Sent") + "</button></div>" +
+      AQ.map((r, i) => '<button class="rfq-item" aria-current="' + (i === 0) + '"><span class="rfq-item__top"><span class="mono" style="font-size:12px">' + r.no + "</span>" + badge(r.st[0], r.st[1]) + "</span><b>" + (r.p ? esc(pn(P(r.p))) : '<span class="mono">' + r.pn + "</span>") + '</b><span class="muted">' + r.buyer + ' <span class="mono">(' + r.bc + ")</span> · <span class=\"mono\">" + r.qty + "</span> " + tr("قطعة", "pcs") + " · " + r.replies.filter(x => x[1]).length + "/" + r.replies.length + " " + tr("ردود", "replies") + "</span></button>").join("") + "</section>" +
+      '<form class="panel" id="aq-form"><div class="panel__head"><h2><span class="mono">' + q.no + "</span></h2>" + badge(q.st[0], q.st[1]) + '</div><div class="panel__body form-grid">' +
+      '<div class="plate" style="padding:12px 16px;display:grid;gap:4px;font-size:13px"><span class="plate__key">' + tr("العميل · لا يظهر للبائعين", "BUYER · HIDDEN FROM SELLERS") + "</span><b>" + q.buyer + ' <span class="mono muted">' + q.bc + '</span></b><span class="muted">' + esc(pn(p)) + " · " + tr("الكمية", "Qty") + ' <span class="mono">' + q.qty + "</span> · " + q.to + " · " + q.need + "</span></div>" +
+      '<div><span class="label">' + tr("ردود البائعين · لا تظهر للعميل", "Seller replies · hidden from the buyer") + '</span><div class="rows panel" style="margin-top:8px">' +
+      q.replies.map(([vid, unit, lead, avail, note], i) => { const v = V(vid); return '<label class="row" style="cursor:' + (unit ? "pointer" : "default") + '">' + (unit ? '<input type="radio" name="pick" value="' + unit + '"' + (i === 0 ? " checked" : "") + ">" : '<span style="width:16px"></span>') + '<div class="row__main"><b>' + vn(v) + ' <span class="mono muted">' + v.code + "</span></b><span>" + (unit ? lead + " · " + tr("متوفر", "in stock") + ' <span class="mono">' + avail + "</span>" + (note ? " · " + note : "") : tr("لم يرد بعد", "No reply yet")) + "</span></div>" + (unit ? aed(unit, true) : badge("", tr("بانتظار", "Pending"))) + "</label>"; }).join("") + "</div></div>" +
+      '<div class="form-grid form-grid--2"><div class="field"><label for="aq-m">' + tr("هامش NAS Market", "NAS Market margin") + '</label><span class="pct"><input id="aq-m" value="6" aria-label="margin"><span>%</span></span></div><div class="field"><span class="label">' + tr("سعر الوحدة للعميل", "Unit price to buyer") + '</span><b class="mono" id="aq-unit"></b></div></div>' +
+      '<div class="field"><label>' + tr("ملاحظات للعميل (تظهر باسم NAS Market)", "Notes to buyer (shown as NAS Market)") + '</label><textarea class="textarea">' + tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels available now, the rest within 10 days.") + "</textarea></div>" +
+      '<div class="sumrow sumrow--total"><span>' + tr("إجمالي العرض للعميل", "Quote total to buyer") + '</span><span class="mono" id="aq-total"></span></div>' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button type="button" class="btn btn--danger" data-aq-no>' + tr("رفض", "Reject") + '</button><button type="button" class="btn btn--line" data-aq-back>' + tr("طلب تعديل من البائع", "Ask seller to revise") + '</button><button class="btn btn--primary">' + icon("check", "icon--sm") + tr("اعتماد وإرسال للعميل", "Approve & send to buyer") + "</button></div></div></form></div>";
+  };
+  views["admin.quotes"].after = () => {
+    const q = AQ[0], form = $("#aq-form");
+    const calc = () => {
+      const pick = $('input[name="pick"]:checked', form), unit = +pick.value * (1 + (+$("#aq-m").value || 0) / 100);
+      $("#aq-unit").textContent = (AR ? "" : "AED ") + num(unit, true) + (AR ? " درهم" : "");
+      $("#aq-total").textContent = (AR ? "" : "AED ") + num(unit * q.qty, true) + (AR ? " درهم" : "");
+    };
+    form.addEventListener("input", calc); form.addEventListener("change", calc); calc();
+    form.addEventListener("submit", e => { e.preventDefault(); toast(tr("تم اعتماد العرض وإرساله للعميل باسم NAS Market", "Approved — sent to the buyer as NAS Market")); });
+    form.addEventListener("click", e => {
+      if (e.target.closest("[data-aq-back]")) toast(tr("أُعيد العرض للبائع للتعديل", "Sent back to the seller"), "send");
+      if (e.target.closest("[data-aq-no]")) toast(tr("تم رفض العرض", "Quote rejected"), "x");
+    });
+    $(".split").addEventListener("click", e => { const b = e.target.closest(".rfq-item"); if (b) $$(".rfq-item").forEach(x => x.setAttribute("aria-current", x === b)); });
+  };
+
+  // ---------- chat monitoring: the admin sees both real identities ----------
+  const AC = [
+    { b: tr("أحمد خالد", "Ahmed Khaled"), bc: "C-20431", v: "v2", p: "p10", tm: "10:42", msgs: [
+      ["b", tr("مرحبا، المحرك بيشتغل مع انفرتر؟ وعندكم منه قطعتين؟", "Hi, does this motor run on a VFD? Do you have two?"), "10:21"],
+      ["s", tr("أهلاً فيك. نعم، العزل فئة F وبيتحمل التشغيل مع الانفرتر. متوفر عندنا 14 قطعة.", "Hello. Yes, class F insulation, VFD-rated. We have 14 in stock."), "10:35"],
+      ["b", tr("ممتاز. هاي صورة لوحة البيانات للمحرك القديم، للتأكد من المقاسات.", "Great. Here's the old motor's nameplate to check the dimensions."), "10:38", "nameplate.jpg · 1.2 MB"],
+      ["s", tr("نفس الإطار 100L ونفس ارتفاع العمود، بيركب مباشرة. متوفر وجاهز للشحن اليوم.", "Same 100L frame and shaft height, it's a direct fit. Ready to ship today."), "10:42"]] },
+    { b: tr("شركة الريم للمقاولات", "Al Reem Contracting"), bc: "C-20788", v: "v2", p: "p28", tm: tr("أمس", "Yesterday"), flag: true, msgs: [
+      ["b", tr("هل يتوفر بطول 100 متر؟ نحتاج كمية كبيرة للمشروع.", "Is it available in 100 m? We need a large quantity for a project."), "16:02"],
+      ["s", tr("متوفر. للكميات الكبيرة تواصل معي مباشرة على ", "Yes. For big quantities contact me directly on ") + '<span class="mask-chip">' + tr("[رقم مخفي]", "[number hidden]") + "</span>", "16:20"],
+      ["m", tr("أُخفي رقم هاتف تلقائياً وأُرسل تنبيه للبائع", "A phone number was masked and the seller was warned"), "16:20"],
+      ["b", tr("تمام، بنطلب عرض سعر من الموقع.", "OK, we'll request a quote through the site."), "16:31"]] },
+    { b: tr("ورشة النجم", "Al Najm Workshop"), bc: "C-19902", v: "v1", p: "p04", tm: "20/10", msgs: [
+      ["b", tr("هل المضخة مناسبة لمياه البحر؟", "Is this pump suitable for seawater?"), "11:05"],
+      ["s", tr("لا، الجسم حديد زهر. للمياه المالحة ننصح بنسخة الستانلس 316.", "No, the body is cast iron. For seawater we recommend the 316 stainless version."), "11:40"]] },
+    { b: tr("محمد س.", "Mohammed S."), bc: "C-18850", v: "v3", p: "p13", tm: "19/10", flag: true, msgs: [
+      ["b", tr("ممكن ترسل لي الفاتورة على الإيميل؟", "Can you email me the invoice?"), "09:12"],
+      ["m", tr("أُخفي بريد إلكتروني تلقائياً", "An email address was masked"), "09:12"],
+      ["s", tr("الفاتورة موجودة بحسابك في صفحة الطلبات.", "The invoice is in your account under Orders."), "09:30"]] }
+  ];
+  function acThread(i) {
+    const c = AC[i], v = V(c.v), p = P(c.p);
+    $("#ac-head").innerHTML = chatAv("user") + '<div style="line-height:1.4"><b>' + c.b + ' <span class="mono muted">' + c.bc + "</span></b><br><span class=\"muted\" style=\"font-size:12px\">" + tr("المشتري", "Buyer") + "</span></div>" +
+      '<span class="muted">⇄</span>' + chatAv("store") + '<div style="line-height:1.4"><b>' + vn(v) + ' <span class="mono muted">' + v.code + "</span></b><br><span class=\"muted\" style=\"font-size:12px\">" + tr("البائع", "Seller") + "</span></div>" +
+      '<div class="acts" style="margin-inline-start:auto"><button class="btn btn--sm btn--line" data-ac-warn>' + icon("alert", "icon--sm") + tr("تحذير البائع", "Warn seller") + '</button><button class="btn btn--sm btn--line" data-ac-close>' + icon("lock", "icon--sm") + tr("إغلاق المحادثة", "Close chat") + "</button></div>";
+    $("#ac-ctx").innerHTML = '<img src="' + IMG(p.img) + '" alt=""><span>' + esc(pn(p)) + '<br><span class="mono muted" style="font-size:11px">' + p.sku + "</span></span>";
+    $("#msgs").innerHTML = '<span class="chat__day">24 OCT 2026</span>' + c.msgs.map(([w, txt, tm, file]) => w === "m" ? masked(txt) :
+      bubble(txt, tm, w === "s", w === "s" ? v.code : c.bc, file)).join("");
+    $("#msgs").scrollTop = $("#msgs").scrollHeight;
+  }
+  views["admin.messages"] = () => head(tr("مراقبة المحادثات", "Chat monitoring"), tr("كل محادثات المشترين والبائعين. الطرفان يريان الرموز فقط، وأنت ترى الأسماء الحقيقية. أرقام الهواتف والبريد تُخفى تلقائياً.", "Every buyer–seller chat. Both sides see codes only; you see the real names. Phone numbers and emails are masked automatically."),
+      '<div class="seg" role="group"><button aria-pressed="true">' + tr("الكل", "All") + '</button><button aria-pressed="false">' + tr("مُبلّغ عنها", "Flagged") + " (2)</button></div>") +
+      '<div class="chat"><div class="chat__list">' + AC.map((c, i) => '<button class="chat__conv" data-ac="' + i + '" aria-current="' + (i === 0) + '">' + chatAv(c.flag ? "alert" : "chat") + '<span style="min-width:0"><b>' + c.b + " ⇄ " + vn(V(c.v)) + "</b><p>" + (c.flag ? '<span style="color:var(--danger)">' + tr("محاولة مشاركة بيانات تواصل · ", "Contact-sharing attempt · ") + "</span>" : "") + c.msgs[c.msgs.length - 1][1] + "</p></span><time>" + c.tm + "</time></button>").join("") + "</div>" +
+      '<div class="chat__main"><div class="chat__head" id="ac-head" style="flex-wrap:wrap"></div><div class="plate chat__ctx" id="ac-ctx"></div><div class="chat__msgs" id="msgs"></div>' +
+      '<form class="chat__compose" id="compose"><select class="select" style="width:auto" aria-label="to"><option>' + tr("للطرفين", "To both") + "</option><option>" + tr("للمشتري فقط", "Buyer only") + "</option><option>" + tr("للبائع فقط", "Seller only") + '</option></select><input class="input" placeholder="' + tr("اكتب كـ NAS Market…", "Write as NAS Market…") + '" aria-label="message"><button class="btn btn--primary">' + tr("إرسال", "Send") + "</button></form></div></div>";
+  views["admin.messages"].after = () => {
+    acThread(0);
+    bindCompose(txt => masked("NAS Market: " + txt));
+    $("#view").addEventListener("click", e => {
+      const b = e.target.closest("[data-ac]");
+      if (b) { $$("[data-ac]").forEach(x => x.setAttribute("aria-current", x === b)); acThread(+b.dataset.ac); }
+      if (e.target.closest("[data-ac-warn]")) toast(tr("أُرسل تحذير للبائع", "Warning sent to the seller"), "alert");
+      if (e.target.closest("[data-ac-close]")) toast(tr("تم إغلاق المحادثة", "Chat closed"), "lock");
     });
   };
 
@@ -758,7 +874,7 @@
         logs.map((l, i) => '<tr><td class="mono">' + l[0] + "</td><td>" + l[1] + '</td><td class="mono" style="font-size:12px;white-space:nowrap">' + l[2] + '</td><td class="mono" style="font-size:12px">' + l[3] + '</td><td class="num">' + badge(l[4] < 300 ? "ok" : l[4] < 500 ? "warn" : "danger", l[4]) + '</td><td class="num mono">' + num(l[5]) + '</td><td><button class="icon-btn" aria-label="view" data-log="' + i + '">' + icon("eye") + "</button></td></tr>").join("") + "</tbody></table></div></section>" +
       '<section class="panel"><div class="panel__head"><h2>' + tr("أسعار الشحن للمشتري", "Buyer shipping rates") + '</h2><button class="btn btn--sm btn--primary" data-rates>' + tr("حفظ", "Save") + '</button></div><div class="table-wrap"><table class="table" style="min-width:0"><thead><tr><th>' + tr("المنطقة", "Zone") + '</th><th class="num">' + tr("عادي", "Std.") + '</th><th class="num">' + tr("سريع", "Exp.") + '</th><th class="num">' + tr("كل كغ إضافي", "+ per kg") + "</th></tr></thead><tbody>" +
         rates.map(r => "<tr><td>" + r[0] + '</td><td class="num"><input class="input rate-input" value="' + r[1] + '" aria-label="standard"></td><td class="num"><input class="input rate-input" value="' + r[2] + '" aria-label="express"></td><td class="num"><input class="input rate-input" value="' + r[3] + '" aria-label="per kg"></td></tr>').join("") +
-        '</tbody></table></div><div class="panel__body" style="border-top:1px solid var(--line);display:grid;gap:10px;font-size:13.5px"><label class="check"><input type="checkbox" checked> ' + tr("شحن مجاني للطلب الفرعي فوق", "Free shipping per sub-order over") + ' <input class="input rate-input" value="500" aria-label="threshold"> ' + tr("درهم", "AED") + '</label><label class="check"><input type="checkbox" checked> ' + tr("أول 5 كغ مشمولة في السعر الأساسي", "First 5 kg included in base rate") + "</label></div></section></div></div>" +
+        '</tbody></table></div><div class="panel__body" style="border-top:1px solid var(--line);display:grid;gap:10px;font-size:13.5px"><label class="check"><input type="checkbox" checked> ' + tr("أول 5 كغ مشمولة في السعر الأساسي", "First 5 kg included in base rate") + "</label></div></section></div></div>" +
       '<div id="it-pay" hidden><div class="carriers"><article class="panel carrier"><div class="carrier__top"><span class="carrier__logo" style="background:var(--navy-800)">PG</span><div><h3>' + tr("[مزود الدفع]", "[Payment provider]") + "</h3><p>" + tr("بطاقات · Apple Pay · استرداد", "Cards · Apple Pay · refunds") + "</p></div></div>" + badge("warn", '<span class="dot"></span>' + tr("بانتظار تفعيل حساب التاجر (KYC)", "Awaiting merchant KYC")) + '<button class="btn btn--line btn--sm" style="justify-self:start">' + icon("settings", "icon--sm") + tr("الإعدادات", "Settings") + "</button></article></div></div>" +
       '<div id="it-not" hidden><div class="carriers"><article class="panel carrier"><div class="carrier__top"><span class="carrier__logo" style="background:var(--marine-700)">@</span><div><h3>' + tr("البريد الإلكتروني", "Email") + "</h3><p>" + tr("إشعارات الطلبات والتذاكر", "Order & ticket notifications") + "</p></div></div>" + badge("ok", '<span class="dot"></span>' + tr("متصل", "Connected")) + '</article><article class="panel carrier"><div class="carrier__top"><span class="carrier__logo" style="background:#1F7A4D">WA</span><div><h3>' + tr("واتساب و SMS", "WhatsApp & SMS") + "</h3><p>" + tr("المرحلة الثالثة", "Phase 3") + "</p></div></div>" + badge("", tr("غير مفعّل", "Not enabled")) + "</article></div></div>" +
       // carrier drawer
