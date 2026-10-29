@@ -109,10 +109,12 @@ ul, ol { padding: 0; list-style: none; }
 .hact b { font-weight: 600; }
 .cur { font-weight: 600; font-size: 13.5px; gap: 10px; }
 .flag { width: 26px; height: 17px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0, 0, 0, .08); }
-.cart-btn { position: relative; font-weight: 600; font-size: 14px; }
-.cart-btn .icon { width: 32px; height: 32px; }
+.hicon { font-weight: 600; font-size: 14px; }
+.hicon__ic { position: relative; display: grid; font-style: normal; }
+.hicon .icon { width: 30px; height: 30px; }
+.hicon .bubble { position: absolute; top: -7px; right: -9px; box-shadow: 0 0 0 2px #fff; }
+.hicon:hover span { color: var(--blue-600); }
 .bubble { display: inline-grid; place-items: center; min-width: 19px; height: 19px; padding: 0 5px; border-radius: 99px; background: var(--blue-600); color: #fff; font: 700 11px/1 var(--font); }
-.cart-btn .bubble--abs { position: absolute; top: -6px; left: 18px; }
 
 /* nav bar */
 .nav { background: var(--navy-800); color: #fff; position: relative; z-index: 40; }
@@ -667,9 +669,9 @@ ul, ol { padding: 0; list-style: none; }
   .wrap { padding-inline: 14px; }
   .logo img { height: 40px; }
   .logo small { display: none; }
+  .logo-tag { display: none !important; }
   .hacts { gap: 14px; }
   .hact span { display: none; }
-  .cart-btn > span:not(.bubble) { display: none; }
   .nav__all { min-width: 0; padding: 0 14px; }
   .nav__all span { display: none; }
   .pbanner { background-size: cover; }

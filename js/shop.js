@@ -84,6 +84,7 @@
     const n = getCart().reduce((s, x) => s + x.qty, 0);
     $$("[data-cart-n]").forEach(e => (e.textContent = n));
     $$("[data-fav-n]").forEach(e => { e.textContent = getFavs().length; e.hidden = !getFavs().length; });
+    $$("[data-wish-n]").forEach(e => (e.textContent = getFavs().length));
   }
 
   // ---------- product card ----------
@@ -97,7 +98,7 @@
     const fav = isFav(p.id), cmp = getCmp().includes(p.id);
     return '<article class="pcard' + (o.reveal === false ? "" : " reveal") + '">' +
       '<a class="pcard__img" href="' + L("product.html?id=" + p.id) + '" tabindex="-1" aria-hidden="true"><img src="' + A(p.img) + '" alt="" loading="lazy"></a>' +
-      '<button class="fav" data-fav="' + p.id + '" aria-pressed="' + fav + '" aria-label="Save to favourites and get stock & price alerts">' + ic("heart") + "</button>" +
+      '<button class="fav" data-fav="' + p.id + '" aria-pressed="' + fav + '" aria-label="Add to wishlist and get stock & price alerts">' + ic("heart") + "</button>" +
       '<div class="pcard__actions-wrap"><div class="pcard__body">' + brandMark(p.brand) +
       '<a class="pcard__name" href="' + L("product.html?id=" + p.id) + '">' + esc(p.name) + "</a>" +
       (p.pn ? '<span class="pcard__pn">' + esc(p.pn) + "</span>" : "") +
@@ -123,8 +124,9 @@
       '<div class="popular-line"><b>Popular Searches:</b>' + (pop || []).map(t => '<a href="' + L("search.html?q=" + encodeURIComponent(t)) + '">' + esc(t) + "</a>").join("") + "</div></div>" +
       '<div class="hacts"><button class="hact cur hact--hide-md" type="button" title="Currency & region">' + flagUAE + "<span>UAE (AED)</span>" + ic("chevd", "icon--sm") + "</button>" +
       '<div class="acctmenu"><a class="hact" href="' + L("login.html") + '">' + ic("user") + "<span>Login / Sign Up<br><b>My Account</b> ▾</span></a>" +
-      '<div class="mega mega--list" style="left:auto;right:0">' + [["account/orders.html", "box", "My Orders & Tracking"], ["account/quotes.html", "doc", "My Quotes & RFQs"], ["account/favourites.html", "heart", "Favourites & Alerts"], ["account/messages.html", "chat", "Messages"], ["account/returns.html", "ret", "Returns & Warranty"], ["login.html", "user", "Login / Sign Up"]].map(([h, i, t]) => '<a href="' + L(h) + '">' + ic(i, "icon--sm") + t + "</a>").join("") + "</div></div>" +
-      '<a class="hact cart-btn" href="' + L("cart.html") + '" data-open="#minicart">' + ic("cart") + '<span class="bubble bubble--abs" data-cart-n>0</span><span>Cart</span><span class="bubble" data-cart-n>0</span></a></div></div></header>' +
+      '<div class="mega mega--list" style="left:auto;right:0">' + [["account/orders.html", "box", "My Orders & Tracking"], ["account/quotes.html", "doc", "My Quotes & RFQs"], ["account/favourites.html", "heart", "Wishlist & Alerts"], ["account/messages.html", "chat", "Messages"], ["account/returns.html", "ret", "Returns & Warranty"], ["login.html", "user", "Login / Sign Up"]].map(([h, i, t]) => '<a href="' + L(h) + '">' + ic(i, "icon--sm") + t + "</a>").join("") + "</div></div>" +
+      '<a class="hact hicon" href="' + L("account/favourites.html") + '" aria-label="Wishlist"><i class="hicon__ic">' + ic("heart") + '<b class="bubble" data-wish-n>0</b></i><span>Wishlist</span></a>' +
+      '<a class="hact hicon" href="' + L("cart.html") + '" data-open="#minicart" aria-label="Cart"><i class="hicon__ic">' + ic("cart") + '<b class="bubble" data-cart-n>0</b></i><span>Cart</span></a></div></div></header>' +
       nav();
   }
   function nav() {
@@ -180,7 +182,7 @@
         '<div class="form-grid form-grid--2"><div class="field"><label>Quantity</label><input class="input" type="number" min="1" value="1"></div><div class="field"><label>Required by</label><input class="input" type="date"></div></div>' +
         '<div class="field"><label>Notes</label><textarea class="textarea" placeholder="Project, delivery location, alternatives accepted…"></textarea></div>' + fld("Email", "email", "name@company.ae"), "Send Request", "Quote request sent — reference RFQ-2610-044") +
       m("m-call", "Request a Call", fld("Name") + fld("Phone", "tel", "+971") + '<div class="field"><label>Topic</label><select class="select"><option>Product selection</option><option>Pricing / quotation</option><option>Order status</option><option>Obsolete replacement</option></select></div>', "Request Call", "Thanks — a sales engineer will call you shortly") +
-      m("m-notify", "Get Alerts for This Product", '<p id="notify-p" class="muted"></p><label class="check"><input type="checkbox" checked> Notify me when it is back in stock</label><label class="check"><input type="checkbox" checked> Notify me when the price drops</label><div class="field"><label>Send alerts to</label><select class="select"><option>Email and WhatsApp</option><option>Email only</option><option>WhatsApp only</option></select></div>', "Save Alerts", "Saved to favourites — we'll notify you") +
+      m("m-notify", "Get Alerts for This Product", '<p id="notify-p" class="muted"></p><label class="check"><input type="checkbox" checked> Notify me when it is back in stock</label><label class="check"><input type="checkbox" checked> Notify me when the price drops</label><div class="field"><label>Send alerts to</label><select class="select"><option>Email and WhatsApp</option><option>Email only</option><option>WhatsApp only</option></select></div>', "Save Alerts", "Added to wishlist — we'll notify you") +
       m("m-partner", "Partner with NAS.AE", fld("Company name") + fld("Contact email", "email") + '<div class="field"><label>Brands / product lines you supply</label><textarea class="textarea"></textarea></div><p class="muted" style="font-size:12.5px">Our team reviews every enquiry and contacts suitable partners directly.</p>', "Send Enquiry", "Thanks — our partnerships team will contact you") +
       '<aside class="drawer" id="minicart" aria-hidden="true" aria-labelledby="mc-t" role="dialog"><div class="drawer__head"><h2 id="mc-t">Your Cart</h2><button class="close-btn" data-close aria-label="Close">' + ic("x") + '</button></div><div class="drawer__body" id="mc-body"></div><div class="drawer__foot" id="mc-foot"></div></aside>' +
       '<div class="cmp-tray" id="cmp-tray"><span><b data-cmp-n>0</b>/4 to compare</span><button class="btn btn--sm btn--ghost" data-cmp-clear>Clear</button><a class="btn btn--sm btn--primary" href="' + L("compare.html") + '">Compare now</a></div>';
@@ -221,7 +223,7 @@
     if (fav) {
       e.preventDefault();
       const id = fav.dataset.fav, f = getFavs();
-      if (isFav(id)) { setFavs(f.filter(x => x.id !== id)); $$('[data-fav="' + id + '"]').forEach(b => b.setAttribute("aria-pressed", "false")); toast("Removed from favourites", "heart"); }
+      if (isFav(id)) { setFavs(f.filter(x => x.id !== id)); $$('[data-fav="' + id + '"]').forEach(b => b.setAttribute("aria-pressed", "false")); toast("Removed from wishlist", "heart"); }
       else { f.push({ id, stock: true, price: true, since: new Date().toISOString().slice(0, 10), was: PROD(id).price }); setFavs(f); $$('[data-fav="' + id + '"]').forEach(b => b.setAttribute("aria-pressed", "true")); $("#notify-p").textContent = PROD(id).brand + " " + PROD(id).name + " — " + PROD(id).pn; open("#m-notify"); }
       return;
     }
@@ -491,7 +493,7 @@
       '<div style="display:flex;gap:18px;flex-wrap:wrap;font-size:13px"><a class="link" href="#" data-sheet="' + p.id + '">' + ic("file", "icon--sm") + 'Datasheet (PDF)</a><label class="link" style="cursor:pointer"><input type="checkbox" data-cmp="' + p.id + '"' + (getCmp().includes(p.id) ? " checked" : "") + "> Compare</label><a class=\"link\" href=\"" + L("obsolete.html?pn=" + encodeURIComponent(p.pn)) + "\">" + ic("swap", "icon--sm") + "Find alternatives</a></div></div>" +
       '<aside class="buybox"><div style="display:flex;gap:10px;align-items:center"><div class="qty"><button type="button" data-q="-1" aria-label="Less">' + ic("minus", "icon--sm") + '</button><input id="qty" type="number" value="1" min="1" aria-label="Quantity"><button type="button" data-q="1" aria-label="More">' + ic("plus", "icon--sm") + '</button></div><button class="btn btn--primary" style="flex:1;min-height:38px" id="add-main"' + (p.stock === "obsolete" ? " disabled" : "") + ">" + ic("cart", "icon--sm") + "Add to Cart</button></div>" +
       '<button class="btn btn--line btn--block" data-rfq="' + p.id + '">' + ic("file", "icon--sm") + "Request Quote / Bulk Price</button>" +
-      '<div class="alertbox"><b>' + ic("heart") + "Stock & price alerts</b><span class=\"muted\">Save this product and we notify you when it's back in stock or the price drops.</span><button class=\"btn btn--line btn--sm\" data-fav=\"" + p.id + '" aria-pressed="' + isFav(p.id) + '">' + (isFav(p.id) ? "Saved to favourites" : "Save & notify me") + "</button></div>" +
+      '<div class="alertbox"><b>' + ic("heart") + "Stock & price alerts</b><span class=\"muted\">Add it to your wishlist and we notify you when it's back in stock or the price drops.</span><button class=\"btn btn--line btn--sm\" data-fav=\"" + p.id + '" aria-pressed="' + isFav(p.id) + '">' + (isFav(p.id) ? "Saved to wishlist" : "Save & notify me") + "</button></div>" +
       '<div class="buybox__row">' + ic("truck") + "<span><b>Delivery</b> across the UAE in 1–3 working days, worldwide on request</span></div>" +
       '<div class="buybox__row">' + ic("ret") + "<span><b>Returns & exchange</b> as per this part's policy agreed with the supplier; sensitive electronics are inspected before acceptance</span></div>" +
       '<div class="buybox__row">' + ic("shield") + "<span><b>Secure payment</b> — card, Apple Pay, bank transfer, COD</span></div>" +
@@ -622,7 +624,7 @@
 
   // ---------- account ----------
   function acct(active, inner) {
-    const items = [["orders", "My Orders & Tracking", "box"], ["quotes", "Quotes & RFQs", "doc"], ["favourites", "Favourites & Alerts", "heart"], ["messages", "Messages", "chat"], ["returns", "Returns & Warranty", "ret"]];
+    const items = [["orders", "My Orders & Tracking", "box"], ["quotes", "Quotes & RFQs", "doc"], ["favourites", "Wishlist & Alerts", "heart"], ["messages", "Messages", "chat"], ["returns", "Returns & Warranty", "ret"]];
     $("#main").innerHTML = '<div class="wrap">' + crumbs([["My Account", ""]]) + '<div class="acct"><nav class="acct-nav"><div class="acct-nav__user"><span class="avatar">AK</span><div>Ahmed Khaled<small>Al Reem Contracting · Business</small></div></div>' +
       items.map(([k, l, i]) => '<a href="' + L("account/" + k + ".html") + '"' + (k === active ? ' aria-current="page"' : "") + ">" + ic(i, "icon--sm") + l + (k === "favourites" ? '<span class="bubble" data-fav-n></span>' : "") + "</a>").join("") + '<a href="' + L("login.html") + '">' + ic("logout", "icon--sm") + "Sign out</a></nav><section>" + inner + "</section></div></div>";
     syncCounts();
@@ -642,7 +644,7 @@
   };
   pages.favourites = function () {
     const favs = getFavs().length ? getFavs() : D.featured.slice(0, 3).map((id, i) => ({ id, stock: true, price: i !== 1, since: "2026-10-20", was: PROD(id).price * 1.08 }));
-    acct("favourites", '<h1 class="page-title">Favourites & Alerts<small>We notify you by email and WhatsApp when a saved product is back in stock or its price drops.</small></h1><div class="panel"><table class="table"><thead><tr><th>Product</th><th>Status</th><th>Price</th><th>Alerts</th><th></th></tr></thead><tbody>' +
+    acct("favourites", '<h1 class="page-title">Wishlist & Alerts<small>We notify you by email and WhatsApp when a saved product is back in stock or its price drops.</small></h1><div class="panel"><table class="table"><thead><tr><th>Product</th><th>Status</th><th>Price</th><th>Alerts</th><th></th></tr></thead><tbody>' +
       favs.map(f => { const p = PROD(f.id); if (!p) return ""; const drop = f.was && f.was > p.price; return '<tr><td><div style="display:flex;gap:10px;align-items:center"><img src="' + A(p.img) + '" alt="" style="width:54px;height:46px;object-fit:contain"><span><b>' + esc(p.brand) + "</b> " + esc(p.name) + '<br><span class="muted">' + esc(p.pn) + '</span></span></div></td><td><span class="stock stock--' + p.stock + '">' + stockTxt(p.stock) + "</span></td><td><b>" + aed(p.price) + "</b>" + (drop ? '<br><span class="badge badge--ok">Price dropped from ' + aed(f.was) + "</span>" : "") + '</td><td><label class="check"><input type="checkbox"' + (f.stock ? " checked" : "") + '> Back in stock</label><label class="check"><input type="checkbox"' + (f.price ? " checked" : "") + '> Price drop</label></td><td><button class="btn btn--sm btn--primary" data-add="' + p.id + '">Add to Cart</button></td></tr>'; }).join("") + "</tbody></table></div>");
     $("#main").addEventListener("change", e => { if (e.target.closest(".table input")) toast("Alert preferences saved", "bell"); });
   };
