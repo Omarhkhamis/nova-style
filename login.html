@@ -1,52 +1,25 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>تسجيل الدخول | NAS Market</title>
-  <meta name="description" content="سجّل دخولك أو أنشئ حساب مشترٍ جديد.">
-  <meta property="og:title" content="تسجيل الدخول | NAS Market">
-  <meta property="og:description" content="سجّل دخولك أو أنشئ حساب مشترٍ جديد.">
-  <meta property="og:image" content="assets/img/p10.jpg">
-  <meta name="theme-color" content="#122A36">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>Login / Sign Up | NAS.AE Store</title>
+  <meta name="description" content="Login or create your NAS.AE account.">
+  <meta property="og:title" content="Login / Sign Up | NAS.AE Store">
+  <meta property="og:description" content="Login or create your NAS.AE account.">
+  <meta name="theme-color" content="#0C3670">
+  <link rel="icon" href="assets/brand/nas-store.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/store.css">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap">
+  <link rel="stylesheet" href="css/shop.css">
 </head>
 <body data-page="login" data-root="">
   <div id="site-header"></div>
-  <main id="main">
-
-    <div class="auth">
-      <div class="auth__side"><img src="assets/img/b-pumproom.jpg" alt="" width="960" height="636"><span class="eyebrow" style="color:var(--volt-500)">NAS MARKET</span><h2>كل قطعة لها رقم. وكل طلب له متابعة.</h2></div>
-      <div class="auth__form"><div class="auth__box">
-        <h1>أهلاً بك</h1>
-        <div class="tabs" role="tablist"><button class="tab" role="tab" aria-selected="true" aria-controls="lg-in">تسجيل الدخول</button><button class="tab" role="tab" aria-selected="false" aria-controls="lg-up">حساب جديد</button></div>
-        <form id="lg-in" class="form-grid" data-go="account/orders.html">
-          <div class="field"><label for="l-u">البريد الإلكتروني أو رقم الجوال</label><input class="input" id="l-u" dir="ltr" autocomplete="username" placeholder="name@company.ae"></div>
-          <div class="field"><label for="l-p">كلمة المرور</label><input class="input" id="l-p" type="password" autocomplete="current-password"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><label class="check"><input type="checkbox"> تذكرني</label><a class="link" href="#">نسيت كلمة المرور؟</a></div>
-          <button class="btn btn--primary btn--lg btn--block">دخول</button>
-          <div class="divider">أو</div>
-          <button type="button" class="btn btn--line btn--block">الدخول برمز تحقق على الجوال (OTP)</button>
-        </form>
-        <form id="lg-up" class="form-grid" data-go="account/orders.html" hidden>
-          <div class="form-grid form-grid--2"><div class="field"><label for="s-n">الاسم</label><input class="input" id="s-n" autocomplete="name"></div><div class="field"><label for="s-p">الجوال</label><input class="input mono" id="s-p" dir="ltr" autocomplete="tel" placeholder="+971"></div></div>
-          <div class="field"><label for="s-e">البريد الإلكتروني</label><input class="input" id="s-e" dir="ltr" autocomplete="email"></div>
-          <div class="field"><label for="s-pw">كلمة المرور</label><input class="input" id="s-pw" type="password" autocomplete="new-password"></div>
-          <label class="check"><input type="checkbox"> أشتري لصالح شركة (فواتير باسم الشركة)</label>
-          <button class="btn btn--primary btn--lg btn--block">إنشاء الحساب</button>
-        </form>
-      </div></div>
-    </div>
-  </main>
+  <main id="main"><noscript><p style="padding:24px">This prototype needs JavaScript.</p></noscript></main>
   <div id="site-footer"></div>
   <script src="js/core.js"></script>
-  <script src="js/products.js"></script>
-  <script src="js/store.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 </html>

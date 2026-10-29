@@ -1,4 +1,4 @@
-/* NAS Market — seller & admin dashboards (AR/EN from one source) */
+/* NAS.AE — seller & admin dashboards (AR/EN from one source) */
 (function () {
   const { LANG, ROOT, icon, brand, logoMark, wave, num, esc, $, $$, toast, open, closeAll, bannerHTML, bannerText, liveBanners } = window.NAS;
   const D = window.NAS_DATA;
@@ -64,7 +64,7 @@
   function shell() {
     const me = APP === "seller"
       ? { av: "PE", name: tr("مصدر الطاقة للكهربائيات", "PowerSource Electric"), role: tr("بائع · الشارقة", "Seller · Sharjah"), user: tr("سامي رضا", "Sami Reda"), urole: tr("مالك المتجر", "Store owner") }
-      : { av: "NA", name: "NAS Market", role: tr("لوحة الإدارة", "Admin console"), user: tr("عمر خ.", "Omar K."), urole: tr("مدير عام", "Super admin") };
+      : { av: "NA", name: "NAS.AE", role: tr("لوحة الإدارة", "Admin console"), user: tr("عمر خ.", "Omar K."), urole: tr("مدير عام", "Super admin") };
     const side = '<aside class="side" id="side" aria-label="' + tr("القائمة", "Navigation") + '"><div class="side__brand">' + brand(storeHome) + '<button class="close-btn" data-close aria-label="close">' + icon("x") + "</button></div>" +
       '<div class="plate plate--dark side__ws"><span class="plate__key">' + (APP === "seller" ? tr("لوحة البائع", "SELLER CENTRAL") : tr("لوحة الإدارة", "ADMIN CONSOLE")) + "</span><b>" + me.name + "</b>" +
       (APP === "seller" ? badge("ok", icon("badge", "icon--sm") + tr("متجر موثّق · نشط", "Verified · Active")) : badge("volt", tr("بيئة العرض", "Demo environment"))) + "</div><nav>" +
@@ -195,8 +195,8 @@
       '<div class="stack"><section class="panel"><div class="panel__head"><h2>' + tr("مخزون منخفض", "Low stock") + "</h2>" + badge("warn", "3") + '</div><div class="rows">' +
       [["p18", 3], ["p28", 8], ["p10", 14]].map(([id, s]) => '<div class="row"><img src="' + IMG(P(id).img) + '" alt=""><div class="row__main"><b>' + esc(pn(P(id))) + "</b><span class=\"mono\">" + P(id).sku + '</span></div><span class="mono ' + (s <= 5 ? "stock-low" : "") + '">' + s + '</span><button class="btn btn--sm btn--line">' + tr("تحديث", "Restock") + "</button></div>").join("") + "</div></section>" +
       '<section class="panel"><div class="panel__head"><h2>' + tr("طلبات عروض أسعار جديدة", "New quote requests") + '</h2><a class="link" href="quotes.html" style="font-size:13px">' + tr("الرد", "Respond") + '</a></div><div class="rows">' +
-      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">NA</span><div class="row__main"><b>' + pn(P("p28")) + "</b><span>" + tr("عبر NAS Market · 12 بكرة", "via NAS Market · 12 reels") + "</span></div>" + badge("warn", tr("ينتهي خلال يوم", "Due in 1 day")) + "</div>" +
-      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">NA</span><div class="row__main"><b>' + pn(P("p10")) + "</b><span>" + tr("عبر NAS Market · 6 قطع · إطار B5", "via NAS Market · 6 pcs · B5 frame") + "</span></div>" + badge("info", tr("جديد", "New")) + "</div></div></section></div></div>";
+      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">NA</span><div class="row__main"><b>' + pn(P("p28")) + "</b><span>" + tr("عبر NAS.AE · 12 بكرة", "via NAS.AE · 12 reels") + "</span></div>" + badge("warn", tr("ينتهي خلال يوم", "Due in 1 day")) + "</div>" +
+      '<div class="row"><span class="vavatar" style="width:38px;height:38px;font-size:11px">NA</span><div class="row__main"><b>' + pn(P("p10")) + "</b><span>" + tr("عبر NAS.AE · 6 قطع · إطار B5", "via NAS.AE · 6 pcs · B5 frame") + "</span></div>" + badge("info", tr("جديد", "New")) + "</div></div></section></div></div>";
   };
   views["seller.index"].after = () => {
     mountLine("c-sales", series(30, 1550, 650, 2), series(30, 1380, 520, 9), kfmt);
@@ -272,25 +272,25 @@
 
   views["seller.quotes"] = () => {
     const list = [
-      ["RFQ-2610-028", "p28", 12, "NAS Market", tr("يحتاج خلال 7 أيام", "Needed within 7 days"), ["warn", tr("ينتهي خلال يوم", "Due in 1 day")]],
-      ["RFQ-2610-033", "p10", 6, "NAS Market", tr("إطار B5 · 400V", "B5 frame · 400V"), ["info", tr("جديد", "New")]],
-      ["RFQ-2610-021", "p07", 50, "NAS Market", tr("توريد شهري", "Monthly supply"), ["info", tr("بانتظار اعتماد الإدارة", "Awaiting admin approval")]],
-      ["RFQ-2610-014", "p09", 20, "NAS Market", "—", ["ok", tr("معتمد → طلب", "Approved → order")]]
+      ["RFQ-2610-028", "p28", 12, "NAS.AE", tr("يحتاج خلال 7 أيام", "Needed within 7 days"), ["warn", tr("ينتهي خلال يوم", "Due in 1 day")]],
+      ["RFQ-2610-033", "p10", 6, "NAS.AE", tr("إطار B5 · 400V", "B5 frame · 400V"), ["info", tr("جديد", "New")]],
+      ["RFQ-2610-021", "p07", 50, "NAS.AE", tr("توريد شهري", "Monthly supply"), ["info", tr("بانتظار اعتماد الإدارة", "Awaiting admin approval")]],
+      ["RFQ-2610-014", "p09", 20, "NAS.AE", "—", ["ok", tr("معتمد → طلب", "Approved → order")]]
     ];
-    return head(tr("طلبات عروض الأسعار", "Quote requests"), tr("الطلبات تصلك من NAS Market بدون بيانات العميل. ردّك يذهب لإدارة المنصة للمراجعة والاعتماد، ويصل للعميل باسم NAS Market.", "Requests reach you from NAS Market without buyer details. Your reply goes to the NAS Market team for approval and reaches the buyer under the NAS Market name.")) +
+    return head(tr("طلبات عروض الأسعار", "Quote requests"), tr("الطلبات تصلك من NAS.AE بدون بيانات العميل. ردّك يذهب لإدارة المنصة للمراجعة والاعتماد، ويصل للعميل باسم NAS.AE.", "Requests reach you from NAS.AE without buyer details. Your reply goes to the NAS.AE team for approval and reaches the buyer under the NAS.AE name.")) +
       '<div class="split"><section class="panel"><div class="tabs" role="tablist" style="padding-inline:12px"><button class="tab" role="tab" aria-selected="true">' + tr("بانتظار الرد", "Awaiting reply") + ' <span class="count">2</span></button><button class="tab" role="tab" aria-selected="false">' + tr("تم الرد", "Answered") + '</button><button class="tab" role="tab" aria-selected="false">' + tr("مقبولة", "Accepted") + '</button><button class="tab" role="tab" aria-selected="false">' + tr("منتهية", "Expired") + "</button></div>" +
       list.map(([no, id, q, c, note, s], i) => '<button class="rfq-item" aria-current="' + (i === 0) + '"><span class="rfq-item__top"><span class="mono" style="font-size:12px">' + no + "</span>" + badge(s[0], s[1]) + "</span><b>" + esc(pn(P(id))) + '</b><span class="muted">' + c + " · <span class=\"mono\">" + q + "</span> " + tr("قطعة", "pcs") + " · " + note + "</span></button>").join("") + "</section>" +
       '<form class="panel" id="q-form"><div class="panel__head"><h2>' + tr("الرد على", "Reply to") + ' <span class="mono">RFQ-2610-028</span></h2></div><div class="panel__body form-grid">' +
       '<div class="plate" style="padding:12px 16px;display:grid;gap:4px;font-size:13px"><span class="plate__key">' + tr("الطلب", "REQUEST") + "</span><b>" + pn(P("p28")) + '</b><span class="muted">' + tr("الكمية 12 بكرة · التسليم: دبي · خلال 7 أيام", "Qty 12 reels · Deliver to: Dubai · within 7 days") + '</span><span class="doc-chip" style="justify-self:start">' + icon("attach") + "specs_cable.pdf</span></div>" +
       '<div class="form-grid form-grid--2"><div class="field"><label>' + tr("سعر الوحدة (درهم)", "Unit price (AED)") + '</label><input class="input mono" dir="ltr" value="1,310.00"></div><div class="field"><label>' + tr("مدة التوريد", "Lead time") + '</label><select class="select"><option>' + tr("3 أيام عمل", "3 business days") + "</option><option>" + tr("7 أيام عمل", "7 business days") + "</option><option>" + tr("14 يوم", "14 days") + '</option></select></div><div class="field"><label>' + tr("صالح حتى", "Valid until") + '</label><input class="input mono" type="date" value="2026-11-05"></div><div class="field"><label>' + tr("الكمية المتوفرة فوراً", "Available now") + '</label><input class="input mono" dir="ltr" value="8"></div></div>' +
       '<div class="field"><span class="label">' + tr("خصومات الكمية (اختياري)", "Volume discounts (optional)") + '</span><div class="tiers"><div class="tier"><input class="input mono" value="12+" aria-label="qty"><input class="input mono" value="1,310.00" aria-label="price"><button type="button" class="icon-btn" aria-label="remove">' + icon("x") + '</button></div><div class="tier"><input class="input mono" value="24+" aria-label="qty"><input class="input mono" value="1,265.00" aria-label="price"><button type="button" class="icon-btn" aria-label="remove">' + icon("x") + '</button></div></div><button type="button" class="link" style="justify-self:start;font-size:13px">+ ' + tr("إضافة شريحة", "Add tier") + "</button></div>" +
-      '<div class="field"><label>' + tr("ملاحظات لإدارة NAS Market", "Notes to the NAS Market team") + '</label><textarea class="textarea">' + tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels available now, the rest within 10 days.") + "</textarea></div>" +
+      '<div class="field"><label>' + tr("ملاحظات لإدارة NAS.AE", "Notes to the NAS.AE team") + '</label><textarea class="textarea">' + tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels available now, the rest within 10 days.") + "</textarea></div>" +
       '<div class="sumrow sumrow--total"><span>' + tr("إجمالي العرض", "Quote total") + '</span><span class="mono">' + (AR ? "15,720.00 درهم" : "AED 15,720.00") + "</span></div>" +
-      '<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" class="btn btn--line">' + icon("download", "icon--sm") + tr("معاينة PDF", "Preview PDF") + '</button><button class="btn btn--primary">' + tr("إرسال العرض للإدارة", "Send to NAS Market") + "</button></div>" +
-      '<div class="alert alert--info">' + icon("shield") + "<span>" + tr("العميل لا يرى اسم متجرك. العرض يصله باسم NAS Market بعد اعتماده من الإدارة.", "The buyer never sees your store name. The quote reaches them as NAS Market once the team approves it.") + "</span></div></div></form></div>";
+      '<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" class="btn btn--line">' + icon("download", "icon--sm") + tr("معاينة PDF", "Preview PDF") + '</button><button class="btn btn--primary">' + tr("إرسال العرض للإدارة", "Send to NAS.AE") + "</button></div>" +
+      '<div class="alert alert--info">' + icon("shield") + "<span>" + tr("العميل لا يرى اسم متجرك. العرض يصله باسم NAS.AE بعد اعتماده من الإدارة.", "The buyer never sees your store name. The quote reaches them as NAS.AE once the team approves it.") + "</span></div></div></form></div>";
   };
   views["seller.quotes"].after = () => {
-    $("#q-form").addEventListener("submit", e => { e.preventDefault(); toast(tr("تم إرسال العرض لإدارة NAS Market للمراجعة", "Quote sent to NAS Market for review")); });
+    $("#q-form").addEventListener("submit", e => { e.preventDefault(); toast(tr("تم إرسال العرض لإدارة NAS.AE للمراجعة", "Quote sent to NAS.AE for review")); });
     $(".split").addEventListener("click", e => { const b = e.target.closest(".rfq-item"); if (b) $$(".rfq-item").forEach(x => x.setAttribute("aria-current", x === b)); });
   };
 
@@ -312,10 +312,10 @@
   views["seller.messages"] = () => {
     const convs = [["C-20431", tr("ممتاز. هاي صورة لوحة البيانات للمحرك القديم", "Great. Here's the old motor's nameplate"), "10:38"], ["C-20788", tr("هل يتوفر بطول 100 متر؟", "Is it available in 100 m?"), tr("أمس", "Yesterday")], ["C-19902", tr("شكراً، وصلت القطع", "Thanks, the parts arrived"), "20/10"]];
     const p = P("p10");
-    return head(tr("المحادثات", "Messages"), tr("استفسارات المشترين عن منتجاتك. المحادثات تمر عبر NAS Market بدون أسماء أو بيانات تواصل.", "Buyer questions about your products. Chats run through NAS Market with no names or contact details.")) +
-      '<div class="alert alert--info">' + icon("shield") + "<span>" + tr("يُمنع تبادل أرقام الهواتف أو البريد أو الروابط الخارجية، وتُخفى تلقائياً. فريق NAS Market يطّلع على كل المحادثات.", "Phone numbers, emails and external links aren't allowed and are masked automatically. The NAS Market team can see every chat.") + "</span></div>" +
+    return head(tr("المحادثات", "Messages"), tr("استفسارات المشترين عن منتجاتك. المحادثات تمر عبر NAS.AE بدون أسماء أو بيانات تواصل.", "Buyer questions about your products. Chats run through NAS.AE with no names or contact details.")) +
+      '<div class="alert alert--info">' + icon("shield") + "<span>" + tr("يُمنع تبادل أرقام الهواتف أو البريد أو الروابط الخارجية، وتُخفى تلقائياً. فريق NAS.AE يطّلع على كل المحادثات.", "Phone numbers, emails and external links aren't allowed and are masked automatically. The NAS.AE team can see every chat.") + "</span></div>" +
       '<div class="chat"><div class="chat__list">' + convs.map(([c, m, tm], i) => '<button class="chat__conv" aria-current="' + (i === 0) + '">' + chatAv("user") + '<span style="min-width:0"><b class="mono">' + tr("عميل ", "Buyer ") + c + "</b><p>" + m + "</p></span><time>" + tm + "</time></button>").join("") + "</div>" +
-      '<div class="chat__main"><div class="chat__head">' + chatAv("user") + '<div style="line-height:1.4"><b class="mono">' + tr("عميل C-20431", "Buyer C-20431") + '</b><br><span class="muted" style="font-size:12px">' + tr("دبي · عبر NAS Market", "Dubai · via NAS Market") + "</span></div></div>" +
+      '<div class="chat__main"><div class="chat__head">' + chatAv("user") + '<div style="line-height:1.4"><b class="mono">' + tr("عميل C-20431", "Buyer C-20431") + '</b><br><span class="muted" style="font-size:12px">' + tr("دبي · عبر NAS.AE", "Dubai · via NAS.AE") + "</span></div></div>" +
       '<a class="plate chat__ctx" href="' + ROOT + "product.html?id=" + p.id + '"><img src="' + IMG(p.img) + '" alt=""><span>' + esc(pn(p)) + '<br><span class="mono muted" style="font-size:11px">' + p.sku + "</span></span></a>" +
       '<div class="chat__msgs" id="msgs"><span class="chat__day">24 OCT 2026</span>' +
       bubble(tr("مرحبا، المحرك بيشتغل مع انفرتر؟ وعندكم منه قطعتين؟", "Hi, does this motor run on a VFD? Do you have two?"), "10:21") +
@@ -416,7 +416,7 @@
     });
   };
 
-  // ---------- quotes: sellers price, the admin approves, the buyer only ever sees NAS Market ----------
+  // ---------- quotes: sellers price, the admin approves, the buyer only ever sees NAS.AE ----------
   const AQ = [
     { no: "RFQ-2610-028", p: "p28", qty: 12, buyer: tr("شركة الريم للمقاولات", "Al Reem Contracting"), bc: "C-20788", to: tr("دبي · جبل علي", "Dubai · Jebel Ali"), need: tr("خلال 7 أيام", "within 7 days"), st: ["warn", tr("بانتظار اعتمادك", "Needs your approval")],
       replies: [["v2", 1310, tr("3 أيام عمل", "3 business days"), 8, tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels now, the rest within 10 days.")], ["v1", 1365, tr("7 أيام عمل", "7 business days"), 12, ""], ["v3", 0]] },
@@ -426,15 +426,15 @@
   ];
   views["admin.quotes"] = () => {
     const q = AQ[0], p = P(q.p);
-    return head(tr("عروض الأسعار", "Quotes"), tr("طلبات العملاء تصل البائعين بدون بيانات العميل، وردود البائعين تصلك هنا. العرض المعتمد يصل للعميل باسم NAS Market فقط.", "Buyer requests reach sellers without buyer details, and seller replies land here. Approved quotes reach the buyer as NAS Market only.")) +
+    return head(tr("عروض الأسعار", "Quotes"), tr("طلبات العملاء تصل البائعين بدون بيانات العميل، وردود البائعين تصلك هنا. العرض المعتمد يصل للعميل باسم NAS.AE فقط.", "Buyer requests reach sellers without buyer details, and seller replies land here. Approved quotes reach the buyer as NAS.AE only.")) +
       '<div class="split"><section class="panel"><div class="tabs" role="tablist" style="padding-inline:12px"><button class="tab" role="tab" aria-selected="true">' + tr("بانتظار اعتمادك", "Needs approval") + ' <span class="count">1</span></button><button class="tab" role="tab" aria-selected="false">' + tr("عند البائعين", "With sellers") + ' <span class="count">2</span></button><button class="tab" role="tab" aria-selected="false">' + tr("مُرسلة", "Sent") + "</button></div>" +
       AQ.map((r, i) => '<button class="rfq-item" aria-current="' + (i === 0) + '"><span class="rfq-item__top"><span class="mono" style="font-size:12px">' + r.no + "</span>" + badge(r.st[0], r.st[1]) + "</span><b>" + (r.p ? esc(pn(P(r.p))) : '<span class="mono">' + r.pn + "</span>") + '</b><span class="muted">' + r.buyer + ' <span class="mono">(' + r.bc + ")</span> · <span class=\"mono\">" + r.qty + "</span> " + tr("قطعة", "pcs") + " · " + r.replies.filter(x => x[1]).length + "/" + r.replies.length + " " + tr("ردود", "replies") + "</span></button>").join("") + "</section>" +
       '<form class="panel" id="aq-form"><div class="panel__head"><h2><span class="mono">' + q.no + "</span></h2>" + badge(q.st[0], q.st[1]) + '</div><div class="panel__body form-grid">' +
       '<div class="plate" style="padding:12px 16px;display:grid;gap:4px;font-size:13px"><span class="plate__key">' + tr("العميل · لا يظهر للبائعين", "BUYER · HIDDEN FROM SELLERS") + "</span><b>" + q.buyer + ' <span class="mono muted">' + q.bc + '</span></b><span class="muted">' + esc(pn(p)) + " · " + tr("الكمية", "Qty") + ' <span class="mono">' + q.qty + "</span> · " + q.to + " · " + q.need + "</span></div>" +
       '<div><span class="label">' + tr("ردود البائعين · لا تظهر للعميل", "Seller replies · hidden from the buyer") + '</span><div class="rows panel" style="margin-top:8px">' +
       q.replies.map(([vid, unit, lead, avail, note], i) => { const v = V(vid); return '<label class="row" style="cursor:' + (unit ? "pointer" : "default") + '">' + (unit ? '<input type="radio" name="pick" value="' + unit + '"' + (i === 0 ? " checked" : "") + ">" : '<span style="width:16px"></span>') + '<div class="row__main"><b>' + vn(v) + ' <span class="mono muted">' + v.code + "</span></b><span>" + (unit ? lead + " · " + tr("متوفر", "in stock") + ' <span class="mono">' + avail + "</span>" + (note ? " · " + note : "") : tr("لم يرد بعد", "No reply yet")) + "</span></div>" + (unit ? aed(unit, true) : badge("", tr("بانتظار", "Pending"))) + "</label>"; }).join("") + "</div></div>" +
-      '<div class="form-grid form-grid--2"><div class="field"><label for="aq-m">' + tr("هامش NAS Market", "NAS Market margin") + '</label><span class="pct"><input id="aq-m" value="6" aria-label="margin"><span>%</span></span></div><div class="field"><span class="label">' + tr("سعر الوحدة للعميل", "Unit price to buyer") + '</span><b class="mono" id="aq-unit"></b></div></div>' +
-      '<div class="field"><label>' + tr("ملاحظات للعميل (تظهر باسم NAS Market)", "Notes to buyer (shown as NAS Market)") + '</label><textarea class="textarea">' + tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels available now, the rest within 10 days.") + "</textarea></div>" +
+      '<div class="form-grid form-grid--2"><div class="field"><label for="aq-m">' + tr("هامش NAS.AE", "NAS.AE margin") + '</label><span class="pct"><input id="aq-m" value="6" aria-label="margin"><span>%</span></span></div><div class="field"><span class="label">' + tr("سعر الوحدة للعميل", "Unit price to buyer") + '</span><b class="mono" id="aq-unit"></b></div></div>' +
+      '<div class="field"><label>' + tr("ملاحظات للعميل (تظهر باسم NAS.AE)", "Notes to buyer (shown as NAS.AE)") + '</label><textarea class="textarea">' + tr("يتوفر 8 بكرات فوراً والباقي خلال 10 أيام.", "8 reels available now, the rest within 10 days.") + "</textarea></div>" +
       '<div class="sumrow sumrow--total"><span>' + tr("إجمالي العرض للعميل", "Quote total to buyer") + '</span><span class="mono" id="aq-total"></span></div>' +
       '<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button type="button" class="btn btn--danger" data-aq-no>' + tr("رفض", "Reject") + '</button><button type="button" class="btn btn--line" data-aq-back>' + tr("طلب تعديل من البائع", "Ask seller to revise") + '</button><button class="btn btn--primary">' + icon("check", "icon--sm") + tr("اعتماد وإرسال للعميل", "Approve & send to buyer") + "</button></div></div></form></div>";
   };
@@ -446,7 +446,7 @@
       $("#aq-total").textContent = (AR ? "" : "AED ") + num(unit * q.qty, true) + (AR ? " درهم" : "");
     };
     form.addEventListener("input", calc); form.addEventListener("change", calc); calc();
-    form.addEventListener("submit", e => { e.preventDefault(); toast(tr("تم اعتماد العرض وإرساله للعميل باسم NAS Market", "Approved — sent to the buyer as NAS Market")); });
+    form.addEventListener("submit", e => { e.preventDefault(); toast(tr("تم اعتماد العرض وإرساله للعميل باسم NAS.AE", "Approved — sent to the buyer as NAS.AE")); });
     form.addEventListener("click", e => {
       if (e.target.closest("[data-aq-back]")) toast(tr("أُعيد العرض للبائع للتعديل", "Sent back to the seller"), "send");
       if (e.target.closest("[data-aq-no]")) toast(tr("تم رفض العرض", "Quote rejected"), "x");
@@ -488,10 +488,10 @@
       '<div class="seg" role="group"><button aria-pressed="true">' + tr("الكل", "All") + '</button><button aria-pressed="false">' + tr("مُبلّغ عنها", "Flagged") + " (2)</button></div>") +
       '<div class="chat"><div class="chat__list">' + AC.map((c, i) => '<button class="chat__conv" data-ac="' + i + '" aria-current="' + (i === 0) + '">' + chatAv(c.flag ? "alert" : "chat") + '<span style="min-width:0"><b>' + c.b + " ⇄ " + vn(V(c.v)) + "</b><p>" + (c.flag ? '<span style="color:var(--danger)">' + tr("محاولة مشاركة بيانات تواصل · ", "Contact-sharing attempt · ") + "</span>" : "") + c.msgs[c.msgs.length - 1][1] + "</p></span><time>" + c.tm + "</time></button>").join("") + "</div>" +
       '<div class="chat__main"><div class="chat__head" id="ac-head" style="flex-wrap:wrap"></div><div class="plate chat__ctx" id="ac-ctx"></div><div class="chat__msgs" id="msgs"></div>' +
-      '<form class="chat__compose" id="compose"><select class="select" style="width:auto" aria-label="to"><option>' + tr("للطرفين", "To both") + "</option><option>" + tr("للمشتري فقط", "Buyer only") + "</option><option>" + tr("للبائع فقط", "Seller only") + '</option></select><input class="input" placeholder="' + tr("اكتب كـ NAS Market…", "Write as NAS Market…") + '" aria-label="message"><button class="btn btn--primary">' + tr("إرسال", "Send") + "</button></form></div></div>";
+      '<form class="chat__compose" id="compose"><select class="select" style="width:auto" aria-label="to"><option>' + tr("للطرفين", "To both") + "</option><option>" + tr("للمشتري فقط", "Buyer only") + "</option><option>" + tr("للبائع فقط", "Seller only") + '</option></select><input class="input" placeholder="' + tr("اكتب كـ NAS.AE…", "Write as NAS.AE…") + '" aria-label="message"><button class="btn btn--primary">' + tr("إرسال", "Send") + "</button></form></div></div>";
   views["admin.messages"].after = () => {
     acThread(0);
-    bindCompose(txt => masked("NAS Market: " + txt));
+    bindCompose(txt => masked("NAS.AE: " + txt));
     $("#view").addEventListener("click", e => {
       const b = e.target.closest("[data-ac]");
       if (b) { $$("[data-ac]").forEach(x => x.setAttribute("aria-current", x === b)); acThread(+b.dataset.ac); }
@@ -707,7 +707,7 @@
     return t.msgs.map(([k, txt, time, file]) => {
       if (k === "s") return '<div class="tmsg tmsg--sys"><span>' + txt + " · " + time + "</span></div>";
       const isMe = adminSide ? k !== "c" : k === "c";
-      const who = k === "c" ? (adminSide ? t.who : tr("أنت", "You")) : k === "n" ? AGENTS[t.as][1] + " · " + tr("ملاحظة داخلية", "Internal note") : (adminSide ? AGENTS[t.as][1] : tr("فريق دعم NAS Market", "NAS Market support"));
+      const who = k === "c" ? (adminSide ? t.who : tr("أنت", "You")) : k === "n" ? AGENTS[t.as][1] + " · " + tr("ملاحظة داخلية", "Internal note") : (adminSide ? AGENTS[t.as][1] : tr("فريق دعم NAS.AE", "NAS.AE support"));
       const av = k === "c" ? t.av : k === "n" ? AGENTS[t.as][0] : (adminSide ? AGENTS[t.as][0] : "NM");
       return '<div class="tmsg ' + (k === "a" ? "tmsg--agent" : k === "n" ? "tmsg--note" : "") + '"' + (isMe && !adminSide ? ' style="justify-self:end"' : "") + '><span class="vavatar">' + av + '</span><div class="tmsg__box"><div class="tmsg__who"><b>' + who + "</b><time>" + time + "</time></div>" + esc(txt) + (file ? '<br><span class="msg__file">' + icon("attach", "icon--sm") + file + "</span>" : "") + "</div></div>";
     }).join("");
@@ -808,7 +808,7 @@
     { no: "TKT-2609-0087", type: "seller", who: "", av: "PE", subj: tr("تغيير الحساب البنكي للتسويات", "Change payout bank account"), cat: "account", pri: "low", st: "resolved", sla: ["ok", ""], as: 2, upd: "28/09", order: "",
       msgs: [["c", tr("نرغب بتغيير الحساب البنكي، مرفق خطاب IBAN الجديد.", "We'd like to change our bank account; new IBAN letter attached."), "26/09", "iban_letter.pdf"], ["a", tr("تم التحديث بعد التحقق. التسوية القادمة على الحساب الجديد.", "Updated after verification. The next payout goes to the new account."), "28/09"]] }
   ];
-  views["seller.support"] = () => head(tr("الدعم الفني", "Support"), tr("تواصل مع فريق NAS Market بخصوص الطلبات، المستحقات، المنتجات أو حسابك.", "Contact the NAS Market team about orders, payouts, products or your account."),
+  views["seller.support"] = () => head(tr("الدعم الفني", "Support"), tr("تواصل مع فريق NAS.AE بخصوص الطلبات، المستحقات، المنتجات أو حسابك.", "Contact the NAS.AE team about orders, payouts, products or your account."),
       '<button class="btn btn--primary btn--sm" data-open="#m-tk">' + icon("plus", "icon--sm") + tr("تذكرة جديدة", "New ticket") + "</button>") +
     '<div class="tk"><section class="panel tk-list"><div class="panel__head"><h2>' + tr("تذاكري", "My tickets") + '</h2><span class="badge badge--info">1 ' + tr("مفتوحة", "open") + '</span></div><div class="tk-items" id="tk-items"></div></section><section class="panel" id="tk-detail"></section></div>' +
     '<div class="modal" id="m-tk" aria-hidden="true" role="dialog" aria-labelledby="mtk-t"><form class="modal__box" id="tk-new"><div class="modal__head"><h2 id="mtk-t" style="font-size:16px">' + tr("تذكرة دعم جديدة", "New support ticket") + '</h2><button type="button" class="close-btn" data-close aria-label="close">' + icon("x") + '</button></div><div class="modal__body form-grid">' +
@@ -925,7 +925,7 @@
   const SELLER_NOTIFS = [
     { kind: "warn", title: { ar: "4 طلبات بانتظار تأكيدك", en: "4 orders awaiting your confirmation" }, body: { ar: "الطلبات غير المؤكدة خلال 24 ساعة تُلغى تلقائياً.", en: "Orders not confirmed within 24h are cancelled automatically." }, time: "09:14", read: false, from: "system" },
     { kind: "ok", title: { ar: "تم تحويل التسوية PO-2610-01", en: "Payout PO-2610-01 sent" }, body: { ar: "18,240 درهم إلى حسابك المنتهي بـ 812.", en: "AED 18,240 to your account ending 812." }, time: "15/10", read: true, from: "system" },
-    { kind: "info", title: { ar: "رد جديد على تذكرة الدعم", en: "New reply on your support ticket" }, body: { ar: "TKT-2610-0141 · فريق دعم NAS Market", en: "TKT-2610-0141 · NAS Market support" }, time: "09:20", read: false, from: "system" }
+    { kind: "info", title: { ar: "رد جديد على تذكرة الدعم", en: "New reply on your support ticket" }, body: { ar: "TKT-2610-0141 · فريق دعم NAS.AE", en: "TKT-2610-0141 · NAS.AE support" }, time: "09:20", read: false, from: "system" }
   ];
   const ADMIN_NOTIFS = [
     { kind: "info", title: { ar: "طلب انضمام جديد: الوطنية للمعدات الثقيلة", en: "New seller application: National Heavy Equipment" }, body: { ar: "المستندات مكتملة وبانتظار المراجعة.", en: "Documents complete, awaiting review." }, time: "10:02", read: false, from: "system" },
@@ -939,7 +939,7 @@
   function nItem(n) {
     const k = n.kind || "info";
     return '<div class="nitem nitem--' + k + (n.read ? "" : " is-unread") + '"><span class="nitem__ic">' + icon(NICON[k]) + "</span><div>" +
-      (n.from === "admin" ? '<span class="nitem__from">' + tr("من إدارة NAS Market", "From NAS Market admin") + "</span>" : "") +
+      (n.from === "admin" ? '<span class="nitem__from">' + tr("من إدارة NAS.AE", "From NAS.AE admin") + "</span>" : "") +
       "<b>" + esc((n.title || {})[bnLang] || (n.title || {}).ar || "") + "</b><p>" + esc((n.body || {})[bnLang] || (n.body || {}).ar || "") + "</p><time>" + esc(n.time || "") + "</time></div></div>";
   }
   function bellHTML() {
@@ -964,7 +964,7 @@
   const TPLS = [
     { id: "t1", auto: true, trig: tr("عند موافقة الإدارة على البائع", "When admin approves a seller"), kind: "ok", used: 214, edited: "12/10",
       name: tr("ترحيب وتفعيل المتجر", "Welcome & store activated"),
-      subj: { ar: "تم تفعيل متجرك على NAS Market", en: "Your NAS Market store is live" },
+      subj: { ar: "تم تفعيل متجرك على NAS.AE", en: "Your NAS.AE store is live" },
       body: { ar: "مرحباً {{seller_name}}،\n\nيسعدنا إبلاغك بأن متجر «{{store_name}}» أصبح مفعّلاً ويمكنك البدء بإضافة منتجاتك.\n\nننصحك بالبدء باستيراد منتجاتك من ملف Excel لتوفير الوقت.", en: "Hello {{seller_name}},\n\nGreat news — “{{store_name}}” is now live and you can start adding products.\n\nTip: import your catalogue from Excel to save time." },
       cta: { ar: "الدخول إلى لوحة البائع", en: "Open Seller Central" } },
     { id: "t2", auto: true, trig: tr("قبل 30 يوماً من انتهاء الرخصة", "30 days before licence expiry"), kind: "warn", used: 9, edited: "05/10",
@@ -984,7 +984,7 @@
       cta: { ar: "عرض النسب الجديدة", en: "View new rates" } },
     { id: "t5", auto: false, kind: "info", used: 3, edited: "18/10",
       name: tr("دعوة للمشاركة في حملة عروض", "Invitation to join a sales campaign"),
-      subj: { ar: "شارك بعروض الجمعة البيضاء على NAS Market", en: "Join the White Friday deals on NAS Market" },
+      subj: { ar: "شارك بعروض الجمعة البيضاء على NAS.AE", en: "Join the White Friday deals on NAS.AE" },
       body: { ar: "مرحباً {{seller_name}}،\n\nنحضّر لحملة الجمعة البيضاء (27–30 نوفمبر) مع بنر رئيسي وإعلانات. سجّل منتجاتك المشاركة بخصم 10% على الأقل قبل 15 نوفمبر لتظهر في صفحة الحملة.", en: "Hello {{seller_name}},\n\nWe're preparing White Friday (27–30 Nov) with a home banner and ads. Register products with at least 10% off before 15 Nov to be featured." },
       cta: { ar: "سجّل منتجاتك", en: "Register products" } },
     { id: "t6", auto: true, trig: tr("عند رفض منتج في المراجعة", "When a product is rejected"), kind: "warn", used: 37, edited: "02/10",
@@ -1001,9 +1001,9 @@
   const fillVars = (s, mark) => s.replace(/\{\{(\w+)\}\}/g, (m, k) => mark ? '<span class="var">' + esc(SAMPLE[k] || m) + "</span>" : (SAMPLE[k] || m));
   function emailHTML(d, lang) {
     const subj = d.subj[lang] || "", body = d.body[lang] || "", cta = d.cta[lang] || "";
-    return '<div class="email"><div class="email__meta"><span>' + tr("من", "From") + ": <bdi><b>NAS Market</b> &lt;no-reply@nasmarket.ae&gt;</bdi></span><span>" + tr("إلى", "To") + ": <bdi>" + esc(SAMPLE.store_name) + " &lt;owner@powersource.ae&gt;</bdi></span><span>" + tr("الموضوع", "Subject") + ": <b>" + esc(fillVars(subj)) + '</b></span></div><div class="email__canvas"><div class="email__frame" dir="' + (lang === "en" ? "ltr" : "rtl") + '"><div class="email__head">' + brand("#") + wave() + '</div><div class="email__body"><h2>' + fillVars(esc(subj), true) + "</h2>" +
+    return '<div class="email"><div class="email__meta"><span>' + tr("من", "From") + ": <bdi><b>NAS.AE</b> &lt;no-reply@nasmarket.ae&gt;</bdi></span><span>" + tr("إلى", "To") + ": <bdi>" + esc(SAMPLE.store_name) + " &lt;owner@powersource.ae&gt;</bdi></span><span>" + tr("الموضوع", "Subject") + ": <b>" + esc(fillVars(subj)) + '</b></span></div><div class="email__canvas"><div class="email__frame" dir="' + (lang === "en" ? "ltr" : "rtl") + '"><div class="email__head">' + brand("#") + wave() + '</div><div class="email__body"><h2>' + fillVars(esc(subj), true) + "</h2>" +
       esc(body).split("\n\n").map(p => "<p>" + fillVars(p.replace(/\n/g, "<br>"), true) + "</p>").join("") +
-      (cta ? '<a class="email__cta" href="#">' + esc(cta) + "</a>" : "") + '</div><div class="email__foot">' + (lang === "en" ? "You're receiving this because you sell on NAS Market. · NAS Market, Dubai, UAE · [address placeholder]" : "وصلتك هذه الرسالة لأنك بائع على NAS Market. · NAS Market، دبي، الإمارات · [العنوان]") + "</div></div></div></div>";
+      (cta ? '<a class="email__cta" href="#">' + esc(cta) + "</a>" : "") + '</div><div class="email__foot">' + (lang === "en" ? "You're receiving this because you sell on NAS.AE. · NAS.AE, Dubai, UAE · [address placeholder]" : "وصلتك هذه الرسالة لأنك بائع على NAS.AE. · NAS.AE، دبي، الإمارات · [العنوان]") + "</div></div></div></div>";
   }
 
   const SEGMENTS = [["all", tr("كل البائعين", "All sellers"), 214], ["cat", tr("حسب القسم", "By category"), 0], ["status", tr("حسب الحالة", "By status"), 0], ["pick", tr("بائعون محددون", "Specific sellers"), 0]];
@@ -1380,7 +1380,7 @@
 
   views["admin.products"].after = () => {
     let cur = null;
-    const notifySeller = (title, kind) => { try { const s = JSON.parse(localStorage.getItem("nas_notifs")) || []; s.unshift({ kind, time: new Date().toTimeString().slice(0, 5), read: false, title: { ar: title.ar, en: title.en }, body: { ar: "قرار مراجعة من إدارة NAS Market", en: "Review decision from NAS Market" } }); localStorage.setItem("nas_notifs", JSON.stringify(s.slice(0, 20))); } catch (_) {} };
+    const notifySeller = (title, kind) => { try { const s = JSON.parse(localStorage.getItem("nas_notifs")) || []; s.unshift({ kind, time: new Date().toTimeString().slice(0, 5), read: false, title: { ar: title.ar, en: title.en }, body: { ar: "قرار مراجعة من إدارة NAS.AE", en: "Review decision from NAS.AE" } }); localStorage.setItem("nas_notifs", JSON.stringify(s.slice(0, 20))); } catch (_) {} };
     const done = (card, html) => { card.style.opacity = ".45"; card.querySelector(".rv-card__acts").innerHTML = html; };
     $("#view").addEventListener("click", e => {
       const card = e.target.closest("[data-rv]"); if (card) cur = card;
@@ -1405,7 +1405,7 @@
   // ---------- boot ----------
   const key = APP + "." + VIEW;
   if (!views[key]) return;
-  document.title = TITLES[APP][VIEW] + " | " + (APP === "seller" ? tr("لوحة البائع", "Seller Central") : tr("لوحة الإدارة", "Admin")) + " — NAS Market";
+  document.title = TITLES[APP][VIEW] + " | " + (APP === "seller" ? tr("لوحة البائع", "Seller Central") : tr("لوحة الإدارة", "Admin")) + " — NAS.AE";
   shell();
   $("#view").innerHTML = views[key]();
   if (views[key].after) views[key].after();

@@ -1,107 +1,25 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>صفحة المنتج | NAS Market</title>
-  <meta name="description" content="مواصفات القطعة، عروض البائعين، الشحن والإرجاع، وطلب عرض سعر.">
-  <meta property="og:title" content="صفحة المنتج | NAS Market">
-  <meta property="og:description" content="مواصفات القطعة، عروض البائعين، الشحن والإرجاع، وطلب عرض سعر.">
-  <meta property="og:image" content="assets/img/p10.jpg">
-  <meta name="theme-color" content="#122A36">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>Product | NAS.AE Store</title>
+  <meta name="description" content="Product details, price, availability, datasheets and alternatives.">
+  <meta property="og:title" content="Product | NAS.AE Store">
+  <meta property="og:description" content="Product details, price, availability, datasheets and alternatives.">
+  <meta name="theme-color" content="#0C3670">
+  <link rel="icon" href="assets/brand/nas-store.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/store.css">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap">
+  <link rel="stylesheet" href="css/shop.css">
 </head>
 <body data-page="product" data-root="">
   <div id="site-header"></div>
-  <main id="main">
-
-    <div class="container">
-      <nav class="crumbs" id="crumbs" aria-label="مسار التنقل" style="padding-top:20px"></nav>
-      <div class="pdp" id="pdp"></div>
-
-      <section class="pdp-tabs">
-        <div class="tabs" role="tablist">
-          <button class="tab" role="tab" aria-selected="true" aria-controls="t-offers">عروض البائعين <span class="count">3</span></button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="t-specs">المواصفات الكاملة</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="t-qa" id="qa">أسئلة وأجوبة <span class="count">3</span></button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="t-rev" id="reviews">التقييمات</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="t-ship">الشحن والإرجاع</button>
-        </div>
-        <div class="tabpanel" id="t-offers"><p class="muted" style="font-size:13px;margin-bottom:12px">نفس القطعة من بائعين آخرين، بحالات وأسعار مختلفة.</p><div class="offers" id="offers"></div></div>
-        <div class="tabpanel" id="t-specs" hidden><dl class="spec-table" id="spec-full" style="max-width:720px"></dl></div>
-        <div class="tabpanel" id="t-qa" hidden>
-          <div class="qa" style="max-width:820px">
-            <div class="qa__item"><p class="qa__q">س: هل المحرك مناسب للتشغيل مع انفرتر (VFD)؟</p><p class="qa__a">ج: نعم، العزل من فئة F ويتحمل التشغيل مع الانفرتر حتى 60 Hz. <small>— رد البائع، قبل يومين</small></p></div>
-            <div class="qa__item"><p class="qa__q">س: هل يتوفر بإطار B5 (فلنجة)؟</p><p class="qa__a">ج: متوفر بطلب خاص خلال 5 أيام عمل، تقدر تطلب عرض سعر. <small>— رد البائع، قبل أسبوع</small></p></div>
-            <div class="qa__item"><p class="qa__q">س: هل السعر يشمل التركيب؟</p><p class="qa__a">ج: لا، السعر للقطعة فقط. <small>— رد البائع، قبل أسبوعين</small></p></div>
-            <button class="btn btn--line" data-open="#m-ask" style="justify-self:start">اسأل البائع</button>
-          </div>
-        </div>
-        <div class="tabpanel" id="t-rev" hidden>
-          <div class="qa" style="max-width:820px">
-            <span class="proto-note">تقييمات تجريبية لأغراض العرض</span>
-            <div class="qa__item"><p class="qa__q">★★★★★ <span class="muted" style="font-weight:400;font-size:12px">· مشترٍ موثّق · شراء حقيقي</span></p><p class="qa__a">[نص تقييم من مشترٍ فعلي يظهر هنا بعد الإطلاق]</p></div>
-            <div class="qa__item"><p class="qa__q">★★★★☆ <span class="muted" style="font-weight:400;font-size:12px">· مشترٍ موثّق · شراء حقيقي</span></p><p class="qa__a">[نص تقييم من مشترٍ فعلي يظهر هنا بعد الإطلاق]</p></div>
-          </div>
-        </div>
-        <div class="tabpanel" id="t-ship" hidden>
-          <dl class="spec-table" style="max-width:720px">
-            <div><dt>الشحن العادي</dt><dd>2–4 أيام · 15.00 AED</dd></div>
-            <div><dt>الشحن السريع</dt><dd>24h · 35.00 AED</dd></div>
-            <div><dt>الإرجاع والاستبدال</dt><dd>حسب سياسة هذه القطعة بالاتفاق مع المورد · بتغليفها الأصلي · فحص فني للقطع الإلكترونية قبل القبول</dd></div>
-            <div><dt>الاسترداد</dt><dd>To original payment method</dd></div>
-          </dl>
-        </div>
-      </section>
-
-      <section class="sec--tight" style="padding-bottom:64px">
-        <div class="sec-head"><div><span class="eyebrow">مشابه</span><h2>منتجات مشابهة</h2></div></div>
-        <div class="pgrid pgrid--5" id="similar"></div>
-      </section>
-    </div>
-
-    <!-- RFQ modal -->
-    <div class="modal" id="m-rfq" aria-hidden="true" role="dialog" aria-labelledby="rfq-t">
-      <form class="modal__box" data-submit-toast="تم إرسال طلب عرض السعر إلى NAS Market RFQ-2610-032">
-        <div class="modal__head"><h2 id="rfq-t" style="font-size:17px">طلب عرض سعر</h2><button type="button" class="close-btn" data-close aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-        <div class="modal__body form-grid">
-          <div class="plate" style="padding:10px 14px;font-size:13px"><span class="plate__key">القطعة</span><br><span id="rfq-product"></span></div>
-          <div class="form-grid form-grid--2">
-            <div class="field"><label for="rfq-q">الكمية المطلوبة</label><input class="input mono" id="rfq-q" type="number" value="10" min="1"></div>
-            <div class="field"><label for="rfq-d">تاريخ التسليم المطلوب</label><input class="input mono" id="rfq-d" type="date"></div>
-          </div>
-          <div class="field"><label for="rfq-s">المواصفات أو الملاحظات</label><textarea class="textarea" id="rfq-s" placeholder="مثال: نحتاج إطار B5 وجهد 400V، مع شهادة منشأ."></textarea></div>
-          <label class="upload"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V9M7 13.5l5-5 5 5M5 4h14"/></svg><span><strong>إرفاق ملف</strong> (مخطط، صورة لوحة البيانات، PDF)</span><input type="file" hidden></label>
-          <label class="check"><input type="checkbox" checked> ابحثوا لي عن أفضل سعر لدى كل الموردين المعتمدين</label>
-          <p class="muted" style="font-size:12px">يصلك عرض السعر من NAS Market مباشرةً بعد مراجعته واعتماده.</p>
-        </div>
-        <div class="modal__foot"><button type="button" class="btn btn--line" data-close>إلغاء</button><button class="btn btn--primary">إرسال الطلب</button></div>
-      </form>
-    </div>
-
-    <!-- Ask seller modal -->
-    <div class="modal" id="m-ask" aria-hidden="true" role="dialog" aria-labelledby="ask-t">
-      <form class="modal__box" data-submit-toast="تم إرسال استفسارك — بتلاقي الرد في المحادثات">
-        <div class="modal__head"><h2 id="ask-t" style="font-size:17px">استفسار عن القطعة</h2><button type="button" class="close-btn" data-close aria-label="إغلاق"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-        <div class="modal__body form-grid">
-          <p class="muted" style="font-size:13px">بخصوص: <b id="ask-product" style="color:var(--ink)"></b></p>
-          <div class="field"><label for="ask-m">رسالتك</label><textarea class="textarea" id="ask-m" placeholder="اكتب سؤالك عن المواصفات، التوافق، أو التوفر…" required></textarea></div>
-          <label class="upload"><svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V9M7 13.5l5-5 5 5M5 4h14"/></svg><span><strong>إرفاق صورة</strong> للقطعة القديمة أو لوحة البيانات</span><input type="file" hidden></label>
-          <p class="muted" style="font-size:12px">رسالتك تصل للبائع عبر NAS Market بدون اسمك أو بيانات تواصلك، وفريق المنصة يطّلع على المحادثات لضمان جودة الخدمة.</p>
-        </div>
-        <div class="modal__foot"><button type="button" class="btn btn--line" data-close>إلغاء</button><button class="btn btn--primary">إرسال</button></div>
-      </form>
-    </div>
-  </main>
+  <main id="main"><noscript><p style="padding:24px">This prototype needs JavaScript.</p></noscript></main>
   <div id="site-footer"></div>
   <script src="js/core.js"></script>
-  <script src="js/products.js"></script>
-  <script src="js/store.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 </html>

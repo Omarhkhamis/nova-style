@@ -1,215 +1,25 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NAS Market | قطع الغيار والمعدات الصناعية في الإمارات</title>
-  <meta name="description" content="سوق إلكتروني متعدد البائعين لقطع الغيار والمعدات الصناعية في الإمارات: ابحث برقم القطعة، قارن عروض البائعين الموثّقين، وادفع بأمان مع فاتورة ضريبية.">
-  <link rel="alternate" hreflang="ar" href="index.html">
-  <link rel="alternate" hreflang="en" href="en/index.html">
-  <link rel="alternate" hreflang="ur" href="ur/index.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="NAS Market — قطع الغيار والمعدات الصناعية">
-  <meta property="og:description" content="قطع ومعدات صناعية من بائعين موثّقين في الإمارات.">
-  <meta property="og:image" content="assets/img/p10.jpg">
-  <meta property="og:locale" content="ar_AE">
-  <meta name="theme-color" content="#122A36">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>NAS.AE Store | Industrial Spare Parts & Equipment Online</title>
+  <meta name="description" content="Genuine industrial products from trusted brands — automation, electrical, drives, instrumentation and more. Delivered across the UAE and worldwide.">
+  <meta property="og:title" content="NAS.AE Store | Industrial Spare Parts & Equipment Online">
+  <meta property="og:description" content="Genuine industrial products from trusted brands — automation, electrical, drives, instrumentation and more. Delivered across the UAE and worldwide.">
+  <meta name="theme-color" content="#0C3670">
+  <link rel="icon" href="assets/brand/nas-store.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/store.css">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap">
+  <link rel="stylesheet" href="css/shop.css">
 </head>
 <body data-page="home" data-root="">
   <div id="site-header"></div>
-
-  <main id="main">
-    <!-- quick categories (phones & tablets) -->
-    <section class="qcats" id="qcats" aria-label="فهرس القطع"></section>
-
-    <!-- HERO: catalog index + annotated part -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <nav class="pindex" aria-labelledby="pi-title">
-          <div class="pindex__title"><h2 id="pi-title">فهرس القطع</h2><span class="mono">INDEX · 08</span></div>
-          <ol>
-            <li><a href="category.html?c=marine"><span class="pindex__code">01</span>بحري<span class="pindex__count">1,240</span></a></li>
-            <li><a href="category.html?c=electrical"><span class="pindex__code">02</span>كهرباء<span class="pindex__count">3,115</span></a></li>
-            <li><a href="category.html?c=hvac"><span class="pindex__code">03</span>تكييف وتبريد<span class="pindex__count">1,870</span></a></li>
-            <li><a href="category.html?c=automation"><span class="pindex__code">04</span>أتمتة وتحكم<span class="pindex__count">960</span></a></li>
-            <li><a href="category.html?c=mech"><span class="pindex__code">05</span>ميكانيك وCNC<span class="pindex__count">2,204</span></a></li>
-            <li><a href="category.html?c=pumps"><span class="pindex__code">06</span>مضخات وصمامات<span class="pindex__count">1,488</span></a></li>
-            <li><a href="category.html?c=tools"><span class="pindex__code">07</span>عدد وأدوات<span class="pindex__count">2,650</span></a></li>
-            <li><a href="category.html?c=safety"><span class="pindex__code">08</span>معدات السلامة<span class="pindex__count">735</span></a></li>
-          </ol>
-          <div class="plate plate--dark pindex__foot">
-            <span>لم تجد القطعة التي تبحث عنها؟</span>
-            <a href="request.html">اطلبها من البائعين <svg class="icon icon--sm flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </nav>
-
-        <div class="stage">
-          <div class="stage__copy">
-            <span class="eyebrow">سوق متعدد البائعين · الإمارات</span>
-            <h1>قطع الغيار والمعدات الصناعية، <mark>بالرقم الصحيح</mark> ومن بائع موثّق.</h1>
-            <p>ابحث برقم القطعة أو الموديل، قارن عروض البائعين بالسعر والحالة، واستلم طلبك مع فاتورة ضريبية.</p>
-            <div class="stage__cta">
-              <a class="btn btn--primary btn--lg" href="category.html">تصفّح الأقسام</a>
-              <a class="btn btn--line btn--lg" href="request.html">اطلب عرض سعر</a>
-            </div>
-            <div class="stage__facts">
-              <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></svg>بائعون برخص موثّقة</span>
-              <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>شحن لكل الإمارات</span>
-              <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7 4 12l5 5"/><path d="M4 12h11a5 5 0 0 1 0 10h-2"/></svg>إرجاع واستبدال حسب كل قطعة</span>
-            </div>
-          </div>
-
-          <figure class="callout-fig" aria-label="محرك كهربائي مع أجزائه">
-            <div class="callout-fig__img">
-              <img src="assets/img/p10.jpg" alt="محرك كهربائي 3 فاز مع لوحة البيانات" width="960" height="640" fetchpriority="high">
-              <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                <line x1="49" y1="37" x2="50" y2="8"/>
-                <line x1="46" y1="62" x2="18" y2="62"/>
-                <line x1="84" y1="55" x2="86" y2="30"/>
-                <line x1="22" y1="48" x2="13" y2="24"/>
-                <line x1="52" y1="88" x2="80" y2="88"/>
-              </svg>
-              <span class="co-pin" style="left:49%;top:37%">1</span>
-              <span class="co-pin" style="left:46%;top:62%">2</span>
-              <span class="co-pin" style="left:84%;top:55%">3</span>
-              <span class="co-pin" style="left:22%;top:48%">4</span>
-              <span class="co-pin" style="left:52%;top:88%">5</span>
-              <a class="co-label plate plate--dark" style="left:50%;top:8%" href="category.html?q=IM-3P"><b>01</b><span>لوحة البيانات<small>ابحث برقم الموديل</small></span></a>
-              <a class="co-label plate plate--dark" style="left:18%;top:62%" href="category.html?c=automation"><b>02</b><span>صندوق التوصيل<small>كونتاكتورات وقواطع</small></span></a>
-              <a class="co-label plate plate--dark" style="left:86%;top:30%" href="category.html?c=mech"><b>03</b><span>العمود<small>رولمان بلي وكوبلنغ</small></span></a>
-              <a class="co-label plate plate--dark" style="left:13%;top:24%" href="category.html?c=hvac"><b>04</b><span>غطاء المروحة<small>قطع التبريد</small></span></a>
-              <a class="co-label plate plate--dark" style="left:80%;top:88%" href="category.html?c=tools"><b>05</b><span>قاعدة التثبيت<small>عدد وأدوات</small></span></a>
-            </div>
-            <figcaption class="co-list">
-              <a href="category.html?q=IM-3P"><b>1</b> لوحة البيانات</a>
-              <a href="category.html?c=automation"><b>2</b> صندوق التوصيل</a>
-              <a href="category.html?c=mech"><b>3</b> العمود والمحامل</a>
-              <a href="category.html?c=hvac"><b>4</b> غطاء المروحة</a>
-              <a href="category.html?c=tools"><b>5</b> قاعدة التثبيت</a>
-            </figcaption>
-          </figure>
-
-          <a class="plate stage__plate" href="product.html?id=p10">
-            <span class="plate__key">منتج الأسبوع · IM-3P-2K2-B3</span>
-            <span style="font-size:14px;font-weight:500">محرك 3 فاز 2.2 كيلوواط</span>
-            <span class="plate__row"><span class="price">1,180<small>درهم</small></span><span class="price-old">1,350</span></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- DEALS -->
-    <section class="deals sec--tight" aria-labelledby="deals-title">
-      <div class="container">
-        <div class="sec-head">
-          <div><span class="eyebrow">DEALS · W43</span><h2 id="deals-title">عروض الأسبوع</h2></div>
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-            <div class="plate timer"><span style="font-size:13px">ينتهي خلال</span><span class="timer__num" id="timer" aria-live="off"></span></div>
-            <a class="link" href="category.html?deals=1">كل العروض <svg class="icon icon--sm flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </div>
-        <div class="hscroll" id="deals"></div>
-      </div>
-    </section>
-
-    <!-- WIDE OFFER BANNER (admin-managed) -->
-    <section class="sec--tight sec-wide" aria-label="عرض خاص" style="padding-bottom:0">
-      <div class="container" id="wide-banner"></div>
-    </section>
-
-    <!-- SECTORS -->
-    <section class="sec sec-sectors" aria-labelledby="sec-title">
-      <div class="container">
-        <div class="sec-head">
-          <div><span class="eyebrow">تسوّق حسب القطاع</span><h2 id="sec-title">ثمانية أقسام، أكثر من 14 ألف قطعة</h2></div>
-          <a class="link" href="category.html">كل الأقسام <svg class="icon icon--sm flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-        <div class="sectors">
-          <a class="sector reveal" href="category.html?c=marine"><img src="assets/img/b-marine.jpg" alt="" loading="lazy" width="960" height="720"><span class="sector__go"><svg class="icon flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="sector__in"><span class="sector__code">01 · MARINE</span><h3>البحري وقطع السفن</h3><span class="sector__count">1,240 قطعة · رفاصات، فلاتر، مضخات بحرية</span></div></a>
-          <a class="sector reveal" href="category.html?c=electrical"><img src="assets/img/b-electrical.jpg" alt="" loading="lazy" width="768" height="1024"><span class="sector__go"><svg class="icon flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="sector__in"><span class="sector__code">02</span><h3>كهرباء</h3><span class="sector__count">3,115 قطعة</span></div></a>
-          <a class="sector reveal" href="category.html?c=hvac"><img src="assets/img/b-hvac.jpg" alt="" loading="lazy" width="1024" height="768"><span class="sector__go"><svg class="icon flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="sector__in"><span class="sector__code">03</span><h3>تكييف وتبريد</h3><span class="sector__count">1,870 قطعة</span></div></a>
-          <a class="sector reveal" href="category.html?c=pumps"><img src="assets/img/b-valves.jpg" alt="" loading="lazy" width="534" height="534"><span class="sector__go"><svg class="icon flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="sector__in"><span class="sector__code">06</span><h3>مضخات وصمامات</h3><span class="sector__count">1,488 قطعة</span></div></a>
-          <a class="sector reveal" href="category.html?c=mech"><img src="assets/img/b-cnc2.jpg" alt="" loading="lazy" width="1024" height="683"><span class="sector__go"><svg class="icon flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="sector__in"><span class="sector__code">05</span><h3>ميكانيك وCNC</h3><span class="sector__count">2,204 قطعة</span></div></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SPEC SHEET: buyer protection -->
-    <section class="specsheet sec" aria-labelledby="ss-title">
-      <div class="container specsheet__grid">
-        <div>
-          <span class="eyebrow">كيف يحميك السوق</span>
-          <h2 id="ss-title">اشترِ من أي بائع، بنفس الضمانات.</h2>
-          <p class="lead">كل البائعين على المنصة يمرّون بنفس المراجعة، وكل طلب يمر عبر نفس نظام الدفع والإرجاع.</p>
-        </div>
-        <dl class="sheet">
-          <div class="sheet__row reveal"><dt class="sheet__key">Buyer protection</dt><dd class="sheet__val"><strong>المبلغ يبقى لدى المنصة حتى تستلم</strong><span>لا يصل إلى البائع إلا بعد تأكيد الاستلام أو انتهاء مهلة الاعتراض.</span></dd></div>
-          <div class="sheet__row reveal"><dt class="sheet__key">Verified sellers</dt><dd class="sheet__val"><strong>كل بائع موثّق برخصة تجارية</strong><span>الإدارة تراجع الرخصة والمستندات قبل تفعيل أي متجر على المنصة.</span></dd></div>
-          <div class="sheet__row reveal"><dt class="sheet__key">Payment</dt><dd class="sheet__val"><strong>بطاقة، Apple Pay، تحويل بنكي، أو عند الاستلام</strong><span>لا تُخزَّن بيانات البطاقة على المنصة، بل تُعالَج لدى مزود دفع مرخّص.</span><div class="paychips"><span class="paychip">VISA</span><span class="paychip">MASTERCARD</span><span class="paychip">APPLE PAY</span><span class="paychip">COD</span></div></dd></div>
-          <div class="sheet__row reveal"><dt class="sheet__key">Tax invoice</dt><dd class="sheet__val"><strong>فاتورة ضريبية 5% لكل طلب</strong><span>باسم شركتك ورقمها الضريبي، وتحمّلها من حسابك بأي وقت.</span></dd></div>
-          <div class="sheet__row reveal"><dt class="sheet__key">Returns</dt><dd class="sheet__val"><strong>إرجاع واستبدال حسب كل قطعة</strong><span>مدة الإرجاع تُحدد لكل قطعة بالاتفاق مع المورد وتظهر في صفحة المنتج قبل الشراء. القطع الإلكترونية الحساسة تخضع لفحص فني قبل قبول الإرجاع أو الاستبدال.</span></dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- PROMO BANNERS (admin-managed) -->
-    <section class="sec sec-promo" style="padding-bottom:0" aria-labelledby="promo-title">
-      <div class="container">
-        <div class="sec-head"><div><span class="eyebrow">PROMOTIONS</span><h2 id="promo-title">حملات وعروض البائعين</h2></div></div>
-        <div class="pbanners" id="promo-banners"></div>
-      </div>
-    </section>
-
-    <!-- NEW ARRIVALS -->
-    <section class="sec sec-new" aria-labelledby="new-title">
-      <div class="container">
-        <div class="sec-head">
-          <div><span class="eyebrow">NEW IN</span><h2 id="new-title">وصل حديثاً من البائعين</h2></div>
-          <a class="link" href="category.html">عرض الكل <svg class="icon icon--sm flip-rtl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-        <div class="tabs" role="tablist" id="arrival-tabs" style="margin-bottom:20px">
-          <button class="tab" role="tab" aria-selected="true" data-cat="">الكل</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="electrical">كهرباء</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="pumps">مضخات وصمامات</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="hvac">تكييف وتبريد</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="tools">عدد وأدوات</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="safety">السلامة</button>
-        </div>
-        <div class="pgrid" id="arrivals"></div>
-      </div>
-    </section>
-
-    <!-- REQUEST A PART: type moment -->
-    <section class="ask" aria-labelledby="ask-title">
-      <div class="ask__bg" aria-hidden="true">P/N ?</div>
-      <div class="container">
-        <div class="ask__in">
-          <span class="eyebrow">طلب قطعة</span>
-          <h2 id="ask-title">لم تجد القطعة؟ <span>اكتب رقمها</span>، ونحن نسأل البائعين.</h2>
-          <p class="muted" style="max-width:56ch">نرسل طلبك للبائعين المتخصصين بنفس القسم، وتصلك العروض في حسابك مع السعر ومدة التوريد.</p>
-          <form class="ask__form" action="request.html">
-            <div class="field"><label for="ask-pn">رقم القطعة أو الموديل</label><input class="input ask__pn" id="ask-pn" name="pn" placeholder="SKF 22216 E" required></div>
-            <div class="field"><label for="ask-qty">الكمية</label><input class="input mono" id="ask-qty" name="qty" type="number" min="1" value="1"></div>
-            <div class="field"><label for="ask-ph">رقم الجوال</label><input class="input mono" id="ask-ph" name="phone" type="tel" placeholder="05x xxx xxxx" dir="ltr"></div>
-            <button class="btn btn--volt btn--lg" type="submit">أرسل الطلب</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
+  <main id="main"><noscript><p style="padding:24px">This prototype needs JavaScript.</p></noscript></main>
   <div id="site-footer"></div>
-
   <script src="js/core.js"></script>
-  <script src="js/products.js"></script>
-  <script src="js/store.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 </html>

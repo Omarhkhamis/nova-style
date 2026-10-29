@@ -1,4 +1,4 @@
-/* NAS Market — shared helpers (storefront + dashboards) */
+/* NAS.AE — shared helpers (storefront + dashboards) */
 (function () {
   const html = document.documentElement;
   const LANG = html.lang || "ar";
@@ -85,10 +85,11 @@
       '<path d="M6 29.5c3-2.4 6-2.4 9 0s6 2.4 9 0 6-2.4 9 0" fill="none" stroke="' + (dark ? "#fff" : "#0B1C25") + '" stroke-width="1.2"/></g>' +
       '<path d="M22.5 9.5 15.5 20h4.6l-1.6 6.8 7-10.4h-4.6z" fill="#F6D24E"/></svg>';
   }
+  // NAS.AE STORE logo: white version on dark surfaces (dashboard sidebar), colour version when dark=true (light surface)
   function brand(href, dark) {
-    return '<a class="brand' + (dark ? " brand--dark" : "") + '" href="' + href + '" aria-label="NAS Market">' + logoMark(dark) +
-      '<span class="brand__word"><b>NAS</b><span>MARKET</span></span></a>';
+    return '<a class="brand' + (dark ? " brand--dark" : "") + '" href="' + href + '" aria-label="NAS.AE Store"><img src="' + ROOT + "assets/brand/nas-store" + (dark ? "" : "-white") + '.png" alt="NAS.AE Store" style="height:40px;width:auto"></a>';
   }
+
 
   function wave(cls) {
     return '<svg class="wave ' + (cls || "") + '" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">' +
