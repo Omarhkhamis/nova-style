@@ -194,7 +194,7 @@
     setTimeout(() => f && f.focus({ preventScroll: true }), 50);
   }
   function closeAll() {
-    $$(".drawer.is-open, .modal.is-open, .mnav.is-open, .filters.is-open, .bsheet.is-open, .side.is-open").forEach(e => { e.classList.remove("is-open"); e.setAttribute("aria-hidden", "true"); });
+    $$(".drawer.is-open, .modal.is-open, .mnav.is-open, .filters.is-open, .bsheet.is-open, .side.is-open, .catdrawer.is-open").forEach(e => { e.classList.remove("is-open"); e.setAttribute("aria-hidden", "true"); });
     overlay && overlay.classList.remove("is-open");
     document.body.style.overflow = "";
     lastFocus && lastFocus.focus && lastFocus.focus({ preventScroll: true });
